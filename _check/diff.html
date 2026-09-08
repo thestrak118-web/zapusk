@@ -1,0 +1,28 @@
+<!doctype html><meta charset="utf-8"><title>Figma diff</title>
+<!-- Figma renderi bilan solishtirish vositasi.
+     ?v=a|b|c   — qaysi variant
+     &m=side    — yonma-yon ko'rish (aks holda difference: qora = aynan mos)
+     &m=off     — faqat sayt
+     &b=4       — farqni yorqinlashtirish
+     &s=0.3     — butun sahifani kichraytirib ko'rish              -->
+<style>
+  html,body{margin:0;background:#000}
+  #wrap{position:relative;width:390px;margin:0 auto;background:#fff;filter:brightness(var(--b,1));zoom:var(--s,1)}
+  iframe{display:block;width:390px;border:0}
+  #ref{position:absolute;left:0;top:0;width:390px;mix-blend-mode:difference;pointer-events:none}
+  body.side #ref{position:static;mix-blend-mode:normal}
+  body.side #wrap{width:790px;display:flex;gap:10px;background:#222}
+  body.off #ref{display:none}
+</style>
+<div id="wrap"><iframe id="f"></iframe><img id="ref"></div>
+<script>
+const H={a:2913,b:1877,c:2292};
+const p=new URLSearchParams(location.search);
+const v=p.get('v')||'a';
+document.body.className=p.get('m')||'';
+document.documentElement.style.setProperty('--b',p.get('b')||1);
+document.documentElement.style.setProperty('--s',p.get('s')||1);
+f.style.height=H[v]+'px';
+f.src='../example/'+v+'/index.html';
+ref.src='ref/'+v+'.png';
+</script>

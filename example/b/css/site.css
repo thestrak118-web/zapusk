@@ -1,0 +1,145 @@
+/* ============================================================
+   Site 2 — Figma node 1:162 (390 x 1877), qora fon / oltin CTA
+   Koordinatalar Figma REST API'dan, o'zgartirilmagan.
+   ============================================================ */
+
+:root{
+  --ink:      #1A1919;
+  --gold:     #FFD899;
+  --gold-1:   #FFDF70;
+  --gold-2:   #FFE9A6;
+  --gold-ink: #492F0A;
+}
+
+body{ background:#0b0b0b; color:#fff; }
+.page{ height:1877px; background:var(--ink); }
+
+/* ---------- hero ---------- */
+.hero-bg   { left:0;    top:-24px; width:390px; height:657px; object-fit:cover; }
+.ring      { left:26px; top:312px; width:344px; height:344px; border-radius:50%;
+             background:rgba(255,255,255,.05); }
+.ring-in   { left:66px; top:376px; width:264px; height:264px; border-radius:50%;
+             background:rgba(255,255,255,.10); }
+.glow      { left:114px; top:317px; width:147px; height:147px; border-radius:50%;
+             background:linear-gradient(160deg,var(--gold-1) 0%,var(--gold-2) 50%,rgba(255,223,112,.83) 100%);
+             filter:blur(50px); }
+.fade      { left:0; top:434px; width:390px; height:218px;
+             background:linear-gradient(180deg,rgba(26,25,25,0) 0%,var(--ink) 56%); }
+.person    { left:63px; top:164px; width:249px; height:293px; }
+
+/* ---------- yuqori panel ---------- */
+.clock-ico { left:20px;  top:21px; width:13px; height:13px; }
+.clock-txt { left:37px;  top:19.5px; width:84px; font-size:16px; line-height:16px; text-align:center; }
+.logo      { left:162px; top:1px;  width:52px; height:52px; }
+.date-ico  { left:246px; top:20px; width:15px; height:15px; }
+.date-txt  { left:267px; top:19.5px; width:110px; font-size:16px; line-height:16px; }
+
+/* ---------- sarlavha (Karantina — asl shrift, Google Fonts) ---------- */
+.h1{
+  left:20px; top:57px; width:350px;
+  font-family:var(--font-karantina);
+  font-weight:400;
+  font-size:46px;
+  line-height:46px;
+  text-align:center;
+  text-transform:uppercase;
+  color:#fff;
+}
+.h1 .gold{
+  background:linear-gradient(140deg,var(--gold-1) 0%,var(--gold-2) 50%,rgba(255,223,112,.83) 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+/* ---------- oltin ticket tugma ---------- */
+.cta      { left:20px; width:350px; height:110px; }
+/* tugma rasmi soyasi bilan birga eksport qilingan: Figma render bounds (5,436) 380x140 */
+.cta img  { position:absolute; left:-15px; top:-11px; width:380px; height:140px; }
+.cta .lbl { position:absolute; left:84.4px; top:42.2px; width:182px; height:25px; }
+.cta-1{ top:447px; }
+.cta-2{ top:1093px; }
+.cta-3{ top:1740px; }
+
+/* ---------- taymer ---------- */
+.timer{
+  left:128px; top:567.5px; width:134px; height:46px;
+  font-family:var(--font-display);
+  font-weight:400;
+  font-size:42px;
+  line-height:42px;
+  color:#fff;
+  -webkit-text-stroke:var(--stroke);
+  paint-order:stroke fill;
+}
+.timer span{ position:absolute; top:4px; text-align:left; }
+.timer i{ position:absolute; top:0; width:8px; text-align:center; font-style:normal; }
+.timer .s1{ left:0;     width:34px; }
+.timer .c1{ left:38px; }
+.timer .s2{ left:50px;  width:34px; }
+.timer .c2{ left:88px; }
+.timer .s3{ left:101px; width:33px; }
+
+.caption{ left:85px; top:619.5px; width:219px; font-size:16px; line-height:16px; white-space:nowrap; }
+.arrow  { left:309.5px; top:558.5px; width:37px; height:74px; }
+
+/* ---------- bo'lim sarlavhalari (Karantina) ---------- */
+.h2{
+  font-family:var(--font-karantina);
+  font-weight:400;
+  font-size:46px;
+  line-height:46px;
+  letter-spacing:.02em;
+  text-transform:uppercase;
+  color:#fff;
+  white-space:nowrap;
+}
+.h2-gifts{ left:22px; top:662px; width:347px; }
+.h2-learn{ left:41px; top:1243px; width:309px; }
+
+/* ---------- sovg'a qatorlari ---------- */
+.gift    { left:16px; width:358px; height:111px; border-radius:20px; background:#fff; }
+.gift-1{ top:724px; } .gift-2{ top:843px; } .gift-3{ top:962px; }
+.gift-img{ left:24px; width:106px; height:91px; border-radius:14px; object-fit:cover; }
+.gift-img-1{ top:734px; } .gift-img-2{ top:853px; } .gift-img-3{ top:972px; }
+.gift-txt{
+  left:140px;
+  font-family:var(--font-tight);
+  font-size:16px;
+  line-height:24px;
+  color:#000;
+}
+.gift-txt-1{ top:755.5px; width:240px; }
+.gift-txt-2{ top:874.5px; width:193px; }
+.gift-txt-3{ top:994.5px; width:197px; }
+
+/* ---------- raqamli ro'yxat ---------- */
+.num{
+  font-family:var(--font-karantina);
+  font-weight:300;
+  font-size:80px;
+  line-height:80px;
+  letter-spacing:-.01em;
+  color:#fff;
+  left:22px;
+}
+.num-1{ top:1303px; letter-spacing:.05em; }
+.num-2{ top:1388px; }
+.num-3{ top:1473px; }
+.num-4{ top:1558px; }
+.num-5{ top:1643px; }
+
+.li-txt{ left:76px; font-size:14px; line-height:18.2px; color:#fff; }
+.li-txt-1{ top:1319px; width:310px; }
+.li-txt-2{ top:1404px; width:298px; }
+.li-txt-3{ top:1489px; width:294px; }
+.li-txt-4{ top:1574px; width:287px; }
+.li-txt-5{ top:1659px; width:289px; }
+
+.dot{
+  left:16px; width:12px; height:12px; border-radius:50%;
+  background:linear-gradient(140deg,var(--gold-1) 0%,var(--gold-2) 50%,rgba(255,223,112,.83) 100%);
+  box-shadow:inset 0 0 0 2px #433116;
+}
+.dot-1{ top:1340px; } .dot-2{ top:1427px; } .dot-3{ top:1512px; }
+.dot-4{ top:1597px; } .dot-5{ top:1681px; }

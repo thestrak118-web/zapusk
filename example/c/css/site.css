@@ -1,0 +1,133 @@
+/* ============================================================
+   Site 3 — Figma node 1:4 (390 x 2292), oq fon / to'q sariq CTA
+   Koordinatalar Figma REST API'dan, o'zgartirilmagan.
+   Display matnlar (YU Buyan / Buyan / Helvetica Neue) — Figma'dan
+   SVG kontur qilib eksport qilingan, ya'ni aynan o'sha shrift.
+   ============================================================ */
+
+:root{
+  --orange:      #FF5722;
+  --orange-2:    #FF7F57;
+  --orange-dark: #DC4D1F;
+  --soft:        #F5F5F5;
+  --dot:         #FFDACE;
+  --circle:      #FFA284;
+}
+
+body{ background:#efefef; color:#000; }
+.page{ height:2292px; background:#fff; }
+
+/* ---------- hero ---------- */
+.fade   { left:0; top:383px; width:390px; height:126px;
+          background:linear-gradient(180deg,rgba(255,255,255,0) 0%,#fff 100%); }
+.orbit  { left:-52px; top:210px; width:494px; height:240px; }
+.person { left:62px; top:165px; width:249px; height:293px; }
+.dot    { width:8px; height:8px; border-radius:50%; background:var(--dot); }
+.dot-1{ left:45px;  top:297px; }
+.dot-2{ left:123px; top:268px; }
+.dot-3{ left:258px; top:267px; }
+.dot-4{ left:336px; top:296px; }
+
+/* ---------- yuqori panel ---------- */
+.chip{
+  width:40px; height:40px;
+  border:.817px solid var(--orange);
+  border-radius:12.2577px;
+  background:var(--soft);
+}
+.chip-l   { left:20px;  top:14px; }
+.chip-r   { left:265px; top:14px; width:38px; height:38px; border-width:.8215px; border-radius:12.3224px; }
+.cal-ico  { left:33px;   top:26px;   width:14.5px; height:14.5px; }
+.clock-ico{ left:276.7px; top:25.3px; width:16.5px; height:15.9px; }
+.date-txt { left:68.6px;  top:28.8px; width:78px; height:13px; }
+.time-txt { left:311.5px; top:27.8px; width:58px; height:13px; }
+.logo     { left:172px; top:-2px; width:68px; height:68px; }
+
+/* ---------- sarlavhalar (Figma SVG kontur — YU Buyan 700) ---------- */
+.h1{ left:20.5px; top:79.2px; width:349px; height:68px; }
+.h2{ left:40.2px; top:625.2px; width:310px; height:28px; }
+
+/* ---------- "pill" (Figma'dagi ko'rinish) ---------- */
+/* Figma qatlam tartibi aynan saqlangan: oq maydon spiker rasmi ostida,
+   "+" va yuborish belgisi rasm ustida. Butun maydon CTA havolasi. */
+.pill{
+  left:20px; top:386px; width:350px; height:48px;
+  border:1px solid #F4F4F4;
+  border-radius:24px;
+  background:#fff;
+  box-shadow:0 4px 4px rgba(107,107,107,.15);
+}
+.form{
+  left:20px; top:386px; width:350px; height:48px;
+  border-radius:24px;
+}
+.form__plus{
+  position:absolute;
+  left:12px; top:-3px;
+  width:27px; height:48px;
+  font-size:40px;
+  line-height:48px;
+  color:#929292;
+}
+.form__send{
+  position:absolute;
+  left:314px; top:12px;
+  display:grid; place-items:center;
+  width:24px; height:24px;
+  border-radius:50%;
+  background:var(--circle);
+  transition:background .2s;
+}
+.form:hover .form__send{ background:var(--orange); }
+
+/* ---------- to'q sariq tugma ---------- */
+.cta{
+  left:27px; width:337.7px; height:80.7px;
+  border-radius:74.07px;
+  background:linear-gradient(90deg,var(--orange-2) 0%,var(--orange) 100%);
+  box-shadow:0 4px 0 var(--orange-dark);
+}
+.cta:active{ box-shadow:0 1px 0 var(--orange-dark); }
+.cta-1{ top:458px; }
+.cta-2{ top:2166px; }
+.cta .lbl { position:absolute; left:65.2px; top:30.7px; width:180px; height:24px; }
+.cta .disc{ position:absolute; left:270px; top:13px; width:56px; height:56px;
+            border-radius:50%; background:#fff; }
+.cta .arw { position:absolute; left:292.6px; top:34.8px; width:10.4px; height:11.1px; }
+
+/* ---------- taymer ---------- */
+.timer{
+  left:170px; top:568.5px; width:51px; height:28px;
+  font-family:var(--font-buyan);
+  font-weight:400;
+  font-size:28px;
+  line-height:28px;
+  text-align:center;
+  -webkit-text-stroke:var(--stroke);
+  paint-order:stroke fill;
+}
+
+/* ---------- kartochkalar ---------- */
+.card     { left:45px; width:300px; height:280px; border-radius:20px; background:var(--soft); }
+.card-1{ top:682px; }  .card-2{ top:978px; }  .card-3{ top:1274px; }
+.card-4{ top:1570px; } .card-5{ top:1866px; }
+
+/* rasm soyasi bilan eksport qilingan: box (45,682) 300x160 → render (35,676) 320x180 */
+.card-img { left:35px; width:320px; height:180px; }
+.card-img-1{ top:676px; }  .card-img-2{ top:972px; }  .card-img-3{ top:1268px; }
+.card-img-4{ top:1564px; } .card-img-5{ top:1860px; }
+
+.check    { left:183px; width:23px; height:23px; border-radius:50%;
+            background:var(--orange); box-shadow:inset 0 0 0 1px #fff; }
+.check-1{ top:830px; }  .check-2{ top:1126px; } .check-3{ top:1422px; }
+.check-4{ top:1718px; } .check-5{ top:2014px; }
+.tick     { left:189px; width:12px; height:8.7px; }
+.tick-1{ top:837px; }  .tick-2{ top:1133px; } .tick-3{ top:1429px; }
+.tick-4{ top:1725px; } .tick-5{ top:2021px; }
+
+/* kartochka matnlari — Figma SVG kontur (Helvetica Neue 14/18.2) */
+.ct-1{ left:59px;   top:880.3px;  width:271px; height:50px; }
+.ct-2{ left:54.9px; top:1177px;   width:280px; height:49px; }
+.ct-3{ left:55.3px; top:1472.3px; width:279px; height:49px; }
+.ct-4{ left:58.3px; top:1769px;   width:272px; height:49px; }
+.ct-5{ left:58.8px; top:2063.7px; width:273px; height:51px; }

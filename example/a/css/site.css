@@ -1,0 +1,147 @@
+/* ============================================================
+   Site 1 — Figma node 1:90 (390 x 2913), oq fon / ko'k CTA
+   Koordinatalar Figma REST API'dan, o'zgartirilmagan.
+   ============================================================ */
+
+:root{
+  --blue:      #3164FB;
+  --blue-dark: #2455E4;
+  --line:      #797979;
+}
+
+body{ background:#f2f4f8; color:#000; }
+.page{ height:2913px; background:#fff; }
+
+/* ---------- yuqori panel ---------- */
+.date-ico  { left:17px;  top:23px; width:17px; height:18px; }
+.date-txt  { left:42px;  top:25px; width:110px; font-size:16px; line-height:16px; }
+.logo      { left:181px; top:-3px; width:68px; height:68px; }
+.clock-ico { left:284px; top:24px; width:17px; height:17px; }
+.clock-txt { left:306px; top:25px; width:45px; font-size:16px; line-height:16px; text-align:center; }
+
+/* ---------- sarlavha (Figma'dan SVG kontur — Herokid 600/38) ---------- */
+.h1{ left:32.2px; top:77.1px; width:326px; height:74px; }
+
+/* ---------- hero ---------- */
+.glow    { left:110px; top:311px; width:144px; height:144px; border-radius:50%;
+           background:rgba(49,100,251,.5); filter:blur(75px); }
+.glass-l { left:9px;   top:223px; width:157px; height:198px; }
+.glass-r { left:218px; top:220px; width:163px; height:207px; }
+.person  { left:67px;  top:186px; width:239px; height:281px; }
+
+/* ---------- ko'k tugma ---------- */
+.cta{
+  left:25px; width:339px; height:86px;
+  border-radius:95.74px;
+  background:var(--blue);
+  box-shadow:
+    0 3.83px 17.7px rgba(49,100,251,.4),
+    0 3.54px 0 var(--blue-dark),
+    inset 0 3.83px 3.83px rgba(255,255,255,.15),
+    inset 0 -3.83px 3.83px rgba(255,255,255,.15);
+}
+.cta:active{ box-shadow:0 0 0 rgba(49,100,251,.4), 0 1px 0 var(--blue-dark); }
+.cta span{
+  position:absolute;
+  top:33.5px; height:19px;
+  color:#fff;
+  font-size:19.47px;
+  font-weight:700;
+  line-height:19.47px;
+  text-align:center;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+.cta img{ position:absolute; width:20px; height:20px; top:32px; }
+
+.cta-1{ top:463px; }
+.cta-1 span{ left:57px;  width:197px; }
+.cta-1 img { left:262px; }
+.cta-2{ top:1632px; left:22px; }
+.cta-2 span{ left:58px;  width:195px; }
+.cta-2 img { left:261px; }
+.cta-3{ top:2777px; left:26px; }
+.cta-3 span{ left:57px;  width:197px; }
+.cta-3 img { left:262px; }
+
+/* ---------- taymer ---------- */
+.timer{
+  left:-1.5px; top:581px; width:390px;
+  font-family:var(--font-display);
+  font-weight:400;
+  font-size:24px;
+  line-height:33.6px;
+  text-align:center;
+  -webkit-text-stroke:var(--stroke);
+  paint-order:stroke fill;
+}
+
+/* ---------- bo'lim sarlavhalari (SVG kontur — Herokid 600) ---------- */
+.h2-gifts{ left:31.8px; top:635.7px; width:327px; height:30px; }
+.h2-learn{ left:40.8px; top:1762.1px; width:309px; height:32px; }
+
+.lead{
+  left:72px; top:678px; width:239px;
+  font-size:14px;
+  line-height:18.2px;
+  text-align:center;
+}
+
+/* ---------- sovg'a kartochkalari ---------- */
+.gift{
+  left:25px; width:340px; height:272px;
+  border-radius:16px;
+  background:#fff;
+  box-shadow:0 0 22.8px rgba(0,0,0,.18);
+}
+.gift-1{ top:736px; }
+.gift-2{ top:1036px; }
+.gift-3{ top:1336px; }
+.gift__img{
+  position:absolute;
+  left:16px; top:16px; width:308px; height:138px;
+  object-fit:cover;
+  border-radius:16px;
+}
+.gift__title{
+  position:absolute;
+  left:16px; top:164px;
+  font-size:14px;
+  font-weight:600;
+  line-height:18.2px;
+}
+/* qator uzilishi Figma'dagidek: "— video darslik" har doim yangi qatorda */
+.gift__title{ width:308px; }
+.gift__text{
+  position:absolute;
+  left:16px; top:208px;
+  font-size:12px;
+  line-height:15.6px;
+}
+/* qator uzilishlari HTML'da <br> bilan qat'iy belgilangan (Figma'dagidek),
+   quti esa hech qachon qayta o'ralmasligi uchun kengroq */
+.gift__text{ width:300px; }
+
+/* ---------- "Bepul darsda o'rganasiz" ---------- */
+.learn{
+  left:25px; width:339px; height:167px;
+  border:1px solid var(--line);
+  border-radius:15px;
+  background:#fff;
+  box-shadow:7px 7px 0 var(--blue);
+}
+.learn-1{ top:1812px; }
+.learn-2{ top:2005px; }
+.learn-3{ top:2198px; }
+.learn-4{ top:2391px; }
+.learn-5{ top:2584px; }
+.learn__icon{ position:absolute; left:21px; top:19px; width:59px; height:57px; }
+.learn__text{
+  position:absolute;
+  left:21px; top:89px;
+  font-size:14px;
+  line-height:19.6px;
+}
+.learn__text{ width:305px; }
+.learn-4 .learn__icon,
+.learn-5 .learn__icon{ top:18px; height:59px; }

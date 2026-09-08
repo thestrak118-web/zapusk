@@ -1,0 +1,73 @@
+/* ============================================================
+   Umumiy asos — Figma 390px kanvasi 1:1 ko'chiriladi.
+   Barcha bloklar Figma koordinatalarida (absolute), sahifa esa
+   viewport meta (width=390) telefon ekraniga moslab kattalashtiradi.
+   ============================================================ */
+
+/* Google Fonts'ning Inter subsetida "→" (U+2192) yo'q — brauzer boshqa
+   shriftga tushib qoladi va kengligi Figma'dagidan farq qiladi.
+   Shuning uchun faqat shu belgi uchun Inter mikro-subseti o'z ichiga joylashtirilgan. */
+@font-face{
+  font-family:"Inter";
+  font-style:normal;
+  font-weight:400 700;
+  font-display:swap;
+  src:url(../assets/fonts/inter-arrow.woff2) format("woff2");
+  unicode-range:U+2192;
+}
+
+:root{
+  --font:       "Inter", -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-tight: "Inter Tight", "Inter", -apple-system, Helvetica, Arial, sans-serif;
+  /* Figma'dagi Herokid / YU Buyan litsenziyali. Bebas Neue — kenglik bo'yicha
+     eng yaqin bepul analog; qalinlik --stroke bilan tenglashtirilgan.
+     Original .woff2 bo'lsa, @font-face qo'shib stack boshiga qo'ying. */
+  --font-display:   "Herokid", "Bebas Neue", "Arial Narrow", Arial, sans-serif;
+  --font-buyan:     "YU Buyan", "Buyan", "Bebas Neue", "Arial Narrow", Arial, sans-serif;
+  --font-karantina: "Karantina", "Bebas Neue", Arial, sans-serif;
+  --stroke: .013em;
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+
+html{ -webkit-text-size-adjust:100%; }
+
+body{
+  margin:0;
+  overflow-x:hidden;
+  font-family:var(--font);
+  font-size:14px;
+  line-height:1.3;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:geometricPrecision;
+}
+
+img{ display:block; max-width:none; }
+a{ color:inherit; text-decoration:none; }
+button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; }
+p,h1,h2,h3,ul,li{ margin:0; padding:0; }
+li{ list-style:none; }
+
+/* Figma freymi: qat'iy 390px.
+   <meta name="viewport" content="width=390"> tufayli brauzerning o'zi
+   telefon ekraniga moslab kattalashtiradi — nisbatlar Figma bilan aynan bir xil. */
+.page{
+  position:relative;
+  width:390px;
+  margin-inline:auto;
+  overflow:hidden;
+}
+
+/* Har bir blok Figma koordinatasida */
+.n{ position:absolute; }
+
+.b{ font-weight:700; }
+
+.btn{ display:block; user-select:none; transition:transform .12s cubic-bezier(.22,.61,.36,1); }
+.btn:active{ transform:translateY(2px); }
+
+.timer{ font-variant-numeric:tabular-nums; }
+
+@media (prefers-reduced-motion:reduce){
+  *{ transition-duration:.001ms !important; }
+}
