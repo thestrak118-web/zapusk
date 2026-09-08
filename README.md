@@ -8,7 +8,8 @@ zapusk/
 ├── example/b/   → Figma "Site 2" (1:162, 390×1877) — qora fon, oltin CTA
 ├── example/c/   → Figma "Site 3" (1:4, 390×2292) — oq fon, to'q sariq CTA
 ├── index.html   → uchalasini yonma-yon ko'rish (bosh sahifa)
-└── _check/      → Figma bilan solishtirish vositasi (saytga kirmaydi)
+├── _check/      → Figma bilan solishtirish vositasi (saytga kirmaydi)
+└── MEMORY.md    → loyiha xotirasi: dizayn tizimi, qoidalar, ish jurnali
 ```
 
 Har bir papka **mustaqil**: `index.html`, `css/`, `js/`, `assets/`. Bittasini
