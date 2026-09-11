@@ -190,3 +190,7 @@ Qolgan farq — joylashuv emas, faqat harf chetlarining silliqlanishi
 - [ ] Figma tokenni yangilash (chatga ochiq yozilgan edi)
 - [ ] Herokid / Buyan `.woff2` topilsa — `base.css` dagi `--font-display` va
       `--font-buyan` boshiga qo'shish, taymer ham asl shriftga o'tadi
+
+## BIR saytlar qo‘shildi
+
+Foydalanuvchi tayyorlangan BIR a/b/c variantlarini ushbu repoga push qilishni so‘radi. Yangi saytlar ildizdagi a/, b/, c/ papkalarida; root index.html ularga yo‘naltirilgan. Oldingi Page 2 example/ fayllari saqlangan. Yangi variantlar foydalanuvchining joriy qoidalariga ko‘ra responsive 425px hero, AVIF, WOFF2 subset va defer JS bilan ishlaydi. Sheets so‘rovi thankYou sahifasida ko‘rinmasdan fonda yuboriladi. Tafsilotlar BIR.md da.

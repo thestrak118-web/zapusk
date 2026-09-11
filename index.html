@@ -3,37 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Zapusk — 3 ta variant</title>
-<style>
-  body{margin:0;background:#111;color:#eee;font:14px/1.5 Inter,system-ui,sans-serif}
-  header{padding:22px 24px 6px}
-  h1{margin:0;font-size:18px;font-weight:600}
-  p{margin:6px 0 0;color:#8b8b8b}
-  .grid{display:flex;gap:24px;padding:20px 24px 40px;overflow-x:auto}
-  figure{margin:0;flex:0 0 auto}
-  figcaption{padding:0 0 8px;color:#9a9a9a;display:flex;gap:10px;align-items:baseline}
-  figcaption a{color:#5b8cff;text-decoration:none}
-  iframe{width:390px;height:820px;border:0;border-radius:14px;background:#fff;box-shadow:0 10px 40px rgba(0,0,0,.5)}
-</style>
+<title>BIR — Uchta sayt varianti</title>
+<style>*{box-sizing:border-box}body{margin:0;background:#eef1f6;color:#17243c;font:16px/1.5 Arial,sans-serif}header{max-width:1250px;margin:40px auto 24px;padding:0 20px}h1{font-size:32px;margin:0 0 4px}header p{margin:0;color:#526176}main{max-width:1250px;margin:auto;padding:0 20px 40px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}a{display:flex;justify-content:space-between;text-decoration:none;background:white;color:#1649be;border-radius:16px 16px 0 0;padding:16px 20px;font-weight:700}iframe{display:block;border:0;width:100%;height:760px;background:white;border-radius:0 0 16px 16px;box-shadow:0 10px 24px #1327490c}@media(max-width:850px){main{grid-template-columns:1fr;max-width:430px}header{text-align:center}}</style>
+<link rel="stylesheet" href="./css/main.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="./css/main.css"></noscript>
 </head>
 <body>
-<header>
-  <h1>Zapusk — 3 ta landing varianti</h1>
-  <p>Figma "Untitled" / Page 2 → Site 1, Site 2, Site 3. Har biri alohida papka: <code>example/a</code>, <code>example/b</code>, <code>example/c</code>.</p>
-</header>
-<div class="grid">
-  <figure>
-    <figcaption><b>a</b> — oq / ko'k <a href="example/a/" target="_blank">ochish ↗</a></figcaption>
-    <iframe src="example/a/" title="Site 1" loading="lazy"></iframe>
-  </figure>
-  <figure>
-    <figcaption><b>b</b> — qora / oltin <a href="example/b/" target="_blank">ochish ↗</a></figcaption>
-    <iframe src="example/b/" title="Site 2" loading="lazy"></iframe>
-  </figure>
-  <figure>
-    <figcaption><b>c</b> — oq / to'q sariq <a href="example/c/" target="_blank">ochish ↗</a></figcaption>
-    <iframe src="example/c/" title="Site 3" loading="lazy"></iframe>
-  </figure>
-</div>
+<header><h1>BIR — Vebinar saytlari</h1><p>25-Sentabr · 20:00</p></header>
+<main>
+<section><a href="./a/">Variant A <span>Ochish ↗</span></a><iframe src="./a/" title="Variant A ko‘rinishi" loading="lazy"></iframe></section>
+<section><a href="./b/">Variant B <span>Ochish ↗</span></a><iframe src="./b/" title="Variant B ko‘rinishi" loading="lazy"></iframe></section>
+<section><a href="./c/">Variant C <span>Ochish ↗</span></a><iframe src="./c/" title="Variant C ko‘rinishi" loading="lazy"></iframe></section>
+</main>
 </body>
 </html>

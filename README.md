@@ -1,3 +1,9 @@
+# Hozirgi BIR saytlar
+
+Yangi variantlar: [a](a/), [b](b/), [c](c/). [Sozlash va tekshiruvlar](BIR.md). Asosiy index.html shu variantlarni ochadi.
+
+Quyida oldingi `example/` loyihasi hujjati saqlangan.
+
 # Zapusk — AI vebinar landing (3 ta variant)
 
 Figma fayl **"Untitled"** (`gAx3LlafiCUAtWgLze0tbH`), **Page 2** dan 1:1 ko'chirilgan statik sayt.
