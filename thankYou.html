@@ -10,6 +10,21 @@
   <style>@font-face{font-family:"Bebas Neue";src:url("./fonts/thanks-bebas.woff2") format("woff2");font-weight:400;font-display:swap}@font-face{font-family:Montserrat;src:url("./fonts/thanks-montserrat.woff2") format("woff2");font-weight:500 700;font-display:swap}*{margin:0;padding:0;box-sizing:border-box}body{background:#ebe8e3;color:#000}.header{min-height:100vh;padding-top:180px}.header-container{margin:auto;max-width:671px;width:100%;display:flex;padding:0 20px}.hero-left,.hero-content{width:100%;display:flex;flex-direction:column;align-items:center}.hero-title{font-family:"Bebas Neue",sans-serif;font-weight:700;font-size:96px;line-height:1;text-align:center;margin-bottom:25px;text-transform:uppercase;max-width:622px}.hero-text{font-family:Montserrat,sans-serif;font-weight:500;font-size:clamp(17px,5vw,29px);line-height:1.5;margin-bottom:58px;max-width:522px}.hero-text span{color:red}.hero-btn-box{max-width:585px;width:100%}.hero-img{display:block;margin:0 auto 46px;width:16px;height:119px}.hero-btn{display:flex;align-items:center;justify-content:center;font-family:"Bebas Neue",sans-serif;font-weight:700;font-size:64px;line-height:1;text-align:center;padding:39px 0 38px;background:#039be5;box-shadow:0 5px #006393;color:#fff;border-radius:30px;width:100%;border:0;text-transform:uppercase;margin-bottom:42px;text-decoration:none;max-height:142px}.submission-feedback{font-family:Montserrat,sans-serif;font-size:15px;font-weight:500;line-height:1.5;text-align:center}[hidden]{display:none!important}@media(max-width:500px){.header{padding-top:30%}.header-container{text-align:center;padding:0 10px}.hero-left,.hero-content{display:block}.hero-title{font-size:40px;margin-bottom:5px}.hero-img{margin-bottom:24px;height:69px;width:auto}.hero-btn{font-size:32px;padding:23px 0 20px;max-width:345px;margin:0 auto 25px}.submission-feedback{font-size:13px;max-width:345px;margin:auto}}</style>
   <link rel="stylesheet" href="./css/thankYou.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="./css/thankYou.css"></noscript>
+  <!-- Meta Pixel — bu sahifada kechiktirilmaydi: odam Telegram tugmasini tez
+       bossa ham CompleteRegistration (js/thanks.js) yetib borsin. Split test
+       yo'q, shuning uchun oddiy PageView to'g'ri. defer qo'yilmaydi. -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '2982763675408670');
+  fbq('track', 'PageView');
+  </script>
 </head>
 <body>
   <main class="header">
@@ -35,6 +50,5 @@
   </main>
   <script src="./js/config.js" defer></script>
   <script src="./js/thanks.js" defer></script>
-  <script src="./js/pixel.js" defer></script>
 </body>
 </html> 

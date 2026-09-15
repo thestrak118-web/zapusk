@@ -566,6 +566,21 @@ kartochka o'ng qismining (136×107) 1.5x eksporti. AVIF: `gift.avif` 136×107
 (2.9 KB) va `gift@1.5x.avif` (4.7 KB), `.i22` → `228,638` 136×107. Eski
 `s2-03*.avif` o'chirildi.
 
+**Meta eventlari.** `CompleteRegistration` endi tugma bosilganda emas (modal
+ochilishi har bosishda sanalardi), **ariza qoldirilgach** `js/thanks.js` da
+yuboriladi: yaroqli `webinar.pending` bo'lsa, bir ariza uchun bir marta
+(`webinar.tracked:<yo'l>`), `eventID` = ariza ID. Sheets javobi kutilmaydi —
+Telegram tugmasini tez bosgan odamning eventi yo'qolmasin. `thankYou.html` da
+pixel endi `<head>` dagi Meta standart kodi (kechiktirilmaydi, `pixel.js`
+ulanmaydi). Landing stubiga `push` va `_fbq` qo'shildi ("conflicting versions"
+ogohlantirishi yo'qoldi). CTA inline skripti `index.html` lardan va
+`tools/svg2site.py` shablonidan olib tashlandi.
+Sinov (4 variant): landing `PageView` 1 · CTA dan keyin event yo'q · thankYou
+`PageView` 1 + `CompleteRegistration` 1 · qayta yuklashda takrorlanmaydi.
+> Sinov eslatmasi: headless Playwright'da Meta **hech narsa yubormaydi**
+> (`navigator.webdriver`), standart kod ham. `--disable-blink-features=AutomationControlled`
+> + `webdriver=false` bilan o'lchash kerak, `/tr` va Sheets `route` bilan ushlanadi.
+
 > ⚠️ Ikkalasi ham **generator chiqargan faylda qo'lda** tuzatildi (manba SVG
 > repoda yo'q). `tools/build.py` qayta ishga tushirilsa, qaytib ketadi —
 > oldin manba SVG'da tugmani va sovg'a rasmini tuzatish kerak.
@@ -576,8 +591,8 @@ kartochka o'ng qismining (136×107) 1.5x eksporti. AVIF: `gift.avif` 136×107
 
 - [ ] Jadvaldan 2 ta `TEST-CLAUDE-OCHIRING` sinov qatorini o'chirish
 - [ ] GitHub Pages yoqish (`thestrak118-web.github.io/zapusk/`)
-- [ ] Meta `CompleteRegistration` hozir CTA bosilishida — haqiqiy arizalarni
-      sanash kerak bo'lsa, uni `thanks.js` dagi tasdiqdan keyingi joyga ko'chirish
+- [x] Meta `CompleteRegistration` CTA bosilishidan ariza qoldirilgandan keyinga
+      ko'chirildi (2026-09-15, pastdagi "eventlar" yozuvi)
 - [ ] Ildiz va `a/` bir xil sahifa (ikkita manzil). Domen ma'lum bo'lgach
       `a/` ga `canonical` qo'yish kerak bo'lishi mumkin
 - [ ] Figma tokenni yangilash (chatga ochiq yozilgan edi)

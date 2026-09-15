@@ -146,6 +146,20 @@
       if (latest && latest.id !== lead.id) send();
     }
   }
+  // Meta CompleteRegistration — ariza qoldirilgach, bir ariza uchun bir marta.
+  // Sheets javobi kutilmaydi: odam Telegram tugmasini bossa javob kelmay
+  // qoladi va event yo'qoladi. eventID = ariza ID (keyin CAPI bilan birlashadi).
+  (() => {
+    const lead = pending();
+    if (!lead || typeof window.fbq !== 'function') return;
+    const key = 'webinar.tracked:' + path;
+    try {
+      if (sessionStorage.getItem(key) === lead.id) return;
+      sessionStorage.setItem(key, lead.id);
+    } catch {}
+    try { window.fbq('track', 'CompleteRegistration', {}, { eventID: lead.id }); } catch {}
+  })();
+
   retry.addEventListener('click', send);
   window.addEventListener('pageshow', event => { if (event.persisted) send(); });
   send();

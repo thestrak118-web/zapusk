@@ -934,15 +934,7 @@ body{ background:#ffffff; }
      CTA bosilganda o'zi yaratadi (integration shartnomasi). -->
 <script src="./js/config.js" defer></script>
 <script src="./js/main.js" defer></script>
-<script>
-/* CTA bosilganda Meta standart eventi. fbq'ni js/main.js ichidagi pixel.js
-   yaratadi va u faqat raqamli pixelId sozlanganda ishga tushadi — shuning
-   uchun tekshirib chaqiramiz. Capture bosqichi: modal ochilishiga xalaqit
-   bermaydi. */
-addEventListener('click', function (e) {
-  if (!e.target.closest('[data-register]')) return;
-  if (typeof fbq === 'function') fbq('track', 'CompleteRegistration');
-}, true);
-</script>
+<!-- Meta CompleteRegistration bu yerda EMAS: u ariza qoldirilgach
+     thankYou.html (js/thanks.js) da, bir ariza uchun bir marta yuboriladi. -->
 </body>
 </html>

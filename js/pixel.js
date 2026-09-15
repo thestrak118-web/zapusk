@@ -14,6 +14,10 @@
   queue.queue = [];
   queue.loaded = true;
   queue.version = '2.0';
+  // Meta'ning standart kodidagidek — aks holda fbevents.js "conflicting
+  // versions" ogohlantirishini chiqaradi.
+  queue.push = queue;
+  if (!window._fbq) window._fbq = queue;
   queue('init', id.trim());
   queue('track', 'PageView');
 
