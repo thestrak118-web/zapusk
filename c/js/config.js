@@ -8,11 +8,10 @@
       hech qanday so'rov yuborilmaydi. Eski loyihaning havolasi
       QO'YILMAYDI — yangi loyihaning o'z qiymatlari kerak. */
 window.LOGISTICS_CONFIG = {
-  endpointUrl: 'https://script.google.com/macros/s/AKfycbz7G8GKmjL0wIHd_gVgzv_AIqyBhXgGV9n1yjIDh173WqcDieJnX--xQgEJT4tropdM/exec',
+  endpointUrl: 'https://script.google.com/macros/s/AKfycby6IhnkmwaOL84KE6T8k37ugGUMpLWLHiDGK8KAbBSMqwyVsEzDDk3PQ9z9PmuC6bFh/exec',
   telegramUrl: 'https://t.me/+GzsmqPGpcew2MjZi',
   pixelId:     '2982763675408670',  /* Meta Pixel */
-  sheetName:   ''    /* ⚠ TO'LDIRILISHI SHART — endpoint bo'lmasa
-                        MISSING_SHEET xatosi qaytaradi */
+  sheetName:   'Lead'  /* jadvaldagi varaq nomi — majburiy */
 };
 
 /* 2. Sahifaning o'z sozlamalari (js/app.js — taymer, analitika). */

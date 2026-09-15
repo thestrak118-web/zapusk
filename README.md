@@ -5,13 +5,20 @@ Figma "Untitled" / Page 1 dan 1:1 ko'chirilgan statik saytlar.
 
 ```
 zapusk/
-├── a/          → Figma "Site 1" (390×1380) — oq fon, ko'k CTA
-├── b/          → Figma "Site 2" (390×1781) — qora fon, to'q sariq CTA
-├── c/          → Figma "Site 3" (390×1925) — oq fon, qizil CTA
-├── index.html  → uchalasini yonma-yon ko'rish
-├── tools/      → Figma SVG'dan sayt yig'adigan generator va sinovlar
-└── arxiv/      → eski kampaniyalar (BIR, uStudy) va eski tekshiruv vositalari
+├── index.html + css/ js/ assets/ fonts/ thankYou.html
+│                 → ASOSIY SAYT = variant a (ildizga nusxalanadi)
+├── a/           → Figma "Site 1" (390×1380) — oq fon, ko'k CTA
+├── b/           → Figma "Site 2" (390×1781) — qora fon, to'q sariq CTA
+├── c/           → Figma "Site 3" (390×1925) — oq fon, qizil CTA
+├── variantlar.html → uchalasini yonma-yon solishtirish
+├── tools/       → Figma SVG'dan sayt yig'adigan generator va sinovlar
+└── arxiv/       → eski kampaniyalar (BIR, uStudy) va eski tekshiruv vositalari
 ```
+
+Sayt manziliga kirgan odam **to'g'ridan-to'g'ri variant a** ni ko'radi —
+qayta yo'naltirish yo'q. Qaysi variant asosiy ekani
+`tools/variants.json` dagi `"asosiy"` kalitida; har yig'ishda o'sha variant
+ildizga nusxalanadi.
 
 Har bir papka **mustaqil**: `index.html`, `css/`, `js/`, `assets/`, `fonts/`,
 `thankYou.html`. Bittasini olib hostingga tashlasangiz, ishlaydi.
@@ -20,8 +27,9 @@ Har bir papka **mustaqil**: `index.html`, `css/`, `js/`, `assets/`, `fonts/`,
 
 ```bash
 cd zapusk && python3 -m http.server 8899
-# http://localhost:8899/     — uchalasi yonma-yon
-# http://localhost:8899/a/   (b, c)
+# http://localhost:8899/                  — asosiy sayt (variant a)
+# http://localhost:8899/b/  /c/           — boshqa variantlar
+# http://localhost:8899/variantlar.html   — uchalasi yonma-yon
 ```
 
 ## Sozlash — `<variant>/js/config.js`
@@ -29,7 +37,7 @@ cd zapusk && python3 -m http.server 8899
 | Kalit | Vazifasi |
 |---|---|
 | `endpointUrl` | Ariza yoziladigan Google Apps Script manzili |
-| `sheetName` | **Majburiy.** Jadvaldagi varaq nomi — bo'sh bo'lsa endpoint `MISSING_SHEET` xatosini qaytaradi va ariza yozilmaydi |
+| `sheetName` | **Majburiy.** Jadvaldagi varaq nomi — hozir `Lead`. Bo'sh bo'lsa endpoint `MISSING_SHEET` qaytaradi va ariza yozilmaydi |
 | `telegramUrl` | Rahmat sahifasidagi kanal tugmasi |
 | `pixelId` | Meta Pixel ID (faqat raqam bo'lsa ishlaydi) |
 
@@ -62,9 +70,9 @@ Lighthouse (mobil, siqish yoqilgan hosting sharoitida):
 
 | Variant | Ball | FCP | LCP | TBT | CLS |
 |---|---|---|---|---|---|
-| a | 0.99 | 626 ms | 1503 ms | 139 ms | 0 |
-| b | 0.98 | 631 ms | 1801 ms | 128 ms | 0 |
-| c | 0.99 | 629 ms | 1726 ms | 135 ms | 0 |
+| / (variant a) | 0.98 | 630 ms | 1502 ms | 179 ms | 0 |
+| b | 0.98 | 637 ms | 1876 ms | 152 ms | 0 |
+| c | 0.98 | 637 ms | 1802 ms | 133 ms | 0 |
 
 Nima qilingan:
 
@@ -74,6 +82,7 @@ Nima qilingan:
 - **Rasmlar AVIF, 2x.** WebP 3x bilan solishtirganda ~2 barobar yengil.
 - **LCP rasmi `preload`** bilan oldindan so'raladi.
 - Qolgan TBT — Meta Pixel'ning `fbevents.js` fayli (~108 KB, tashqi).
+- Favikon `data:` URI sifatida sahifa ichida — `favicon.ico` uchun 404 so'rov yo'q.
 
 ## Figma bilan aniqlik
 

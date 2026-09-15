@@ -2,36 +2,595 @@
 <html lang="uz">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Logistika vebinar — 3 ta sayt varianti</title>
-<meta name="robots" content="noindex">
+<meta name="viewport" content="width=390, viewport-fit=cover">
+<title>Logistikani bepul o‘rganib, 300$ daromadga chiqish — bepul vebinar</title>
+<meta name="description" content="19-sentyabr, soat 20:00. Logistikani mutlaqo bepulga o‘rganib, boshlang‘ich 300$ daromadga chiqish. Qatnashganlar orasidan 10,000$ lik grant yutish imkoni.">
+<meta name="theme-color" content="#367AF7">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%278%27 fill=%27#367AF7%27/%3E%3C/svg%3E">
+<meta property="og:title" content="Logistikani bepul o‘rganib, 300$ daromadga chiqish — bepul vebinar">
+<meta property="og:description" content="19-sentyabr, soat 20:00. Logistikani mutlaqo bepulga o‘rganib, boshlang‘ich 300$ daromadga chiqish. Qatnashganlar orasidan 10,000$ lik grant yutish imkoni.">
+<meta property="og:image" content="assets/s1-02.avif">
+<meta property="og:type" content="website">
+<link rel="preload" href="assets/s1-01.avif" as="image" fetchpriority="high">
+<link rel="preload" href="fonts/antonio-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/arimo-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/bebas-neue-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/mulish-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/mulish-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/poppins-500.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-*{box-sizing:border-box}
-body{margin:0;background:#eef1f6;color:#17243c;font:16px/1.5 system-ui,Arial,sans-serif}
-header{max-width:1250px;margin:40px auto 20px;padding:0 20px}
-h1{font-size:30px;margin:0 0 4px}
-header p{margin:0;color:#526176}
-main{max-width:1250px;margin:auto;padding:0 20px 48px;display:grid;
-     grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
-a.top{display:flex;justify-content:space-between;text-decoration:none;background:#fff;
-      color:#1649be;border-radius:16px 16px 0 0;padding:16px 20px;font-weight:700}
-iframe{display:block;border:0;width:100%;height:760px;background:#fff;
-       border-radius:0 0 16px 16px;box-shadow:0 10px 24px rgba(19,39,73,.05)}
-@media(max-width:850px){main{grid-template-columns:1fr;max-width:430px}header{text-align:center}}
+@font-face{font-family:'Antonio';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/antonio-700.woff2) format('woff2')}
+@font-face{font-family:'Arimo';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/arimo-700.woff2) format('woff2')}
+@font-face{font-family:'Bebas Neue';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/bebas-neue-400.woff2) format('woff2')}
+@font-face{font-family:'Mulish';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/mulish-400.woff2) format('woff2')}
+@font-face{font-family:'Mulish';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/mulish-700.woff2) format('woff2')}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/poppins-500.woff2) format('woff2')}
+
+/* ============================================================
+   Umumiy asos — Figma 390px kanvasi 1:1 ko'chiriladi.
+   Har bir element Figma koordinatasida (position:absolute),
+   sahifani esa viewport meta (width=390) telefon ekraniga
+   proporsional kattalashtiradi.
+   Manba: Figma "Untitled" / Page 1.
+   ============================================================ */
+
+:root{
+  /* Figma'dagi HelveticaNeue va Gilroy litsenziyali — ular faqat
+     CTA yozuvida ishlatilgan va SVG kontur bo'lib eksport qilingan
+     (assets/txt/*.svg). Qolgan shriftlar Google Fonts'da bepul. */
+  --font:      "Mulish", -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-head: "Antonio", "Bebas Neue", "Arial Narrow", Arial, sans-serif;
+  --font-ui:   "Poppins", -apple-system, Helvetica, Arial, sans-serif;
+  --font-cond: "Bebas Neue", "Arial Narrow", Arial, sans-serif;
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+
+html{ -webkit-text-size-adjust:100%; }
+
+body{
+  margin:0;
+  overflow-x:hidden;
+  font-family:var(--font);
+  font-size:16px;
+  line-height:1.3;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:geometricPrecision;
+}
+
+img{ display:block; max-width:none; }
+a{ color:inherit; text-decoration:none; }
+button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; }
+p,h1,h2,h3,ul,li{ margin:0; padding:0; }
+li{ list-style:none; }
+
+/* Figma freymi: qat'iy 390px */
+.page{
+  position:relative;
+  width:390px;
+  margin-inline:auto;
+  overflow:hidden;
+}
+
+/* Har bir blok Figma koordinatasida */
+.n{ position:absolute; }
+
+.btn{ display:block; user-select:none; transition:transform .12s cubic-bezier(.22,.61,.36,1); }
+.btn:active{ transform:translateY(2px); }
+
+@media (prefers-reduced-motion:reduce){
+  *{ transition-duration:.001ms !important; }
+}
+
+/* Figma freymidan avtomatik yig'ilgan — tools/svg2site.py.
+   Qo'lda tahrirlamang: SVG qayta eksport qilinsa, qaytadan yaratiladi. */
+body{ background:#ffffff; }
+
+/* Figma freymi: qat'iy 390.0px kanvas, har bir qatlam absolyut koordinatada.
+   .im — rasm to'ldirgan shakl, .v — vektor+matn qatlami (z-tartib DOM bo'yicha) */
+.page{ position:relative; width:390.0px; height:1380.0px; margin-inline:auto; overflow:hidden; }
+.im{ position:absolute; display:block; max-width:none; }
+.v{ position:absolute; left:0; top:0; width:390.0px; height:1380.0px; pointer-events:none; }
+/* CTA — Figma shakli ustidagi shaffof tugma (yozuv SVG qatlamida) */
+.cta{ position:absolute; display:block; padding:0; border:0; background:none;
+      font:inherit; color:transparent; cursor:pointer;
+      -webkit-tap-highlight-color:transparent; }
+.cta:focus-visible{ outline:3px solid #fff; outline-offset:3px; }
+.i1{left:-31px;top:198px;width:489px;height:383px}
+.i15{left:75px;top:237px;width:250px;height:366px}
+.i25{left:29px;top:665px;width:123px;height:82px}
+.cta-1{left:24px;top:554px;width:343px;height:82px;border-radius:41px}
+.cta-2{left:24px;top:1258px;width:343px;height:82px;border-radius:41px}
+
+/* Ro'yxatdan o'tish oynasi — variant rangi */
+#registrationModal.homeModal .HomeFormBtn{background:#3074F0}
+#registrationModal.homeModal .HomeFormBtn:hover{background:#2963CC}
+#registrationModal.homeModal .HomeFormRowInput:focus{border-color:#3074F0}
+#registrationModal.homeModal .phone-input-container:focus-within{border-color:#3074F0}
+#registrationModal.homeModal button:focus-visible,
+#registrationModal.homeModal [role="option"]:focus-visible{outline-color:#3074F0}
 </style>
 </head>
-<body>
-<header>
-  <h1>Logistika — bepul vebinar</h1>
-  <p>19-sentyabr · 20:00 · uchta sayt varianti</p>
-</header>
-<main>
-  <section><a class="top" href="./a/">Variant A — ko‘k <span>Ochish ↗</span></a>
-    <iframe src="./a/" title="Variant A" loading="lazy"></iframe></section>
-  <section><a class="top" href="./b/">Variant B — qora <span>Ochish ↗</span></a>
-    <iframe src="./b/" title="Variant B" loading="lazy"></iframe></section>
-  <section><a class="top" href="./c/">Variant C — qizil <span>Ochish ↗</span></a>
-    <iframe src="./c/" title="Variant C" loading="lazy"></iframe></section>
+<body data-variant="1">
+
+<main class="page">
+  <svg xmlns="http://www.w3.org/2000/svg" width="390.0" height="1380.0" viewBox="0 0 390 1380" fill="none" class="v" aria-hidden="false"><defs>
+<filter id="filter0_di_0_1_c0" x="24" y="554" width="343" height="87" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix" />
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+<feOffset dy="5" />
+<feComposite in2="hardAlpha" operator="out" />
+<feColorMatrix type="matrix" values="0 0 0 0 0.0419517 0 0 0 0 0.310027 0 0 0 0 0.793269 0 0 0 1 0" />
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1" />
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape" />
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+<feOffset />
+<feGaussianBlur stdDeviation="7.35" />
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.58 0" />
+<feBlend mode="normal" in2="shape" result="effect2_innerShadow_0_1" />
+</filter>
+<filter id="filter1_di_0_1_c0" x="24" y="1258" width="343" height="87" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix" />
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+<feOffset dy="5" />
+<feComposite in2="hardAlpha" operator="out" />
+<feColorMatrix type="matrix" values="0 0 0 0 0.0419517 0 0 0 0 0.310027 0 0 0 0 0.793269 0 0 0 1 0" />
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1" />
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape" />
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+<feOffset />
+<feGaussianBlur stdDeviation="7.35" />
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.58 0" />
+<feBlend mode="normal" in2="shape" result="effect2_innerShadow_0_1" />
+</filter>
+<filter id="filter2_d_0_1_c0" x="24.1" y="826.1" width="342.8" height="158.8" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix" />
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+<feOffset />
+<feGaussianBlur stdDeviation="11.45" />
+<feComposite in2="hardAlpha" operator="out" />
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0" />
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1" />
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape" />
+</filter>
+<filter id="filter3_d_0_1_c0" x="24.1" y="957.1" width="342.8" height="162.8" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix" />
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+<feOffset />
+<feGaussianBlur stdDeviation="11.45" />
+<feComposite in2="hardAlpha" operator="out" />
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0" />
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1" />
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape" />
+</filter>
+<filter id="filter4_d_0_1_c0" x="24.1" y="1092.1" width="342.8" height="162.8" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix" />
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+<feOffset />
+<feGaussianBlur stdDeviation="11.45" />
+<feComposite in2="hardAlpha" operator="out" />
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0" />
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1" />
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape" />
+</filter>
+<linearGradient id="paint0_linear_0_1_c0" x1="213.5" y1="230.5" x2="213.5" y2="310" gradientUnits="userSpaceOnUse">
+<stop stop-color="white" />
+<stop offset="1" stop-color="white" stop-opacity="0" />
+</linearGradient>
+<linearGradient id="paint1_linear_0_1_c0" x1="213.5" y1="486.5" x2="213.5" y2="581" gradientUnits="userSpaceOnUse">
+<stop stop-color="white" stop-opacity="0" />
+<stop offset="1" stop-color="white" />
+</linearGradient>
+<linearGradient id="paint2_linear_0_1_c0" x1="195.5" y1="554" x2="195.5" y2="636" gradientUnits="userSpaceOnUse">
+<stop stop-color="#6199FF" />
+<stop offset="1" stop-color="#0050E2" />
+</linearGradient>
+<linearGradient id="paint3_linear_0_1_c0" x1="195.5" y1="1258" x2="195.5" y2="1340" gradientUnits="userSpaceOnUse">
+<stop stop-color="#6199FF" />
+<stop offset="1" stop-color="#0050E2" />
+</linearGradient>
+<linearGradient id="paint4_linear_0_1_c0" x1="54.5" y1="506.718" x2="368.014" y2="733.824" gradientUnits="userSpaceOnUse">
+<stop stop-color="#105DE6" />
+<stop offset="0.609076" stop-color="#E6EFFF" />
+<stop offset="1" stop-color="#115CE6" />
+</linearGradient>
+<clipPath id="clip0_0_1_c0">
+<rect width="390" height="1380" fill="white" />
+</clipPath>
+</defs>
+<g id="Site_c0 1" clip-path="url(#clip0_0_1_c0)">
+<rect width="390" height="1380" fill="white" />
+<g id="Background_c0+Border">
+<mask id="path_c0-2-inside-1_0_1" fill="white">
+<path d="M0 -4H390V29C390 42.2548 379.255 53 366 53H24C10.7452 53 0 42.2548 0 29V-4Z" />
+</mask>
+</g>
+</g>
+</svg>
+  <img class="im i1" src="assets/s1-01.avif" alt="" width="489" height="383">
+  <svg xmlns="http://www.w3.org/2000/svg" width="390.0" height="1380.0" viewBox="0 0 390 1380" fill="none" class="v" aria-hidden="false"><defs>
+<filter id="filter0_di_0_1_c2" x="24" y="554" width="343" height="87" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix" />
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+<feOffset dy="5" />
+<feComposite in2="hardAlpha" operator="out" />
+<feColorMatrix type="matrix" values="0 0 0 0 0.0419517 0 0 0 0 0.310027 0 0 0 0 0.793269 0 0 0 1 0" />
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1" />
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape" />
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+<feOffset />
+<feGaussianBlur stdDeviation="7.35" />
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.58 0" />
+<feBlend mode="normal" in2="shape" result="effect2_innerShadow_0_1" />
+</filter>
+<filter id="filter1_di_0_1_c2" x="24" y="1258" width="343" height="87" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix" />
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+<feOffset dy="5" />
+<feComposite in2="hardAlpha" operator="out" />
+<feColorMatrix type="matrix" values="0 0 0 0 0.0419517 0 0 0 0 0.310027 0 0 0 0 0.793269 0 0 0 1 0" />
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1" />
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape" />
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+<feOffset />
+<feGaussianBlur stdDeviation="7.35" />
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.58 0" />
+<feBlend mode="normal" in2="shape" result="effect2_innerShadow_0_1" />
+</filter>
+<filter id="filter2_d_0_1_c2" x="24.1" y="826.1" width="342.8" height="158.8" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix" />
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+<feOffset />
+<feGaussianBlur stdDeviation="11.45" />
+<feComposite in2="hardAlpha" operator="out" />
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0" />
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1" />
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape" />
+</filter>
+<filter id="filter3_d_0_1_c2" x="24.1" y="957.1" width="342.8" height="162.8" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix" />
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+<feOffset />
+<feGaussianBlur stdDeviation="11.45" />
+<feComposite in2="hardAlpha" operator="out" />
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0" />
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1" />
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape" />
+</filter>
+<filter id="filter4_d_0_1_c2" x="24.1" y="1092.1" width="342.8" height="162.8" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix" />
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+<feOffset />
+<feGaussianBlur stdDeviation="11.45" />
+<feComposite in2="hardAlpha" operator="out" />
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0" />
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1" />
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape" />
+</filter>
+<linearGradient id="paint0_linear_0_1_c2" x1="213.5" y1="230.5" x2="213.5" y2="310" gradientUnits="userSpaceOnUse">
+<stop stop-color="white" />
+<stop offset="1" stop-color="white" stop-opacity="0" />
+</linearGradient>
+<linearGradient id="paint1_linear_0_1_c2" x1="213.5" y1="486.5" x2="213.5" y2="581" gradientUnits="userSpaceOnUse">
+<stop stop-color="white" stop-opacity="0" />
+<stop offset="1" stop-color="white" />
+</linearGradient>
+<linearGradient id="paint2_linear_0_1_c2" x1="195.5" y1="554" x2="195.5" y2="636" gradientUnits="userSpaceOnUse">
+<stop stop-color="#6199FF" />
+<stop offset="1" stop-color="#0050E2" />
+</linearGradient>
+<linearGradient id="paint3_linear_0_1_c2" x1="195.5" y1="1258" x2="195.5" y2="1340" gradientUnits="userSpaceOnUse">
+<stop stop-color="#6199FF" />
+<stop offset="1" stop-color="#0050E2" />
+</linearGradient>
+<linearGradient id="paint4_linear_0_1_c2" x1="54.5" y1="506.718" x2="368.014" y2="733.824" gradientUnits="userSpaceOnUse">
+<stop stop-color="#105DE6" />
+<stop offset="0.609076" stop-color="#E6EFFF" />
+<stop offset="1" stop-color="#115CE6" />
+</linearGradient>
+<clipPath id="clip0_0_1_c2">
+<rect width="390" height="1380" fill="white" />
+</clipPath>
+</defs>
+<g id="Site_c2 1" clip-path="url(#clip0_0_1_c2)">
+<g id="Location_c2 map animation - Martin Tabiyashki 1">
+<rect x="-31" y="198" width="489" height="383" fill="url(#paint0_linear_0_1_c2)" />
+<rect x="-31" y="198" width="489" height="383" fill="url(#paint1_linear_0_1_c2)" />
+</g>
+<g id="Background_c2+Border">
+<mask id="path_c2-2-inside-1_0_1" fill="white">
+<path d="M0 -4H390V29C390 42.2548 379.255 53 366 53H24C10.7452 53 0 42.2548 0 29V-4Z" />
+</mask>
+<path d="M0 -4H390V29C390 42.2548 379.255 53 366 53H24C10.7452 53 0 42.2548 0 29V-4Z" fill="white" />
+<path d="M0 -4H390H0M390 29C390 42.8071 378.807 54 365 54H25C11.1929 54 0 42.8071 0 29C0 41.7025 10.7452 52 24 52H366C379.255 52 390 41.7025 390 29ZM390 29M0 53V-4V53M0 53M390 -4V53V-4" fill="#367AF5" mask="url(#path_c2-2-inside-1_0_1)" />
+<path id="Vector_c2" fill-rule="evenodd" clip-rule="evenodd" d="M28.3846 15.5C28.5784 15.5 28.7643 15.577 28.9013 15.714C29.0384 15.8511 29.1154 16.037 29.1154 16.2308V17.6923H37.8846V16.2308C37.8846 16.037 37.9616 15.8511 38.0987 15.714C38.2357 15.577 38.4216 15.5 38.6154 15.5C38.8092 15.5 38.9951 15.577 39.1321 15.714C39.2692 15.8511 39.3462 16.037 39.3462 16.2308V17.6923H40.0769C40.8522 17.6923 41.5957 18.0003 42.1439 18.5485C42.692 19.0966 43 19.8401 43 20.6154V31.5769C43 32.3522 42.692 33.0957 42.1439 33.6439C41.5957 34.192 40.8522 34.5 40.0769 34.5H26.9231C26.1478 34.5 25.4043 34.192 24.8561 33.6439C24.308 33.0957 24 32.3522 24 31.5769V20.6154C24 19.8401 24.308 19.0966 24.8561 18.5485C25.4043 18.0003 26.1478 17.6923 26.9231 17.6923H27.6538V16.2308C27.6538 16.037 27.7308 15.8511 27.8679 15.714C28.0049 15.577 28.1908 15.5 28.3846 15.5ZM41.5385 24.2692C41.5385 23.8816 41.3845 23.5099 41.1104 23.2358C40.8363 22.9617 40.4645 22.8077 40.0769 22.8077H26.9231C26.5355 22.8077 26.1637 22.9617 25.8896 23.2358C25.6155 23.5099 25.4615 23.8816 25.4615 24.2692V31.5769C25.4615 31.9645 25.6155 32.3363 25.8896 32.6104C26.1637 32.8845 26.5355 33.0385 26.9231 33.0385H40.0769C40.4645 33.0385 40.8363 32.8845 41.1104 32.6104C41.3845 32.3363 41.5385 31.9645 41.5385 31.5769V24.2692Z" fill="#367AF7" />
+<text id="19_c2-sentyabr" fill="black" style="white-space: pre" xml:space="preserve" font-family="Poppins" font-size="16" font-weight="500" letter-spacing="0em"><tspan x="51.4922" y="30.6">19-sentyabr</tspan></text>
+<text id="20_c2:00" fill="black" style="white-space: pre" xml:space="preserve" font-family="Poppins" font-size="18" font-weight="500" letter-spacing="0em"><tspan x="315.303" y="31.8">20:00</tspan></text>
+<path id="Vector_2_c2" d="M297 17C295.418 17 293.871 17.4692 292.555 18.3482C291.24 19.2273 290.214 20.4767 289.609 21.9385C289.003 23.4003 288.845 25.0089 289.154 26.5607C289.462 28.1126 290.224 29.538 291.343 30.6569C292.462 31.7757 293.887 32.5376 295.439 32.8463C296.991 33.155 298.6 32.9965 300.061 32.391C301.523 31.7855 302.773 30.7602 303.652 29.4446C304.531 28.129 305 26.5822 305 25C304.998 22.879 304.154 20.8454 302.654 19.3456C301.155 17.8458 299.121 17.0022 297 17ZM297 31.7692C295.661 31.7692 294.352 31.3722 293.239 30.6284C292.126 29.8846 291.258 28.8274 290.746 27.5905C290.234 26.3536 290.1 24.9925 290.361 23.6794C290.622 22.3663 291.267 21.1601 292.213 20.2134C293.16 19.2667 294.366 18.622 295.679 18.3608C296.992 18.0996 298.354 18.2337 299.59 18.746C300.827 19.2584 301.885 20.126 302.628 21.2392C303.372 22.3524 303.769 23.6612 303.769 25C303.767 26.7947 303.053 28.5153 301.784 29.7843C300.515 31.0534 298.795 31.7672 297 31.7692ZM301.923 25C301.923 25.1632 301.858 25.3197 301.743 25.4351C301.627 25.5505 301.471 25.6154 301.308 25.6154H297C296.837 25.6154 296.68 25.5505 296.565 25.4351C296.449 25.3197 296.385 25.1632 296.385 25V20.6923C296.385 20.5291 296.449 20.3726 296.565 20.2572C296.68 20.1418 296.837 20.0769 297 20.0769C297.163 20.0769 297.32 20.1418 297.435 20.2572C297.551 20.3726 297.615 20.5291 297.615 20.6923V24.3846H301.308C301.471 24.3846 301.627 24.4494 301.743 24.5649C301.858 24.6803 301.923 24.8368 301.923 25Z" fill="#367AF7" />
+</g>
+<g id="Logistikani_c2 mutlaqo bepulga oârganib, boshlangâich 300$ daromadga chiqish.">
+<text fill="black" style="white-space: pre" xml:space="preserve" font-family="Antonio" font-size="30" font-weight="bold" letter-spacing="0em"><tspan x="27.8779" y="139.734">LOGISTIKANI MUTLAQO BEPULGA </tspan><tspan x="27.043" y="178.734">O‘RGANIB, </tspan></text>
+<text fill="#367AF7" style="white-space: pre" xml:space="preserve" font-family="Antonio" font-size="30" font-weight="bold" letter-spacing="0em"><tspan x="143.645" y="178.734">BOSHLANG’ICH 300$ </tspan><tspan x="77.4043" y="217.734">DAROMADGA CHIQISH.</tspan></text>
+</g>
+<g id="Group_c2 1">
+<rect id="Rectangle_c2 1" x="28" y="67" width="333" height="34" rx="5" fill="#367AF7" fill-opacity="0.12" />
+<text id="10_c2,000$ lik grant" fill="#005AFF" style="white-space: pre" xml:space="preserve" font-family="Poppins" font-size="24" font-weight="500" letter-spacing="0em"><tspan x="113.219" y="92.4">10,000$ lik grant</tspan></text>
+<path id="Vector_3_c2" d="M97.6667 74H84.3333C83.4493 74 82.6014 74.3512 81.9763 74.9763C81.3512 75.6014 81 76.4493 81 77.3333V90.6667C81 91.5507 81.3512 92.3986 81.9763 93.0237C82.6014 93.6488 83.4493 94 84.3333 94H97.6667C98.5507 94 99.3986 93.6488 100.024 93.0237C100.649 92.3986 101 91.5507 101 90.6667V77.3333C101 76.4493 100.649 75.6014 100.024 74.9763C99.3986 74.3512 98.5507 74 97.6667 74ZM95.7778 81.3444L90.7 88.0111C90.5965 88.1456 90.4636 88.2545 90.3114 88.3297C90.1592 88.4048 89.9919 88.444 89.8222 88.4444C89.6535 88.4454 89.4867 88.4078 89.3346 88.3346C89.1825 88.2615 89.0491 88.1546 88.9444 88.0222L86.2333 84.5667C86.1436 84.4514 86.0774 84.3196 86.0387 84.1787C85.9999 84.0379 85.9892 83.8908 86.0072 83.7458C86.0253 83.6009 86.0717 83.4609 86.1439 83.3339C86.216 83.2069 86.3125 83.0953 86.4278 83.0056C86.6606 82.8243 86.9558 82.743 87.2486 82.7795C87.3936 82.7975 87.5336 82.8439 87.6606 82.9161C87.7876 82.9883 87.8992 83.0847 87.9889 83.2L89.8 85.5111L94 79.9556C94.089 79.8388 94.2001 79.7408 94.327 79.667C94.4539 79.5932 94.5941 79.5451 94.7396 79.5255C94.8851 79.5059 95.033 79.5152 95.1749 79.5527C95.3168 79.5903 95.4499 79.6554 95.5667 79.7444C95.6834 79.8335 95.7815 79.9446 95.8552 80.0715C95.929 80.1984 95.9771 80.3386 95.9967 80.4841C96.0163 80.6295 96.0071 80.7774 95.9695 80.9194C95.9319 81.0613 95.8668 81.1944 95.7778 81.3111V81.3444Z" fill="#FF0000" />
+</g>
+</g>
+</svg>
+  <img class="im i15" src="assets/s1-02.avif" alt="" width="250" height="366">
+  <svg xmlns="http://www.w3.org/2000/svg" width="390.0" height="1380.0" viewBox="0 0 390 1380" fill="none" class="v" aria-hidden="false"><defs>
+<filter id="filter0_di_0_1_c4" x="24" y="554" width="343" height="87" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix" />
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+<feOffset dy="5" />
+<feComposite in2="hardAlpha" operator="out" />
+<feColorMatrix type="matrix" values="0 0 0 0 0.0419517 0 0 0 0 0.310027 0 0 0 0 0.793269 0 0 0 1 0" />
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1" />
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape" />
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+<feOffset />
+<feGaussianBlur stdDeviation="7.35" />
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.58 0" />
+<feBlend mode="normal" in2="shape" result="effect2_innerShadow_0_1" />
+</filter>
+<filter id="filter1_di_0_1_c4" x="24" y="1258" width="343" height="87" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix" />
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+<feOffset dy="5" />
+<feComposite in2="hardAlpha" operator="out" />
+<feColorMatrix type="matrix" values="0 0 0 0 0.0419517 0 0 0 0 0.310027 0 0 0 0 0.793269 0 0 0 1 0" />
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1" />
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape" />
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+<feOffset />
+<feGaussianBlur stdDeviation="7.35" />
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.58 0" />
+<feBlend mode="normal" in2="shape" result="effect2_innerShadow_0_1" />
+</filter>
+<filter id="filter2_d_0_1_c4" x="24.1" y="826.1" width="342.8" height="158.8" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix" />
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+<feOffset />
+<feGaussianBlur stdDeviation="11.45" />
+<feComposite in2="hardAlpha" operator="out" />
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0" />
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1" />
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape" />
+</filter>
+<filter id="filter3_d_0_1_c4" x="24.1" y="957.1" width="342.8" height="162.8" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix" />
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+<feOffset />
+<feGaussianBlur stdDeviation="11.45" />
+<feComposite in2="hardAlpha" operator="out" />
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0" />
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1" />
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape" />
+</filter>
+<filter id="filter4_d_0_1_c4" x="24.1" y="1092.1" width="342.8" height="162.8" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix" />
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+<feOffset />
+<feGaussianBlur stdDeviation="11.45" />
+<feComposite in2="hardAlpha" operator="out" />
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0" />
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1" />
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape" />
+</filter>
+<linearGradient id="paint0_linear_0_1_c4" x1="213.5" y1="230.5" x2="213.5" y2="310" gradientUnits="userSpaceOnUse">
+<stop stop-color="white" />
+<stop offset="1" stop-color="white" stop-opacity="0" />
+</linearGradient>
+<linearGradient id="paint1_linear_0_1_c4" x1="213.5" y1="486.5" x2="213.5" y2="581" gradientUnits="userSpaceOnUse">
+<stop stop-color="white" stop-opacity="0" />
+<stop offset="1" stop-color="white" />
+</linearGradient>
+<linearGradient id="paint2_linear_0_1_c4" x1="195.5" y1="554" x2="195.5" y2="636" gradientUnits="userSpaceOnUse">
+<stop stop-color="#6199FF" />
+<stop offset="1" stop-color="#0050E2" />
+</linearGradient>
+<linearGradient id="paint3_linear_0_1_c4" x1="195.5" y1="1258" x2="195.5" y2="1340" gradientUnits="userSpaceOnUse">
+<stop stop-color="#6199FF" />
+<stop offset="1" stop-color="#0050E2" />
+</linearGradient>
+<linearGradient id="paint4_linear_0_1_c4" x1="54.5" y1="506.718" x2="368.014" y2="733.824" gradientUnits="userSpaceOnUse">
+<stop stop-color="#105DE6" />
+<stop offset="0.609076" stop-color="#E6EFFF" />
+<stop offset="1" stop-color="#115CE6" />
+</linearGradient>
+<clipPath id="clip0_0_1_c4">
+<rect width="390" height="1380" fill="white" />
+</clipPath>
+</defs>
+<g id="Site_c4 1" clip-path="url(#clip0_0_1_c4)">
+<g id="Background_c4+Border">
+<mask id="path_c4-2-inside-1_0_1" fill="white">
+<path d="M0 -4H390V29C390 42.2548 379.255 53 366 53H24C10.7452 53 0 42.2548 0 29V-4Z" />
+</mask>
+</g>
+<g id="Group_c4 2089345766">
+<g id="Rectangle_c4 240650019" filter="url(#filter0_di_0_1_c4)">
+<path d="M27.3807 561.632C28.2333 557.123 32.2191 554 36.8078 554H354.018C358.687 554 362.725 557.23 363.557 561.825C365.025 569.929 367 583.057 367 595C367 606.943 365.025 620.071 363.557 628.175C362.725 632.77 358.687 636 354.018 636H36.8078C32.2191 636 28.2333 632.877 27.3807 628.368C25.9203 620.644 24 608.014 24 595C24 581.986 25.9203 569.356 27.3807 561.632Z" fill="url(#paint2_linear_0_1_c4)" />
+</g>
+<g id="Group_c4 2089345765">
+<text id="bepul_c4 qatnashish" fill="white" style="white-space: pre" xml:space="preserve" font-family="Arimo,Helvetica Neue,Helvetica,Arial,sans-serif" font-size="24" font-weight="bold" letter-spacing="0.02em"><tspan x="55.4039" y="604.584">BEPUL QATNASHISH</tspan></text>
+<path id="Arrow_c4 2" d="M318 595C317.448 595 317 595.448 317 596C317 596.552 317.448 597 318 597V596V595ZM337.707 596.707C338.098 596.317 338.098 595.683 337.707 595.293L331.343 588.929C330.953 588.538 330.319 588.538 329.929 588.929C329.538 589.319 329.538 589.953 329.929 590.343L335.586 596L329.929 601.657C329.538 602.047 329.538 602.681 329.929 603.071C330.319 603.462 330.953 603.462 331.343 603.071L337.707 596.707ZM318 596V597H337V596V595H318V596Z" fill="white" />
+</g>
+</g>
+<g id="Group_c4 2089345767">
+<g id="Rectangle_c4 240650019_2" filter="url(#filter1_di_0_1_c4)">
+<path d="M27.3807 1265.63C28.2333 1261.12 32.2191 1258 36.8078 1258H354.018C358.687 1258 362.725 1261.23 363.557 1265.82C365.025 1273.93 367 1287.06 367 1299C367 1310.94 365.025 1324.07 363.557 1332.18C362.725 1336.77 358.687 1340 354.018 1340H36.8078C32.2191 1340 28.2333 1336.88 27.3807 1332.37C25.9203 1324.64 24 1312.01 24 1299C24 1285.99 25.9203 1273.36 27.3807 1265.63Z" fill="url(#paint3_linear_0_1_c4)" />
+</g>
+<g id="Group_c4 2089345765_2">
+<text id="bepul_c4 qatnashish_2" fill="white" style="white-space: pre" xml:space="preserve" font-family="Arimo,Helvetica Neue,Helvetica,Arial,sans-serif" font-size="24" font-weight="bold" letter-spacing="0.02em"><tspan x="55.4039" y="1308.58">BEPUL QATNASHISH</tspan></text>
+<path id="Arrow_c4 2_2" d="M318 1299C317.448 1299 317 1299.45 317 1300C317 1300.55 317.448 1301 318 1301V1300V1299ZM337.707 1300.71C338.098 1300.32 338.098 1299.68 337.707 1299.29L331.343 1292.93C330.953 1292.54 330.319 1292.54 329.929 1292.93C329.538 1293.32 329.538 1293.95 329.929 1294.34L335.586 1300L329.929 1305.66C329.538 1306.05 329.538 1306.68 329.929 1307.07C330.319 1307.46 330.953 1307.46 331.343 1307.07L337.707 1300.71ZM318 1300V1301H337V1300V1299H318V1300Z" fill="white" />
+</g>
+</g>
+<rect id="Rectangle_c4 240650020" x="24.5" y="654.5" width="342" height="106" rx="13.5" fill="#EEF0FD" stroke="url(#paint4_linear_0_1_c4)" />
+<text id="maxsus_c4 Sovgâa:" fill="black" style="white-space: pre" xml:space="preserve" font-family="Bebas Neue" font-size="32" letter-spacing="0.02em"><tspan x="157.043" y="690.6">MAXSUS SOVG’A:</tspan></text>
+<text id="vebinarga_c4 qatnashganlar orasida 10,000$ lik grant yutish imkoniyati" fill="black" style="white-space: pre" xml:space="preserve" font-family="Mulish" font-size="16" letter-spacing="0em"><tspan x="157" y="711.54">vebinarga qatnashganlar </tspan><tspan x="157" y="730.54">orasida 10,000$ lik grant </tspan><tspan x="157" y="749.54">yutish imkoniyati</tspan></text>
+</g>
+</svg>
+  <img class="im i25" src="assets/s1-03.avif" alt="" width="123" height="82">
+  <svg xmlns="http://www.w3.org/2000/svg" width="390.0" height="1380.0" viewBox="0 0 390 1380" fill="none" class="v" aria-hidden="false"><defs>
+<filter id="filter0_di_0_1_c6" x="24" y="554" width="343" height="87" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix" />
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+<feOffset dy="5" />
+<feComposite in2="hardAlpha" operator="out" />
+<feColorMatrix type="matrix" values="0 0 0 0 0.0419517 0 0 0 0 0.310027 0 0 0 0 0.793269 0 0 0 1 0" />
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1" />
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape" />
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+<feOffset />
+<feGaussianBlur stdDeviation="7.35" />
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.58 0" />
+<feBlend mode="normal" in2="shape" result="effect2_innerShadow_0_1" />
+</filter>
+<filter id="filter1_di_0_1_c6" x="24" y="1258" width="343" height="87" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix" />
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+<feOffset dy="5" />
+<feComposite in2="hardAlpha" operator="out" />
+<feColorMatrix type="matrix" values="0 0 0 0 0.0419517 0 0 0 0 0.310027 0 0 0 0 0.793269 0 0 0 1 0" />
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1" />
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape" />
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+<feOffset />
+<feGaussianBlur stdDeviation="7.35" />
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.58 0" />
+<feBlend mode="normal" in2="shape" result="effect2_innerShadow_0_1" />
+</filter>
+<filter id="filter2_d_0_1_c6" x="24.1" y="826.1" width="342.8" height="158.8" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix" />
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+<feOffset />
+<feGaussianBlur stdDeviation="11.45" />
+<feComposite in2="hardAlpha" operator="out" />
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0" />
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1" />
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape" />
+</filter>
+<filter id="filter3_d_0_1_c6" x="24.1" y="957.1" width="342.8" height="162.8" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix" />
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+<feOffset />
+<feGaussianBlur stdDeviation="11.45" />
+<feComposite in2="hardAlpha" operator="out" />
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0" />
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1" />
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape" />
+</filter>
+<filter id="filter4_d_0_1_c6" x="24.1" y="1092.1" width="342.8" height="162.8" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix" />
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+<feOffset />
+<feGaussianBlur stdDeviation="11.45" />
+<feComposite in2="hardAlpha" operator="out" />
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0" />
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1" />
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape" />
+</filter>
+<linearGradient id="paint0_linear_0_1_c6" x1="213.5" y1="230.5" x2="213.5" y2="310" gradientUnits="userSpaceOnUse">
+<stop stop-color="white" />
+<stop offset="1" stop-color="white" stop-opacity="0" />
+</linearGradient>
+<linearGradient id="paint1_linear_0_1_c6" x1="213.5" y1="486.5" x2="213.5" y2="581" gradientUnits="userSpaceOnUse">
+<stop stop-color="white" stop-opacity="0" />
+<stop offset="1" stop-color="white" />
+</linearGradient>
+<linearGradient id="paint2_linear_0_1_c6" x1="195.5" y1="554" x2="195.5" y2="636" gradientUnits="userSpaceOnUse">
+<stop stop-color="#6199FF" />
+<stop offset="1" stop-color="#0050E2" />
+</linearGradient>
+<linearGradient id="paint3_linear_0_1_c6" x1="195.5" y1="1258" x2="195.5" y2="1340" gradientUnits="userSpaceOnUse">
+<stop stop-color="#6199FF" />
+<stop offset="1" stop-color="#0050E2" />
+</linearGradient>
+<linearGradient id="paint4_linear_0_1_c6" x1="54.5" y1="506.718" x2="368.014" y2="733.824" gradientUnits="userSpaceOnUse">
+<stop stop-color="#105DE6" />
+<stop offset="0.609076" stop-color="#E6EFFF" />
+<stop offset="1" stop-color="#115CE6" />
+</linearGradient>
+<clipPath id="clip0_0_1_c6">
+<rect width="390" height="1380" fill="white" />
+</clipPath>
+</defs>
+<g id="Site_c6 1" clip-path="url(#clip0_0_1_c6)">
+<g id="Background_c6+Border">
+<mask id="path_c6-2-inside-1_0_1" fill="white">
+<path d="M0 -4H390V29C390 42.2548 379.255 53 366 53H24C10.7452 53 0 42.2548 0 29V-4Z" />
+</mask>
+</g>
+<text id="vebinarda_c6 siz" fill="black" style="white-space: pre" xml:space="preserve" font-family="Antonio" font-size="30" font-weight="bold" letter-spacing="0em"><tspan x="116.484" y="826.734">VEBINARDA SIZ</tspan></text>
+<g id="Frame_c6 2">
+<g id="Group_c6 2089345769">
+<g id="Rectangle_c6 240650021" filter="url(#filter2_d_0_1_c6)">
+<rect x="47" y="849" width="297" height="113" rx="21" fill="white" />
+</g>
+<g id="Logistikani_c6 oârganib, oyiga qancha daromad topish mumkinligini haqida bilib olasiz.">
+<text fill="black" style="white-space: pre" xml:space="preserve" font-family="Mulish" font-size="16" letter-spacing="0em"><tspan x="183.297" y="926.04"> mumkinligini </tspan><tspan x="62" y="948.04">haqida bilib olasiz.</tspan></text>
+<text fill="black" style="white-space: pre" xml:space="preserve" font-family="Mulish" font-size="16" font-weight="bold" letter-spacing="0em"><tspan x="62" y="904.04">Logistikani o‘rganib, oyiga qancha </tspan><tspan x="62" y="926.04">daromad topish</tspan></text>
+</g>
+<circle id="Ellipse_c6 1" cx="322.5" cy="868.5" r="13.5" fill="#9DBFFF" />
+<circle id="Ellipse_c6 2" cx="308.5" cy="868.5" r="13.5" fill="#115CE6" />
+<text id="01_c6" fill="white" style="white-space: pre" xml:space="preserve" font-family="Antonio" font-size="16" font-weight="bold" letter-spacing="0em"><tspan x="301.414" y="875.625">01</tspan></text>
+</g>
+<g id="Group_c6 2089345768">
+<g id="Rectangle_c6 240650022" filter="url(#filter3_d_0_1_c6)">
+<rect x="47" y="980" width="297" height="117" rx="21" fill="white" />
+</g>
+<g id="Logistika_c6 sohasi sizga mos keladimi va bu yoânalishda ishlay olasizmi â aniqlab olasiz.">
+<text fill="black" style="white-space: pre" xml:space="preserve" font-family="Mulish" font-size="16" letter-spacing="0em"><tspan x="62" y="1037.04">Logistika sohasi </tspan><tspan x="329.562" y="1037.04"> </tspan><tspan x="62" y="1059.04">va bu yo‘nalishda </tspan><tspan x="62" y="1081.04">— aniqlab olasiz.</tspan></text>
+<text fill="black" style="white-space: pre" xml:space="preserve" font-family="Mulish" font-size="16" font-weight="bold" letter-spacing="0em"><tspan x="184.391" y="1037.04">sizga mos keladimi</tspan><tspan x="194.938" y="1059.04">ishlay olasizmi
+</tspan></text>
+</g>
+<circle id="Ellipse_c6 3" cx="322.5" cy="999.5" r="13.5" fill="#9DBFFF" />
+<circle id="Ellipse_c6 4" cx="308.5" cy="999.5" r="13.5" fill="#115CE6" />
+<text id="02_c6" fill="white" style="white-space: pre" xml:space="preserve" font-family="Antonio" font-size="16" font-weight="bold" letter-spacing="0em"><tspan x="300.336" y="1006.62">02</tspan></text>
+</g>
+<g id="Group_c6 2089345767_2">
+<g id="Rectangle_c6 240650023" filter="url(#filter4_d_0_1_c6)">
+<rect x="47" y="1115" width="297" height="117" rx="21" fill="white" />
+</g>
+<g id="Logistikani_c6 bepul oârganish uchun $10 000 lik grantni yutib olish shartlari bilan tanishasiz.">
+<text fill="black" style="white-space: pre" xml:space="preserve" font-family="Mulish" font-size="16" letter-spacing="0em"><tspan x="62" y="1172.04">Logistikani bepul o‘rganish </tspan><tspan x="62" y="1194.04">uchun </tspan><tspan x="97.4688" y="1216.04"> shartlari bilan tanishasiz.</tspan></text>
+<text fill="black" style="white-space: pre" xml:space="preserve" font-family="Mulish" font-size="16" font-weight="bold" letter-spacing="0em"><tspan x="111.312" y="1194.04">$10 000 lik grantni yutib </tspan><tspan x="62" y="1216.04">olish</tspan></text>
+</g>
+<circle id="Ellipse_c6 5" cx="322.5" cy="1134.5" r="13.5" fill="#9DBFFF" />
+<circle id="Ellipse_c6 6" cx="308.5" cy="1134.5" r="13.5" fill="#115CE6" />
+<text id="03_c6" fill="white" style="white-space: pre" xml:space="preserve" font-family="Antonio" font-size="16" font-weight="bold" letter-spacing="0em"><tspan x="300.305" y="1141.62">03</tspan></text>
+</g>
+</g>
+</g>
+</svg>
+  <button class="cta cta-1" type="button" data-register data-cta="hero">BEPUL QATNASHISH</button>
+  <button class="cta cta-2" type="button" data-register data-cta="pastki">BEPUL QATNASHISH</button>
 </main>
+
+<!-- Ro'yxatdan o'tish oynasi sahifada YO'Q: js/main.js uni birinchi
+     CTA bosilganda o'zi yaratadi (integration shartnomasi). -->
+<script src="./js/config.js" defer></script>
+<script src="./js/main.js" defer></script>
+<script>
+/* CTA bosilganda Meta standart eventi. fbq'ni js/main.js ichidagi pixel.js
+   yaratadi va u faqat raqamli pixelId sozlanganda ishga tushadi — shuning
+   uchun tekshirib chaqiramiz. Capture bosqichi: modal ochilishiga xalaqit
+   bermaydi. */
+addEventListener('click', function (e) {
+  if (!e.target.closest('[data-register]')) return;
+  if (typeof fbq === 'function') fbq('track', 'CompleteRegistration');
+}, true);
+</script>
 </body>
 </html>

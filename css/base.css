@@ -1,0 +1,55 @@
+/* ============================================================
+   Umumiy asos — Figma 390px kanvasi 1:1 ko'chiriladi.
+   Har bir element Figma koordinatasida (position:absolute),
+   sahifani esa viewport meta (width=390) telefon ekraniga
+   proporsional kattalashtiradi.
+   Manba: Figma "Untitled" / Page 1.
+   ============================================================ */
+
+:root{
+  /* Figma'dagi HelveticaNeue va Gilroy litsenziyali — ular faqat
+     CTA yozuvida ishlatilgan va SVG kontur bo'lib eksport qilingan
+     (assets/txt/*.svg). Qolgan shriftlar Google Fonts'da bepul. */
+  --font:      "Mulish", -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-head: "Antonio", "Bebas Neue", "Arial Narrow", Arial, sans-serif;
+  --font-ui:   "Poppins", -apple-system, Helvetica, Arial, sans-serif;
+  --font-cond: "Bebas Neue", "Arial Narrow", Arial, sans-serif;
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+
+html{ -webkit-text-size-adjust:100%; }
+
+body{
+  margin:0;
+  overflow-x:hidden;
+  font-family:var(--font);
+  font-size:16px;
+  line-height:1.3;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:geometricPrecision;
+}
+
+img{ display:block; max-width:none; }
+a{ color:inherit; text-decoration:none; }
+button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; }
+p,h1,h2,h3,ul,li{ margin:0; padding:0; }
+li{ list-style:none; }
+
+/* Figma freymi: qat'iy 390px */
+.page{
+  position:relative;
+  width:390px;
+  margin-inline:auto;
+  overflow:hidden;
+}
+
+/* Har bir blok Figma koordinatasida */
+.n{ position:absolute; }
+
+.btn{ display:block; user-select:none; transition:transform .12s cubic-bezier(.22,.61,.36,1); }
+.btn:active{ transform:translateY(2px); }
+
+@media (prefers-reduced-motion:reduce){
+  *{ transition-duration:.001ms !important; }
+}

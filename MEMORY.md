@@ -385,14 +385,55 @@ qo'llanilmagan — shuning uchun CTA yozuvi HelveticaNeue'ni topolmay tasodifiy
 fallback bilan chizilardi. Endi qatlam XML'ida almashtiriladi
 (HelveticaNeue → Arimo, Gilroy → Urbanist) va yozuv Figma bilan ustma-ust tushadi.
 
+### 2026-09-15 (kech) — ildiz sayti, Sheets ulandi, telefon maydoni
+
+**`a/` asosiy sayt bo'ldi.** `tools/variants.json` ga `"asosiy": "a"` kaliti
+qo'shildi; `tools/build.py` har yig'ishdan keyin o'sha variantni ildizga
+nusxalaydi (`publish_root`). Qayta yo'naltirish qo'yilmadi — u qo'shimcha
+so'rov bo'lib, tezlikka zarar qilardi. Eski solishtirish sahifasi
+→ `variantlar.html`.
+
+**Google Sheets nihoyat ulandi.** Foydalanuvchi ketma-ket uchta yangi
+deployment yubordi, uchalasi ham bir xil javob berdi:
+`{"ok":false,"code":"MISSING_SHEET"}`. Muammo URL'da emas, skript mantig'ida —
+`sheetName` majburiy. Varaq nomi **`Lead`** ekani bitta so'rov bilan aniqlandi:
+
+```
+{"ok":true,"message":"Ma'lumot qabul qilindi","sheet":"Lead"}
+```
+
+Brauzerda to'liq oqim tekshirildi (Sheets bloklanmagan holda): forma →
+`thankYou.html` → orqa fonda POST → tasdiq. **Xato bloki endi chiqmaydi.**
+Jadvalda 2 ta `TEST-CLAUDE-OCHIRING` qatori qoldi — o'chirilishi kerak.
+
+| Kalit | Yakuniy qiymat |
+|---|---|
+| `endpointUrl` | `AKfycby6Ihnk…/exec` (uchinchi deployment) |
+| `sheetName` | `Lead` |
+| `telegramUrl` | `https://t.me/+GzsmqPGpcew2MjZi` |
+| `pixelId` | `2982763675408670` |
+
+**Telefon maydoni.** Foydalanuvchi: "raqamdan oshiqcha son yozilmasligi kerak".
+Tekshirildi — 10-chi raqam aslida kiritilmayotgan edi (`beforeinput` to'xtatadi),
+lekin birga qizil xato chiqardi va shu chalkashtirardi. Endi limitdan oshgan
+raqam **jimgina** e'tiborsiz qoldiriladi; qo'yib yuborilgan (paste) noto'g'ri
+raqam uchun tushuntirish saqlanib qoldi. O'zgarish umumiy
+`logistics-launch/source/integration/js/main.js` da — boshqa loyihalarga ham
+tegishli.
+
+**Favikon** `data:` URI sifatida sahifa ichida — har sahifada ketayotgan
+`favicon.ico` 404 so'rovi yo'qoldi.
+
 ---
 
 ## 7. Keyingi ishlar
 
-- [ ] **`sheetName` ni to'ldirish** — bu bo'lmasa hech bir ariza jadvalga
-      yozilmaydi (`MISSING_SHEET`). Eng muhim ochiq ish.
-- [ ] `sheetName` qo'yilgach, haqiqiy ariza yuborib jadvalda ko'rish
+- [ ] Jadvaldan 2 ta `TEST-CLAUDE-OCHIRING` sinov qatorini o'chirish
 - [ ] GitHub Pages yoqish (`thestrak118-web.github.io/zapusk/`)
+- [ ] Meta `CompleteRegistration` hozir CTA bosilishida — haqiqiy arizalarni
+      sanash kerak bo'lsa, uni `thanks.js` dagi tasdiqdan keyingi joyga ko'chirish
+- [ ] Ildiz va `a/` bir xil sahifa (ikkita manzil). Domen ma'lum bo'lgach
+      `a/` ga `canonical` qo'yish kerak bo'lishi mumkin
 - [ ] Figma tokenni yangilash (chatga ochiq yozilgan edi)
 - [ ] CTA yozuvi Figma'da HelveticaNeue Bold — hozir Arimo bilan almashtirilgan,
       renderda biroz ingichkaroq chiqadi. Litsenziyali `.woff2` topilsa

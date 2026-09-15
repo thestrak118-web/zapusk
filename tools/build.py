@@ -8,6 +8,7 @@ oqimini o'rnatadi.
 bo'lishi kerak (Figma: freymni tanlab Export -> SVG).
 """
 import json, subprocess, sys
+import shutil
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -43,6 +44,24 @@ def main():
         info = install_integration(out)
         print('   ro\'yxatdan o\'tish oqimi o\'rnatildi (%d bayt), config saqlandi: %s'
               % (info['runtimeBytes'], info['configPreserved']))
+
+    publish_root(conf)
+
+
+def publish_root(conf):
+    """Asosiy variantni ildizga nusxalaydi — sayt manziliga kirgan odam
+    darhol o'sha sahifani ko'radi, qayta yo'naltirishsiz."""
+    name = conf.get('asosiy')
+    if not name:
+        return
+    src = ROOT / name
+    for item in sorted(src.iterdir()):
+        dst = ROOT / item.name
+        if item.is_dir():
+            shutil.copytree(item, dst, dirs_exist_ok=True)
+        else:
+            shutil.copy2(item, dst)
+    print('ildizga qo\'yildi: variant %s' % name)
 
 
 if __name__ == '__main__':
