@@ -1,5 +1,16 @@
 # Zapusk — landing variantlari
 
+Uchta kampaniya bitta repoda:
+
+| Kampaniya | Papka | Sana |
+|---|---|---|
+| **BIR** — vebinar | `a/`, `b/`, `c/` (ildizda) → [BIR.md](BIR.md) | 25-sentabr 20:00 |
+| **Logistika** — vebinar | `example/d/`, `example/e/`, `example/f/` | 19-sentyabr 20:00 |
+| **uStudy** — AI darsi | `example/a/`, `example/b/`, `example/c/` | 18–19-sentabr |
+
+Ildizdagi `index.html` BIR variantlarini ochadi, pastida qolganlariga havola bor.
+Quyida `example/` loyihasining hujjati.
+
 Figma fayl **"Untitled"** (`gAx3LlafiCUAtWgLze0tbH`) dan 1:1 ko'chirilgan statik
 saytlar. Ikki kampaniya, har birida 3 ta variant.
 
