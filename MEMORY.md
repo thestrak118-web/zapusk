@@ -566,17 +566,22 @@ kartochka o'ng qismining (136×107) 1.5x eksporti. AVIF: `gift.avif` 136×107
 (2.9 KB) va `gift@1.5x.avif` (4.7 KB), `.i22` → `228,638` 136×107. Eski
 `s2-03*.avif` o'chirildi.
 
-**Meta eventlari.** `CompleteRegistration` endi tugma bosilganda emas (modal
-ochilishi har bosishda sanalardi), **ariza qoldirilgach** `js/thanks.js` da
-yuboriladi: yaroqli `webinar.pending` bo'lsa, bir ariza uchun bir marta
-(`webinar.tracked:<yo'l>`), `eventID` = ariza ID. Sheets javobi kutilmaydi —
-Telegram tugmasini tez bosgan odamning eventi yo'qolmasin. `thankYou.html` da
-pixel endi `<head>` dagi Meta standart kodi (kechiktirilmaydi, `pixel.js`
-ulanmaydi). Landing stubiga `push` va `_fbq` qo'shildi ("conflicting versions"
-ogohlantirishi yo'qoldi). CTA inline skripti `index.html` lardan va
-`tools/svg2site.py` shablonidan olib tashlandi.
-Sinov (4 variant): landing `PageView` 1 · CTA dan keyin event yo'q · thankYou
-`PageView` 1 + `CompleteRegistration` 1 · qayta yuklashda takrorlanmaydi.
+**Meta eventlari — Bio Hil bilan aynan bir xil** (bitta targetolog, bir xil
+event talab qiladi; 2026-09-16):
+- landing `index.html` oxirida Meta standart kodi → `PageView` darhol
+  (`main.js` ichidagi kechiktiruvchi stub `window.fbq` borligini ko'rib to'xtaydi);
+- forma yuborilganda `main.js` → `fbq("track","CompleteRegistration")` (bir ariza
+  uchun bir marta, `localStorage` `webinar.tracked:…`), keyin `thankYou.html`
+  **yangi tabda** (`window.open`; bloklansa o'sha tabda) — landing ochiq qoladi,
+  event yo'lda kesilmaydi;
+- `thankYou.html` — faqat `PageView`; Telegram tugmasi `target="_blank"`;
+- ariza yangi tabga `localStorage` orqali ham o'tadi (`thanks.js` 10 daqiqagacha
+  zaxira o'qiydi), tasdiq ham `localStorage` ga yoziladi — takror POST bo'lmaydi;
+- tugma bosilishida event yo'q. Meta Test Events'dagi "Автоматические"
+  qatorlar — Meta'ning avtomatik tugma-bosish eventlari (kodimizdan emas, Bio
+  Hil'da ham bor).
+Jonli sinov (4 variant): landing `PageView` 1 · CTA'da yo'q · submit'da
+`CompleteRegistration` 1 (`fbclid` bilan) · yangi tabda `PageView` 1 · Sheets 1.
 > Sinov eslatmasi: headless Playwright'da Meta **hech narsa yubormaydi**
 > (`navigator.webdriver`), standart kod ham. `--disable-blink-features=AutomationControlled`
 > + `webdriver=false` bilan o'lchash kerak, `/tr` va Sheets `route` bilan ushlanadi.
