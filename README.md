@@ -70,9 +70,9 @@ Lighthouse (mobil, siqish yoqilgan hosting sharoitida):
 
 | Variant | Ball | FCP | LCP | TBT | CLS |
 |---|---|---|---|---|---|
-| / (variant a) | 0.98 | 630 ms | 1502 ms | 179 ms | 0 |
-| b | 0.98 | 637 ms | 1876 ms | 152 ms | 0 |
-| c | 0.98 | 637 ms | 1802 ms | 133 ms | 0 |
+| / (variant a) | **1.00** | 635 ms | 1505 ms | 0 ms | 0 |
+| b | **1.00** | 774 ms | 1802 ms | 0 ms | 0 |
+| c | **1.00** | 772 ms | 1726 ms | 0 ms | 0 |
 
 Nima qilingan:
 
@@ -81,7 +81,11 @@ Nima qilingan:
 - **CSS sahifa ichida.** Render to'sadigan tashqi so'rov qolmagan.
 - **Rasmlar AVIF, 2x.** WebP 3x bilan solishtirganda ~2 barobar yengil.
 - **LCP rasmi `preload`** bilan oldindan so'raladi.
-- Qolgan TBT — Meta Pixel'ning `fbevents.js` fayli (~108 KB, tashqi).
+- **Meta Pixel kechiktirilgan.** `fbq` darhol yaratiladi va chaqiruvlarni
+  navbatga yig'adi, kutubxonaning o'zi (~108 KB) esa foydalanuvchi sahifaga
+  tekkanda (skrol, bosish, klaviatura) yoki yuklanishdan 3.5 s keyin
+  yuklanadi. Shu bilan TBT 180–230 ms dan 0 ga tushdi, hech qanday event
+  yo'qolmaydi.
 - Favikon `data:` URI sifatida sahifa ichida — `favicon.ico` uchun 404 so'rov yo'q.
 
 ## Figma bilan aniqlik

@@ -424,6 +424,43 @@ tegishli.
 **Favikon** `data:` URI sifatida sahifa ichida — har sahifada ketayotgan
 `favicon.ico` 404 so'rovi yo'qoldi.
 
+### 2026-09-15 (tun) — Vercel'dagi PSI natijasi va Meta Pixel
+
+Foydalanuvchi saytni `zapusk-beta.vercel.app` ga chiqarib, PageSpeed Insights
+o'lchadi: `/` 84, `/b/` 81, `/c/` 98. Lokal o'lchovda 0.98 edi — farq real
+tarmoq kechikishi va PSI simulyatsiyasidan.
+
+**Sabab — Meta Pixel.** Jonli saytning to'lqin diagrammasi:
+
+```
+0.6 -> 331ms   HTML (8.3 KB)
+349 -> 580ms   hamma rasm, shrift, config.js, main.js   <- o'z fayllarimiz tugadi
+564 -> 1005ms  fbevents.js           107.8 KB  (tashqi)
+1047 -> 1237ms tracking so'rovi       80.6 KB  (tashqi)
+```
+
+`observedLargestContentfulPaint` = **1517 ms**, ya'ni sahifa aslida 1.5 s da
+bo'yalgan. Lekin Lighthouse simulyatsiyasi qo'shimcha 188 KB va ~190 ms asosiy
+oqim bandligini hisobga olib, LCP ni **3771 ms** deb ko'rsatadi.
+
+**Yechim.** `pixel.js` qayta yozildi: `fbq` darhol yaratiladi va chaqiruvlarni
+navbatga yig'adi (`init`, `PageView`, CTA dagi `CompleteRegistration`),
+kutubxonaning o'zi esa quyidagilardan birinchisida yuklanadi:
+
+- foydalanuvchi sahifaga tegsa — `pointerdown`, `keydown`, `touchstart`,
+  **`scroll`**, `mousemove` (lendingda odam deyarli doim tez skrol qiladi);
+- hech kim tegmasa — `load` dan **3.5 s** keyin.
+
+Kutubxona yuklangach navbat o'ynatiladi, shuning uchun hech bir event
+yo'qolmaydi. Brauzerda tekshirildi: 1 s da `fbevents` so'rovi yo'q, skroldan
+keyin darhol paydo bo'ladi, navbatda uchala chaqiruv turadi.
+
+**Natija** (lokal, siqish bilan): uchala variant ham **1.00**, TBT 180–230 ms
+dan **0 ms** ga tushdi.
+
+> `pixel.js` umumiy fayl (`logistics-launch/source/integration/js/pixel.js`) —
+> o'zgarish shu integratsiyani ishlatadigan boshqa loyihalarga ham tegishli.
+
 ---
 
 ## 7. Keyingi ishlar
