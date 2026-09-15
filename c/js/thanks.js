@@ -18,8 +18,20 @@
     try { return JSON.parse(sessionStorage.getItem(key) || 'null'); }
     catch { return null; }
   }
+  // Rahmat sahifasi yangi tabda ochiladi. sessionStorage har doim ham yangi tabga
+  // o'tmaydi, shuning uchun landing arizani localStorage ga ham yozadi. Eski
+  // (10 daqiqadan oshgan) yozuv qayta yuborilmaydi.
+  const LOCAL_MAX_AGE = 10 * 60 * 1000;
+  function readLocal(key) {
+    try { return JSON.parse(localStorage.getItem(key) || 'null'); }
+    catch { return null; }
+  }
   function pending() {
-    const lead = read(pendingKey);
+    let lead = read(pendingKey);
+    if (!lead) {
+      const local = readLocal(pendingKey);
+      if (local && Number.isFinite(local.createdAt) && Date.now() - local.createdAt < LOCAL_MAX_AGE) lead = local;
+    }
     if (!lead || typeof lead.id !== 'string' || !lead.id || lead.id.length > 100 ||
         typeof lead.name !== 'string' || lead.name.length > 100 || !/\p{L}/u.test(lead.name) ||
         !/^[\p{L}\p{M}\s'‘’ʻʼ`.-]+$/u.test(lead.name) ||
@@ -30,17 +42,19 @@
   }
   function text(node, value) { node.textContent = value; node.hidden = !value; }
   function receipt() {
-    const saved = read(confirmationKey);
+    const saved = read(confirmationKey) || readLocal(confirmationKey);
     return saved?.confirmed === true && Number.isFinite(saved.confirmedAt) ? saved : null;
   }
   function hasPending() {
-    try { return sessionStorage.getItem(pendingKey) !== null; }
-    catch { return false; }
+    return pending() !== null;
   }
   function clearMatchingPending(id) {
     try {
       if (read(pendingKey)?.id === id) sessionStorage.removeItem(pendingKey);
     } catch { /* Acknowledgment remains honest even if browser storage becomes unavailable. */ }
+    try {
+      if (readLocal(pendingKey)?.id === id) localStorage.removeItem(pendingKey);
+    } catch {}
   }
   function showConfirmed() {
     text(message, 'Arizangiz qabul qilindi!');
@@ -131,8 +145,11 @@
       // A late response for an older lead must not erase a newer handoff.
       const latest = pending();
       if (!latest || latest.id === lead.id) {
-        try { sessionStorage.setItem(confirmationKey, JSON.stringify({ id: lead.id, confirmed: true, confirmedAt: Date.now() })); }
+        const stamp = JSON.stringify({ id: lead.id, confirmed: true, confirmedAt: Date.now() });
+        try { sessionStorage.setItem(confirmationKey, stamp); }
         catch { /* Do not turn a successful POST into a retry because storage failed. */ }
+        // Landing tabi ochiq qoladi — o'sha ariza qayta yuborilsa, yangi tab buni ko'rsin.
+        try { localStorage.setItem(confirmationKey, stamp); } catch {}
         clearMatchingPending(lead.id);
         showConfirmed();
       }
@@ -146,19 +163,8 @@
       if (latest && latest.id !== lead.id) send();
     }
   }
-  // Meta CompleteRegistration — ariza qoldirilgach, bir ariza uchun bir marta.
-  // Sheets javobi kutilmaydi: odam Telegram tugmasini bossa javob kelmay
-  // qoladi va event yo'qoladi. eventID = ariza ID (keyin CAPI bilan birlashadi).
-  (() => {
-    const lead = pending();
-    if (!lead || typeof window.fbq !== 'function') return;
-    const key = 'webinar.tracked:' + path;
-    try {
-      if (sessionStorage.getItem(key) === lead.id) return;
-      sessionStorage.setItem(key, lead.id);
-    } catch {}
-    try { window.fbq('track', 'CompleteRegistration', {}, { eventID: lead.id }); } catch {}
-  })();
+  // Meta CompleteRegistration bu yerda EMAS — landing (js/main.js) forma
+  // yuborilganda o'zi yuboradi va bu sahifani yangi tabda ochadi.
 
   retry.addEventListener('click', send);
   window.addEventListener('pageshow', event => { if (event.persisted) send(); });
