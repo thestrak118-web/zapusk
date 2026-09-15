@@ -14,6 +14,15 @@
 | Freymlar | `1:90` Site 1 (390×2913) → `example/a`<br>`1:162` Site 2 (390×1877) → `example/b`<br>`1:4` Site 3 (390×2292) → `example/c` |
 | Mavzu | uStudy — AI bo'yicha bepul onlayn dars, 18–19-sentabr, soat 20:00 |
 
+**Page 1 (logistika kampaniyasi, 2026-09-15)** — boshqa mavzu, boshqa freymlar:
+
+| | |
+|---|---|
+| Freymlar | `Site 1` (390×1380) → `example/d`<br>`Site 2` (390×1781) → `example/e`<br>`Site 3` (390×1925) → `example/f` |
+| Mavzu | Logistika — bepul vebinar, 19-sentyabr, soat 20:00, 10 000$ lik grant |
+| Manba fayl | Figma'dan **Export → SVG** (API orqali emas): `Site 1..3.svg` |
+| Meta | `tools/variants.json` — sarlavha, tavsif, rang, prefiks |
+
 **Figma token** — `/home/erwin/qwertyu/.env` faylida, `FIGMA_TOKEN` kaliti
 (`chmod 600`, git repodan tashqarida, hech qachon commit qilinmaydi).
 
@@ -47,6 +56,21 @@ curl -H "X-Figma-Token: $FIGMA_TOKEN" "https://api.figma.com/v1/files/gAx3LlafiC
    (rasm eksporti soyani ham o'z ichiga oladi), `absoluteBoundingBox` emas.
 8. **Har bir variant mustaqil.** `example/<v>/` ichida o'z `css/ js/ assets/`.
    Bittasini ko'chirib olsangiz ham ishlaydi.
+
+### Page 1 uchun qo'shimcha qoidalar (`example/d · e · f`)
+
+9. **Sahifa qo'lda yozilmaydi.** `index.html` va `css/site.css` ni
+   `tools/svg2site.py` Figma SVG'sidan yig'adi. Tahrir kerak bo'lsa —
+   generator yoki `tools/variants.json` tuzatiladi, natija emas.
+10. **Matn SVG ichida qoladi.** Figma bergan bazaviy chiziq (x/y) aynan
+    takrorlanadi — shuning uchun `<br>` bilan qator sanashning hojati yo'q.
+    Litsenziyali shrift bepul analogga almashtiriladi (`FONT_SUB`):
+    HelveticaNeue → Arimo, Gilroy → Urbanist.
+11. **Ro'yxatdan o'tish oynasi sahifada bo'lmaydi.** Integratsiya shartnomasi
+    (`logistics-launch/source/integration/README-contract.md`) bo'yicha
+    `js/main.js` uni birinchi CTA bosilganda o'zi qo'shadi. Sahifada faqat
+    `<button type="button" data-register>` turadi. Modal markupini qo'lda
+    qo'yish — shartnoma buzilishi.
 
 ---
 
@@ -115,6 +139,32 @@ oltin gradient: linear-gradient(140deg,#FFDF70,#FFE9A6 50%,rgba(255,223,112,.83)
 | Orbit | `assets/s3-orbit.webp` `−52, 210` 494×240 (freymdan kengroq, `.page` kesadi) |
 | Nuqtalar | 8px `#FFDACE` — `45,297` · `123,268` · `258,267` · `336,296` |
 
+### Page 1 variantlari — avtomatik yig'ilgan
+
+O'lchamlar generator chiqargan `css/site.css` dan olingan (Figma qiymati).
+
+| | **d** — Site 1 | **e** — Site 2 | **f** — Site 3 |
+|---|---|---|---|
+| Kanvas | 390×1380 | 390×1781 | 390×1925 |
+| Sahifa foni | `#ffffff` | `#000000` | `#ffffff` |
+| Asosiy rang (`accent`) | `#3074F0` ko'k | `#E7600F` to'q sariq | `#E91919` qizil |
+| `theme-color` | `#367AF7` | `#000000` | `#D40000` |
+| CTA 1 | `24,554` 343×82 r41 | `26,538` 338×78 r39 | `23,581` 343×85 r12 |
+| CTA 2 | `24,1258` 343×82 r41 | `26,1659` 338×78 r39 | `23,1789` 343×85 r12 |
+| Rasm / vektor qatlam | 3 / 4 | 6 / 7 | 7 / 8 |
+| `assets/` hajmi | 144 KB | 388 KB | 360 KB |
+| Shriftlar | Antonio, Arimo, Bebas Neue, Mulish, Poppins | Antonio, Bebas Neue, Big Shoulders Display, Mulish, Urbanist | Arimo, Bebas Neue, Mulish, Sora |
+
+Umumiy CSS (generator chiqaradi, `base.css` ga bog'liq emas):
+`.page{position:relative;width:390px;height:<H>px;margin-inline:auto;overflow:hidden}`,
+`.im{position:absolute}` (rasm), `.v{position:absolute;left:0;top:0;pointer-events:none}`
+(vektor+matn qatlami — bosishni to'smaydi), `.cta{position:absolute;background:none;
+color:transparent}` (Figma shakli ustidagi shaffof tugma).
+
+Ro'yxatdan o'tish oynasi shartnoma uslubi bilan qizil keladi; har bir variant uni
+o'z rangiga bo'yaydi — `#registrationModal.homeModal …` (ID li selektor `main.js`
+keyinroq qo'shadigan `<style>` dan ustun turadi).
+
 ---
 
 ## 4. Sozlamalar (`example/<v>/js/config.js`)
@@ -128,6 +178,24 @@ oltin gradient: linear-gradient(140deg,#FFDF70,#FFE9A6 50%,rgba(255,223,112,.83)
 
 CTA havolasiga `?start=v<variant>_<joy>` qo'shiladi — masalan `start=v2_hero`.
 Shu orqali bot tomonda qaysi variant va qaysi tugma ishlagani ko'rinadi.
+
+### `example/{d,e,f}/js/config.js` — ikkita blok
+
+| Kalit | Qiymat | Izoh |
+|---|---|---|
+| `LOGISTICS_CONFIG.endpointUrl` | Google Apps Script `.../exec` | lead shu yerga yoziladi |
+| `LOGISTICS_CONFIG.telegramUrl` | **bo'sh** | rahmat sahifasidagi kanal tugmasi |
+| `LOGISTICS_CONFIG.pixelId` | bo'sh | faqat raqamli ID bo'lsa so'rov ketadi |
+| `LOGISTICS_CONFIG.sheetName` | bo'sh | jadval varag'i nomi |
+| `SITE_CONFIG.eventDate` | `2026-09-19T20:00:00+05:00` | vebinar sanasi |
+| `SITE_CONFIG.timerMinutes` | `2` | sahifada taymer bo'lsa |
+
+`endpointUrl` mijozga ochiq bo'lishi tabiiy — u baribir brauzerga yuklanadi,
+sir emas. Eski kampaniyaning havolasi **ko'chirilmaydi** (shartnoma talabi).
+
+Oqim: forma to'ldiriladi → `sessionStorage` ga `webinar.pending:<variant>`
+yoziladi → darhol `thankYou.html` ga o'tiladi → POST orqa fonda ketadi.
+Sahifadan hech qanday POST yuborilmaydi.
 
 ---
 
@@ -153,6 +221,28 @@ Raqamli tekshiruv (headless Chrome → Figma renderi bilan piksel taqqoslash):
 
 Qolgan farq — joylashuv emas, faqat harf chetlarining silliqlanishi
 (Figma va brauzer matnni bir xil rasterlashtirmaydi).
+
+### Page 1 variantlari (2026-09-15)
+
+Etalon — Figma'ning 2x PNG eksporti (`Site 1..3.png`), render — headless Chrome
+`--force-device-scale-factor=2 --window-size=390,<H>`:
+
+| Variant | O'rtacha | >32 farqli piksel |
+|---|---|---|
+| d | 2.72 | 1.9% |
+| e | 2.46 | 1.9% |
+| f | 2.48 | 1.4% |
+
+> `_check/verify.html`, `_check/paste.html` va `_check/figma-p1.json` — d·e·f
+> qo'lda yig'ilgan davrdan qolgan yordamchilar. Generator chiqargan sahifalarda
+> `data-fig` atributi yo'q, shuning uchun `verify.html` ular uchun ishlamaydi;
+> yangi tekshiruv — yuqoridagi piksel taqqoslash va `tools/test_flow.py`.
+
+**Oqim sinovi** — `python3 tools/test_flow.py` (localhost:8899 ishlab turishi kerak).
+Uchala variantda 11 tadan tekshiruv: 2 ta CTA, modal boshida yo'qligi, bosilgach
+paydo bo'lishi, forma ID lari, `+998`, bo'sh/qisqa raqamda o'tkazmasligi,
+to'g'ri ma'lumotda `thankYou.html` ga o'tishi. Sinov paytida `script.google.com`
+CDP orqali **bloklanadi** — jadvalga sinov lidi tushmaydi.
 
 ---
 
@@ -181,12 +271,60 @@ Qolgan farq — joylashuv emas, faqat harf chetlarining silliqlanishi
 - Taymer 120 → **2 daqiqa**, format `mm:ss` (a/c) va `hh:mm:ss` (b).
 - GitHub: https://github.com/thestrak118-web/zapusk (public, `main`).
 
+### 2026-09-15 — logistika kampaniyasi (Page 1), variantlar d · e · f
+
+**Nima qilindi**
+
+- Figma Page 1 dan 3 ta freym **SVG eksport** qilib olindi (API o'rniga —
+  matn va vektor geometriyasi aynan keladi).
+- `tools/svg2site.py` — SVG'dan 1:1 sayt yig'adigan generator. Rasm to'ldirgan
+  shakllar 3x WebP bo'lib chiqariladi, qolgan hamma vektor+matn z-tartibi
+  saqlangan holda SVG qatlamlarga bo'linadi.
+- `tools/variants.json` + `tools/build.py` — uchala variantni bitta buyruq bilan
+  qayta yig'ish: `python3 tools/build.py <svg-papka>`.
+- Ro'yxatdan o'tish oqimi `logistics-launch/integration.py` orqali o'rnatildi
+  (`js/main.js`, `thankYou.html`, shriftlar). Endpoint `config.js` ga yozildi.
+- `tools/test_flow.py` — Selenium bilan oqim sinovi (33 ta tekshiruv, hammasi o'tdi).
+
+**Topilgan va tuzatilgan xatolar**
+
+- *Xotira portlashi (exit 137).* `pattern` ning `objectBoundingBox` koordinatasi
+  rasm pikseliga o'girilayotganda ortiqcha `*im.width` bor edi: kesim qutisi
+  540000×330000 px chiqib, `pad_for_box` ulkan tuval ajratardi. To'g'risi —
+  `px = (u − tx)/a`. Qo'shimcha himoya: 80 MP dan katta tuvalda aniq xato beradi.
+- *Sahifa butunlay oq chiqardi.* Generator `.im`/`.v` klasslarini chiqaradi,
+  `base.css` esa eski `.n` ni biladi — hech biri `position:absolute` olmagan,
+  qatlamlar oqim bo'ylab pastga tizilib ketgan. Joylashuv qoidalari endi
+  generatsiya qilinadigan `site.css` ichida (base.css ga bog'liq emas).
+- *CTA topilmadi (0 ta).* Detektor gradientli `<rect>` qidirardi, Figma'da tugma
+  — `<path>`. Keyin "matnni o'rab turgan eng yaqin guruh" ham ishlamadi: e da
+  tugma hero bloki bilan bitta guruhda, chegarasi 389×616 chiqardi. Yakuniy
+  yechim — **matn nuqtasini o'z ichiga olgan eng kichik tugmasimon shakl**
+  (kengligi ≥200, balandligi 40..160). Uchala variantda 2 tadan CTA topildi.
+- *Modal ikki marta.* Generator shabloni modal markupini sahifaga qo'yardi,
+  shartnoma esa buni taqiqlaydi (`main.js` o'zi qo'shadi). Shablondan olib
+  tashlandi, CTA'lar `<button type="button" data-register>` bo'ldi.
+- *Forma tugmasi uchala variantda qizil edi.* `accent` qiymati qo'shildi,
+  `#registrationModal.homeModal …` selektori bilan variant rangiga bo'yaladi.
+- `install_integration` mavjud `config.js` ni saqlab qoladi — shuning uchun
+  `LOGISTICS_CONFIG` va `SITE_CONFIG` bitta faylga birlashtirildi.
+
+**Eslatma:** `example/{d,e,f}` avval qo'lda (absolyut koordinata bilan) yig'ilgan
+edi; 2026-09-15 da hammasi generator chiqarganiga almashtirildi.
+
 ---
 
 ## 7. Keyingi ishlar
 
-- [ ] `ctaUrl` ni haqiqiy Telegram bot havolasiga almashtirish
+- [ ] `LOGISTICS_CONFIG.telegramUrl` — rahmat sahifasidagi kanal tugmasi uchun
+      yangi loyihaning kanal havolasi (hozir bo'sh, tugma ishlamaydi)
+- [ ] Endpointga haqiqiy lid yuborib tekshirish (sinovda ataylab bloklangan)
+- [ ] `pixelId` — reklama piksel ID si, kerak bo'lsa
+- [ ] a/b/c dagi `ctaUrl` ni haqiqiy Telegram bot havolasiga almashtirish
 - [ ] GitHub Pages yoqish (`thestrak118-web.github.io/zapusk/`)
 - [ ] Figma tokenni yangilash (chatga ochiq yozilgan edi)
+- [ ] CTA yozuvi Figma'da HelveticaNeue Bold — hozir Arimo bilan almashtirilgan,
+      renderda biroz ingichkaroq chiqadi. Litsenziyali `.woff2` topilsa
+      `FONT_SUB` dan olib tashlanadi.
 - [ ] Herokid / Buyan `.woff2` topilsa — `base.css` dagi `--font-display` va
       `--font-buyan` boshiga qo'shish, taymer ham asl shriftga o'tadi

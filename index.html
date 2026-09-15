@@ -3,13 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Zapusk — 3 ta variant</title>
+<title>Zapusk — landing variantlari</title>
 <style>
   body{margin:0;background:#111;color:#eee;font:14px/1.5 Inter,system-ui,sans-serif}
   header{padding:22px 24px 6px}
   h1{margin:0;font-size:18px;font-weight:600}
   p{margin:6px 0 0;color:#8b8b8b}
-  .grid{display:flex;gap:24px;padding:20px 24px 40px;overflow-x:auto}
+  .grid{display:flex;gap:24px;padding:12px 24px 34px;overflow-x:auto}
+  section h2{margin:18px 24px 0;font-size:15px;font-weight:600;color:#ddd}
+  section h2 small{color:#777;font-weight:400}
   figure{margin:0;flex:0 0 auto}
   figcaption{padding:0 0 8px;color:#9a9a9a;display:flex;gap:10px;align-items:baseline}
   figcaption a{color:#5b8cff;text-decoration:none}
@@ -18,10 +20,30 @@
 </head>
 <body>
 <header>
-  <h1>Zapusk — 3 ta landing varianti</h1>
-  <p>Figma "Untitled" / Page 2 → Site 1, Site 2, Site 3. Har biri alohida papka: <code>example/a</code>, <code>example/b</code>, <code>example/c</code>.</p>
+  <h1>Zapusk — landing variantlari</h1>
+  <p>Ikki kampaniya, har biri 3 ta variant. Har bir papka mustaqil ishlaydi.</p>
 </header>
-<div class="grid">
+<section>
+  <h2>Logistika — bepul vebinar, 19-sentyabr 20:00 <small>(Figma Page 1)</small></h2>
+  <div class="grid">
+    <figure>
+      <figcaption><b>d</b> — oq / ko'k <a href="example/d/" target="_blank">ochish ↗</a></figcaption>
+      <iframe src="example/d/" title="Site 1" loading="lazy"></iframe>
+    </figure>
+    <figure>
+      <figcaption><b>e</b> — qora / to'q sariq <a href="example/e/" target="_blank">ochish ↗</a></figcaption>
+      <iframe src="example/e/" title="Site 2" loading="lazy"></iframe>
+    </figure>
+    <figure>
+      <figcaption><b>f</b> — oq / qizil <a href="example/f/" target="_blank">ochish ↗</a></figcaption>
+      <iframe src="example/f/" title="Site 3" loading="lazy"></iframe>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <h2>uStudy — AI darsi, 18–19-sentabr <small>(Figma Page 2)</small></h2>
+  <div class="grid">
   <figure>
     <figcaption><b>a</b> — oq / ko'k <a href="example/a/" target="_blank">ochish ↗</a></figcaption>
     <iframe src="example/a/" title="Site 1" loading="lazy"></iframe>
@@ -34,6 +56,7 @@
     <figcaption><b>c</b> — oq / to'q sariq <a href="example/c/" target="_blank">ochish ↗</a></figcaption>
     <iframe src="example/c/" title="Site 3" loading="lazy"></iframe>
   </figure>
-</div>
+  </div>
+</section>
 </body>
 </html>

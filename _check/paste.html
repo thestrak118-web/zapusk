@@ -1,0 +1,51 @@
+<!doctype html><meta charset="utf-8"><title>SVG paste</title>
+<!-- Figma'dan "Copy as SVG" qilingan freymni shu yerga qo'yib, aniq
+     geometriyani JSON ko'rinishida chiqarish uchun yordamchi sahifa. -->
+<style>body{margin:0;font:12px monospace;background:#111;color:#ccc}
+#ta{width:100%;height:120px}#host{position:absolute;left:-99999px;top:0}</style>
+<textarea id="ta" placeholder="Ctrl+V"></textarea>
+<div id="host"></div>
+<pre id="log">kutilmoqda…</pre>
+<script>
+window.PARSED=null;
+function parse(svgText){
+  const host=document.getElementById('host');
+  host.innerHTML=svgText;
+  const svg=host.querySelector('svg');
+  if(!svg) return {err:'svg topilmadi', head:svgText.slice(0,200)};
+  const base=svg.getBoundingClientRect();
+  const out=[];
+  svg.querySelectorAll('*').forEach(el=>{
+    const tag=el.tagName.toLowerCase();
+    if(['defs','clippath','lineargradient','radialgradient','stop','filter','fegaussianblur','feblend','fecolormatrix','feflood','fecomposite','feoffset','pattern','use','style','title','desc','mask','fedropshadow','femerge','femergenode','fetile','feimage'].includes(tag)) return;
+    let r;
+    try{ r=el.getBoundingClientRect(); }catch(e){ return; }
+    const cs=getComputedStyle(el);
+    const rec={t:tag,
+      b:[+(r.left-base.left).toFixed(2),+(r.top-base.top).toFixed(2),+r.width.toFixed(2),+r.height.toFixed(2)]};
+    const nm=el.getAttribute('id')||el.getAttribute('data-name'); if(nm) rec.n=nm;
+    const f=el.getAttribute('fill')||cs.fill; if(f&&f!=='none') rec.f=f;
+    const op=el.getAttribute('fill-opacity')||el.getAttribute('opacity'); if(op) rec.o=+op;
+    const st=el.getAttribute('stroke'); if(st&&st!=='none'){rec.s=st;rec.sw=el.getAttribute('stroke-width');}
+    if(tag==='rect'){ rec.r=el.getAttribute('rx')||0; }
+    if(tag==='text'||tag==='tspan'){
+      rec.tx=el.textContent;
+      rec.ff=el.getAttribute('font-family')||cs.fontFamily;
+      rec.fs=el.getAttribute('font-size')||cs.fontSize;
+      rec.fw=el.getAttribute('font-weight')||cs.fontWeight;
+      const ls=el.getAttribute('letter-spacing'); if(ls) rec.ls=ls;
+      rec.x=el.getAttribute('x'); rec.y=el.getAttribute('y');
+    }
+    if(tag==='image'){ rec.img=1; }
+    out.push(rec);
+  });
+  return {w:base.width,h:base.height,n:out.length,items:out};
+}
+document.getElementById('ta').addEventListener('paste',e=>{
+  setTimeout(()=>{
+    const t=document.getElementById('ta').value;
+    window.PARSED=parse(t);
+    document.getElementById('log').textContent='uzunlik='+t.length+' | elementlar='+(window.PARSED.n||0)+' | '+(window.PARSED.err||'ok');
+  },200);
+});
+</script>

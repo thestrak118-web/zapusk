@@ -1,0 +1,27 @@
+/* Figma freymidan avtomatik yig'ilgan — tools/svg2site.py.
+   Qo'lda tahrirlamang: SVG qayta eksport qilinsa, qaytadan yaratiladi. */
+body{ background:#ffffff; }
+
+/* Figma freymi: qat'iy 390.0px kanvas, har bir qatlam absolyut koordinatada.
+   .im — rasm to'ldirgan shakl, .v — vektor+matn qatlami (z-tartib DOM bo'yicha) */
+.page{ position:relative; width:390.0px; height:1380.0px; margin-inline:auto; overflow:hidden; }
+.im{ position:absolute; display:block; max-width:none; }
+.v{ position:absolute; left:0; top:0; width:390.0px; height:1380.0px; pointer-events:none; }
+/* CTA — Figma shakli ustidagi shaffof tugma (yozuv SVG qatlamida) */
+.cta{ position:absolute; display:block; padding:0; border:0; background:none;
+      font:inherit; color:transparent; cursor:pointer;
+      -webkit-tap-highlight-color:transparent; }
+.cta:focus-visible{ outline:3px solid #fff; outline-offset:3px; }
+.i1{left:-31px;top:198px;width:489px;height:383px}
+.i15{left:75px;top:237px;width:250px;height:366px}
+.i25{left:29px;top:665px;width:123px;height:82px}
+.cta-1{left:24px;top:554px;width:343px;height:82px;border-radius:41px}
+.cta-2{left:24px;top:1258px;width:343px;height:82px;border-radius:41px}
+
+/* Ro'yxatdan o'tish oynasi — variant rangi */
+#registrationModal.homeModal .HomeFormBtn{background:#3074F0}
+#registrationModal.homeModal .HomeFormBtn:hover{background:#2963CC}
+#registrationModal.homeModal .HomeFormRowInput:focus{border-color:#3074F0}
+#registrationModal.homeModal .phone-input-container:focus-within{border-color:#3074F0}
+#registrationModal.homeModal button:focus-visible,
+#registrationModal.homeModal [role="option"]:focus-visible{outline-color:#3074F0}

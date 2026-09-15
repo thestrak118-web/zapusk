@@ -1,0 +1,3259 @@
+{
+"41:2": {
+"name": "Site 1",
+"type": "FRAME",
+"frame": "41:2",
+"box": [
+0.0,
+0.0,
+390.0,
+1358.0
+],
+"rb": [
+0.0,
+0.0,
+390.0,
+1358.0
+]
+},
+"41:3": {
+"name": "Location map animation - Martin Tabiyashki 1",
+"type": "RECTANGLE",
+"frame": "41:2",
+"box": [
+-31.0,
+198.0,
+489.0,
+383.0
+],
+"rb": [
+0.0,
+198.0,
+390.0,
+383.0
+]
+},
+"41:4": {
+"name": "Background+Border",
+"type": "FRAME",
+"frame": "41:2",
+"box": [
+0.0,
+-4.0,
+390.0,
+57.0
+],
+"rb": [
+0.0,
+0.0,
+390.0,
+53.0
+]
+},
+"41:5": {
+"name": "Vector",
+"type": "VECTOR",
+"frame": "41:2",
+"box": [
+24.0,
+15.5,
+19.0,
+19.0
+],
+"rb": [
+24.0,
+15.5,
+19.0,
+19.0
+]
+},
+"41:6": {
+"name": "19-sentyabr",
+"type": "TEXT",
+"frame": "41:2",
+"box": [
+51.0,
+17.0,
+98.0,
+16.0
+],
+"rb": [
+52.21,
+19.06,
+95.82,
+16.08
+],
+"text": {
+"chars": "19-sentyabr",
+"font": "Poppins",
+"weight": 500,
+"size": 16.0,
+"lh": 16.0,
+"ls": 0.0,
+"align": "CENTER",
+"case": ""
+}
+},
+"41:7": {
+"name": "20:00",
+"type": "TEXT",
+"frame": "41:2",
+"box": [
+315.0,
+12.0,
+50.0,
+27.0
+],
+"rb": [
+316.2,
+18.61,
+47.4,
+13.52
+],
+"text": {
+"chars": "20:00",
+"font": "Poppins",
+"weight": 500,
+"size": 18.0,
+"lh": 27.0,
+"ls": 0.0,
+"align": "CENTER",
+"case": ""
+}
+},
+"41:8": {
+"name": "Vector",
+"type": "VECTOR",
+"frame": "41:2",
+"box": [
+289.0,
+17.0,
+16.0,
+16.0
+],
+"rb": [
+289.0,
+17.0,
+16.0,
+16.0
+]
+},
+"41:9": {
+"name": "Logistikani mutlaqo bepulga o‘rganib, boshlang’ich 300$ daromadga chiqish.",
+"type": "TEXT",
+"frame": "41:2",
+"box": [
+20.0,
+105.0,
+351.0,
+117.0
+],
+"rb": [
+28.65,
+113.91,
+334.06,
+108.37
+],
+"text": {
+"chars": "Logistikani mutlaqo bepulga o‘rganib, boshlang’ich 300$ daromadga chiqish.",
+"font": "Antonio",
+"weight": 700,
+"size": 30.0,
+"lh": 38.818359375,
+"ls": 0.0,
+"align": "CENTER",
+"case": "UPPER"
+}
+},
+"41:10": {
+"name": "Group 1",
+"type": "GROUP",
+"frame": "41:2",
+"box": [
+92.0,
+71.0,
+205.0,
+26.0
+],
+"rb": [
+92.0,
+71.0,
+205.0,
+26.0
+]
+},
+"41:11": {
+"name": "Rectangle 1",
+"type": "RECTANGLE",
+"frame": "41:2",
+"box": [
+92.0,
+71.0,
+205.0,
+26.0
+],
+"rb": [
+92.0,
+71.0,
+205.0,
+26.0
+]
+},
+"41:12": {
+"name": "10,000$ lik grant",
+"type": "TEXT",
+"frame": "41:2",
+"box": [
+141.0,
+76.0,
+131.0,
+16.0
+],
+"rb": [
+142.03,
+77.46,
+129.17,
+16.9
+],
+"text": {
+"chars": "10,000$ lik grant",
+"font": "Poppins",
+"weight": 500,
+"size": 16.0,
+"lh": 16.0,
+"ls": 0.0,
+"align": "CENTER",
+"case": ""
+}
+},
+"41:13": {
+"name": "Vector",
+"type": "VECTOR",
+"frame": "41:2",
+"box": [
+118.0,
+75.0,
+18.0,
+18.0
+],
+"rb": [
+118.0,
+75.0,
+18.0,
+18.0
+]
+},
+"41:14": {
+"name": "ChatGPT Image Sep 15, 2026, 04_22_14 PM-Photoroom 1",
+"type": "RECTANGLE",
+"frame": "41:2",
+"box": [
+75.0,
+237.0,
+250.0,
+366.0
+],
+"rb": [
+75.0,
+237.0,
+250.0,
+366.0
+]
+},
+"41:15": {
+"name": "Group 2089345766",
+"type": "GROUP",
+"frame": "41:2",
+"box": [
+24.0,
+554.0,
+343.0,
+82.0
+],
+"rb": [
+24.0,
+554.0,
+343.0,
+87.0
+]
+},
+"41:16": {
+"name": "Rectangle 240650019",
+"type": "VECTOR",
+"frame": "41:2",
+"box": [
+24.0,
+554.0,
+343.0,
+82.0
+],
+"rb": [
+24.0,
+554.0,
+343.0,
+87.0
+]
+},
+"41:17": {
+"name": "Group 2089345765",
+"type": "GROUP",
+"frame": "41:2",
+"box": [
+55.0,
+581.0,
+282.0,
+29.0
+],
+"rb": [
+55.0,
+581.0,
+283.0,
+29.0
+]
+},
+"41:18": {
+"name": "bepul qatnashish",
+"type": "TEXT",
+"frame": "41:2",
+"box": [
+55.0,
+581.0,
+253.0,
+29.0
+],
+"rb": [
+57.06,
+587.46,
+248.88,
+19.15
+],
+"text": {
+"chars": "bepul qatnashish",
+"font": "HelveticaNeue",
+"weight": 400,
+"size": 24.0,
+"lh": 28.80000114440918,
+"ls": 0.48,
+"align": "CENTER",
+"case": "UPPER"
+}
+},
+"41:19": {
+"name": "Arrow 2",
+"type": "VECTOR",
+"frame": "41:2",
+"box": [
+318.0,
+596.0,
+19.0,
+0.0
+],
+"rb": [
+317.0,
+588.64,
+21.0,
+14.73
+]
+},
+"41:20": {
+"name": "Group 2089345767",
+"type": "GROUP",
+"frame": "41:2",
+"box": [
+24.0,
+1231.0,
+343.0,
+82.0
+],
+"rb": [
+24.0,
+1231.0,
+343.0,
+87.0
+]
+},
+"41:21": {
+"name": "Rectangle 240650019",
+"type": "VECTOR",
+"frame": "41:2",
+"box": [
+24.0,
+1231.0,
+343.0,
+82.0
+],
+"rb": [
+24.0,
+1231.0,
+343.0,
+87.0
+]
+},
+"41:22": {
+"name": "Group 2089345765",
+"type": "GROUP",
+"frame": "41:2",
+"box": [
+55.0,
+1258.0,
+282.0,
+29.0
+],
+"rb": [
+55.0,
+1258.0,
+283.0,
+29.0
+]
+},
+"41:23": {
+"name": "bepul qatnashish",
+"type": "TEXT",
+"frame": "41:2",
+"box": [
+55.0,
+1258.0,
+253.0,
+29.0
+],
+"rb": [
+57.06,
+1264.46,
+248.88,
+19.15
+],
+"text": {
+"chars": "bepul qatnashish",
+"font": "HelveticaNeue",
+"weight": 400,
+"size": 24.0,
+"lh": 28.80000114440918,
+"ls": 0.48,
+"align": "CENTER",
+"case": "UPPER"
+}
+},
+"41:24": {
+"name": "Arrow 2",
+"type": "VECTOR",
+"frame": "41:2",
+"box": [
+318.0,
+1273.0,
+19.0,
+0.0
+],
+"rb": [
+317.0,
+1265.64,
+21.0,
+14.73
+]
+},
+"41:25": {
+"name": "Rectangle 240650020",
+"type": "RECTANGLE",
+"frame": "41:2",
+"box": [
+24.0,
+654.0,
+343.0,
+85.0
+],
+"rb": [
+24.0,
+654.0,
+343.0,
+85.0
+]
+},
+"41:26": {
+"name": "maxsus Sovg’a:",
+"type": "TEXT",
+"frame": "41:2",
+"box": [
+140.0,
+659.0,
+166.0,
+38.0
+],
+"rb": [
+141.36,
+665.28,
+163.27,
+23.04
+],
+"text": {
+"chars": "maxsus Sovg’a:",
+"font": "Bebas Neue",
+"weight": 400,
+"size": 32.0,
+"lh": 38.400001525878906,
+"ls": 0.64,
+"align": "CENTER",
+"case": "UPPER"
+}
+},
+"41:27": {
+"name": "vebinarga qatnashganlar orasidan grant yutish imkoni",
+"type": "TEXT",
+"frame": "41:2",
+"box": [
+140.0,
+693.0,
+213.0,
+38.0
+],
+"rb": [
+140.19,
+697.22,
+208.61,
+34.41
+],
+"text": {
+"chars": "vebinarga qatnashganlar orasidan grant yutish imkoni",
+"font": "Mulish",
+"weight": 400,
+"size": 16.0,
+"lh": 19.200000762939453,
+"ls": 0.0,
+"align": "LEFT",
+"case": ""
+}
+},
+"41:28": {
+"name": "ChatGPT Image Sep 15, 2026, 04_31_57 PM-Photoroom 1",
+"type": "RECTANGLE",
+"frame": "41:2",
+"box": [
+25.0,
+659.0,
+111.0,
+74.0
+],
+"rb": [
+25.0,
+659.0,
+111.0,
+74.0
+]
+},
+"41:29": {
+"name": "vebinarda siz",
+"type": "TEXT",
+"frame": "41:2",
+"box": [
+116.0,
+765.0,
+158.0,
+39.0
+],
+"rb": [
+117.04,
+773.91,
+155.9,
+26.38
+],
+"text": {
+"chars": "vebinarda siz",
+"font": "Antonio",
+"weight": 700,
+"size": 30.0,
+"lh": 38.818359375,
+"ls": 0.0,
+"align": "CENTER",
+"case": "UPPER"
+}
+},
+"41:30": {
+"name": "Frame 2",
+"type": "FRAME",
+"frame": "41:2",
+"box": [
+47.0,
+822.0,
+297.0,
+383.0
+],
+"rb": [
+24.1,
+799.1,
+342.8,
+428.8
+]
+},
+"41:31": {
+"name": "Group 2089345769",
+"type": "GROUP",
+"frame": "41:2",
+"box": [
+47.0,
+822.0,
+297.0,
+113.0
+],
+"rb": [
+24.1,
+799.1,
+342.8,
+158.8
+]
+},
+"41:32": {
+"name": "Rectangle 240650021",
+"type": "RECTANGLE",
+"frame": "41:2",
+"box": [
+47.0,
+822.0,
+297.0,
+113.0
+],
+"rb": [
+24.1,
+799.1,
+342.8,
+158.8
+]
+},
+"41:33": {
+"name": "Logistikani o‘rganib, oyiga qancha daromad topish mumkinligini haqida bilib olasiz.",
+"type": "TEXT",
+"frame": "41:2",
+"box": [
+62.0,
+860.0,
+264.0,
+66.0
+],
+"rb": [
+62.66,
+865.22,
+260.15,
+59.23
+],
+"text": {
+"chars": "Logistikani o‘rganib, oyiga qancha daromad topish mumkinligini haqida bilib olasiz.",
+"font": "Mulish",
+"weight": 400,
+"size": 16.0,
+"lh": 22.399999618530273,
+"ls": 0.0,
+"align": "LEFT",
+"case": ""
+}
+},
+"41:34": {
+"name": "Ellipse 1",
+"type": "ELLIPSE",
+"frame": "41:2",
+"box": [
+309.0,
+828.0,
+27.0,
+27.0
+],
+"rb": [
+309.0,
+828.0,
+27.0,
+27.0
+]
+},
+"41:35": {
+"name": "Ellipse 2",
+"type": "ELLIPSE",
+"frame": "41:2",
+"box": [
+295.0,
+828.0,
+27.0,
+27.0
+],
+"rb": [
+295.0,
+828.0,
+27.0,
+27.0
+]
+},
+"41:36": {
+"name": "01",
+"type": "TEXT",
+"frame": "41:2",
+"box": [
+301.0,
+830.0,
+14.0,
+21.0
+],
+"rb": [
+302.22,
+835.09,
+11.2,
+14.08
+],
+"text": {
+"chars": "01",
+"font": "Antonio",
+"weight": 700,
+"size": 16.0,
+"lh": 20.703125,
+"ls": 0.0,
+"align": "CENTER",
+"case": "UPPER"
+}
+},
+"41:37": {
+"name": "Group 2089345768",
+"type": "GROUP",
+"frame": "41:2",
+"box": [
+47.0,
+953.0,
+297.0,
+117.0
+],
+"rb": [
+24.1,
+930.1,
+342.8,
+162.8
+]
+},
+"41:38": {
+"name": "Rectangle 240650022",
+"type": "RECTANGLE",
+"frame": "41:2",
+"box": [
+47.0,
+953.0,
+297.0,
+117.0
+],
+"rb": [
+24.1,
+930.1,
+342.8,
+162.8
+]
+},
+"41:39": {
+"name": "Logistika sohasi sizga mos keladimi va bu yo‘nalishda ishlay olasizmi — aniqlab olasiz.",
+"type": "TEXT",
+"frame": "41:2",
+"box": [
+62.0,
+993.0,
+269.0,
+66.0
+],
+"rb": [
+62.0,
+998.22,
+266.59,
+59.23
+],
+"text": {
+"chars": "Logistika sohasi sizga mos keladimi va bu yo‘nalishda ishlay olasizmi\n— aniqlab olasiz.",
+"font": "Mulish",
+"weight": 400,
+"size": 16.0,
+"lh": 22.399999618530273,
+"ls": 0.0,
+"align": "LEFT",
+"case": ""
+}
+},
+"41:40": {
+"name": "Ellipse 3",
+"type": "ELLIPSE",
+"frame": "41:2",
+"box": [
+309.0,
+959.0,
+27.0,
+27.0
+],
+"rb": [
+309.0,
+959.0,
+27.0,
+27.0
+]
+},
+"41:41": {
+"name": "Ellipse 4",
+"type": "ELLIPSE",
+"frame": "41:2",
+"box": [
+295.0,
+959.0,
+27.0,
+27.0
+],
+"rb": [
+295.0,
+959.0,
+27.0,
+27.0
+]
+},
+"41:42": {
+"name": "02",
+"type": "TEXT",
+"frame": "41:2",
+"box": [
+300.0,
+961.0,
+16.0,
+21.0
+],
+"rb": [
+301.14,
+966.09,
+13.76,
+14.08
+],
+"text": {
+"chars": "02",
+"font": "Antonio",
+"weight": 700,
+"size": 16.0,
+"lh": 20.703125,
+"ls": 0.0,
+"align": "CENTER",
+"case": "UPPER"
+}
+},
+"41:43": {
+"name": "Group 2089345767",
+"type": "GROUP",
+"frame": "41:2",
+"box": [
+47.0,
+1088.0,
+297.0,
+117.0
+],
+"rb": [
+24.1,
+1065.1,
+342.8,
+162.8
+]
+},
+"41:44": {
+"name": "Rectangle 240650023",
+"type": "RECTANGLE",
+"frame": "41:2",
+"box": [
+47.0,
+1088.0,
+297.0,
+117.0
+],
+"rb": [
+24.1,
+1065.1,
+342.8,
+162.8
+]
+},
+"41:45": {
+"name": "Logistikani bepul o‘rganish uchun $10 000 lik grantni yutib olish shartlari bilan tanishasiz.",
+"type": "TEXT",
+"frame": "41:2",
+"box": [
+62.0,
+1128.0,
+244.0,
+66.0
+],
+"rb": [
+62.66,
+1133.22,
+234.28,
+55.94
+],
+"text": {
+"chars": "Logistikani bepul o‘rganish uchun $10 000 lik grantni yutib olish shartlari bilan tanishasiz.",
+"font": "Mulish",
+"weight": 400,
+"size": 16.0,
+"lh": 22.399999618530273,
+"ls": 0.0,
+"align": "LEFT",
+"case": ""
+}
+},
+"41:46": {
+"name": "Ellipse 5",
+"type": "ELLIPSE",
+"frame": "41:2",
+"box": [
+309.0,
+1094.0,
+27.0,
+27.0
+],
+"rb": [
+309.0,
+1094.0,
+27.0,
+27.0
+]
+},
+"41:47": {
+"name": "Ellipse 6",
+"type": "ELLIPSE",
+"frame": "41:2",
+"box": [
+295.0,
+1094.0,
+27.0,
+27.0
+],
+"rb": [
+295.0,
+1094.0,
+27.0,
+27.0
+]
+},
+"41:48": {
+"name": "03",
+"type": "TEXT",
+"frame": "41:2",
+"box": [
+300.0,
+1096.0,
+16.0,
+21.0
+],
+"rb": [
+301.11,
+1101.09,
+13.86,
+14.08
+],
+"text": {
+"chars": "03",
+"font": "Antonio",
+"weight": 700,
+"size": 16.0,
+"lh": 20.703125,
+"ls": 0.0,
+"align": "CENTER",
+"case": "UPPER"
+}
+},
+"41:49": {
+"name": "Site 2",
+"type": "FRAME",
+"frame": "41:49",
+"box": [
+0.0,
+0.0,
+390.0,
+1764.0
+],
+"rb": [
+0.0,
+0.0,
+390.0,
+1764.0
+]
+},
+"41:50": {
+"name": "ChatGPT Image Sep 15, 2026, 04_41_30 PM 1",
+"type": "RECTANGLE",
+"frame": "41:49",
+"box": [
+0.0,
+-13.0,
+389.0,
+692.0
+],
+"rb": [
+0.0,
+0.0,
+389.0,
+679.0
+]
+},
+"41:51": {
+"name": "Rectangle 240650024",
+"type": "RECTANGLE",
+"frame": "41:49",
+"box": [
+0.0,
+0.0,
+389.0,
+230.0
+],
+"rb": [
+0.0,
+0.0,
+389.0,
+230.0
+]
+},
+"41:52": {
+"name": "Group 2",
+"type": "GROUP",
+"frame": "41:49",
+"box": [
+20.0,
+17.0,
+349.0,
+40.0
+],
+"rb": [
+20.0,
+17.0,
+349.0,
+40.0
+]
+},
+"41:53": {
+"name": "Rectangle 1",
+"type": "RECTANGLE",
+"frame": "41:49",
+"box": [
+20.0,
+18.0,
+349.0,
+38.0
+],
+"rb": [
+20.0,
+18.0,
+349.0,
+38.0
+]
+},
+"41:54": {
+"name": "Soat: 20:00",
+"type": "TEXT",
+"frame": "41:49",
+"box": [
+268.0,
+17.0,
+86.0,
+40.0
+],
+"rb": [
+269.13,
+31.58,
+83.74,
+11.57
+],
+"text": {
+"chars": "Soat: 20:00",
+"font": "Montserrat",
+"weight": 600,
+"size": 16.0,
+"lh": 40.0,
+"ls": 0.0,
+"align": "CENTER",
+"case": "UPPER"
+}
+},
+"41:55": {
+"name": "Group 13",
+"type": "GROUP",
+"frame": "41:49",
+"box": [
+36.0,
+23.0,
+113.0,
+28.0
+],
+"rb": [
+36.0,
+23.0,
+113.0,
+28.0
+]
+},
+"41:56": {
+"name": "19-Sentabr",
+"type": "TEXT",
+"frame": "41:49",
+"box": [
+63.0,
+23.0,
+86.0,
+28.0
+],
+"rb": [
+65.18,
+31.22,
+83.5,
+11.92
+],
+"text": {
+"chars": "19-Sentabr",
+"font": "Mulish",
+"weight": 600,
+"size": 16.0,
+"lh": 28.0,
+"ls": 0.0,
+"align": "CENTER",
+"case": "UPPER"
+}
+},
+"41:57": {
+"name": "Group 1",
+"type": "GROUP",
+"frame": "41:49",
+"box": [
+36.0,
+27.0,
+20.0,
+20.0
+],
+"rb": [
+36.0,
+27.0,
+20.0,
+20.0
+]
+},
+"41:58": {
+"name": "Vector",
+"type": "VECTOR",
+"frame": "41:49",
+"box": [
+41.0,
+37.0,
+11.0,
+5.0
+],
+"rb": [
+41.0,
+37.0,
+11.0,
+5.0
+]
+},
+"41:59": {
+"name": "Vector",
+"type": "VECTOR",
+"frame": "41:49",
+"box": [
+36.0,
+27.0,
+20.0,
+20.0
+],
+"rb": [
+36.0,
+27.0,
+20.0,
+20.0
+]
+},
+"41:60": {
+"name": "Group 2089345771",
+"type": "GROUP",
+"frame": "41:49",
+"box": [
+16.0,
+77.0,
+359.0,
+117.0
+],
+"rb": [
+16.0,
+77.0,
+359.0,
+117.0
+]
+},
+"41:61": {
+"name": "10,000$ lik grant",
+"type": "TEXT",
+"frame": "41:49",
+"box": [
+20.0,
+77.0,
+348.0,
+68.0
+],
+"rb": [
+22.58,
+81.16,
+344.61,
+58.8
+],
+"text": {
+"chars": "10,000$ lik grant",
+"font": "Big Shoulders Display",
+"weight": 700,
+"size": 57.0,
+"lh": 68.22900390625,
+"ls": 0.0,
+"align": "CENTER",
+"case": "UPPER"
+}
+},
+"41:62": {
+"name": "Group 2089345770",
+"type": "GROUP",
+"frame": "41:49",
+"box": [
+16.0,
+153.0,
+359.0,
+41.0
+],
+"rb": [
+16.0,
+153.0,
+359.0,
+41.0
+]
+},
+"41:63": {
+"name": "Rectangle 240650025",
+"type": "RECTANGLE",
+"frame": "41:49",
+"box": [
+16.0,
+153.0,
+359.0,
+41.0
+],
+"rb": [
+16.0,
+153.0,
+359.0,
+41.0
+]
+},
+"41:64": {
+"name": "Logistikani bepulga o’rganishingiz uchun",
+"type": "TEXT",
+"frame": "41:49",
+"box": [
+22.0,
+159.0,
+347.0,
+29.0
+],
+"rb": [
+23.14,
+163.6,
+344.72,
+19.61
+],
+"text": {
+"chars": "Logistikani bepulga o’rganishingiz uchun",
+"font": "Big Shoulders Display",
+"weight": 700,
+"size": 24.0,
+"lh": 28.72800064086914,
+"ls": 0.0,
+"align": "CENTER",
+"case": "UPPER"
+}
+},
+"41:65": {
+"name": "Ellipse 7",
+"type": "ELLIPSE",
+"frame": "41:49",
+"box": [
+124.0,
+333.0,
+144.0,
+144.0
+],
+"rb": [
+52.7,
+261.7,
+286.6,
+286.6
+]
+},
+"41:66": {
+"name": "ChatGPT Image Sep 15, 2026, 04_50_01 PM (1) 1",
+"type": "RECTANGLE",
+"frame": "41:49",
+"box": [
+40.0,
+211.0,
+311.0,
+370.0
+],
+"rb": [
+40.0,
+211.0,
+311.0,
+370.0
+]
+},
+"41:67": {
+"name": "Group 2089345692",
+"type": "GROUP",
+"frame": "41:49",
+"box": [
+1.0,
+471.0,
+389.0,
+208.0
+],
+"rb": [
+1.0,
+471.0,
+389.0,
+208.0
+]
+},
+"41:68": {
+"name": "Rectangle 240650025",
+"type": "RECTANGLE",
+"frame": "41:49",
+"box": [
+1.0,
+471.0,
+389.0,
+208.0
+],
+"rb": [
+1.0,
+471.0,
+389.0,
+208.0
+]
+},
+"41:69": {
+"name": "Rectangle 10",
+"type": "RECTANGLE",
+"frame": "41:49",
+"box": [
+26.0,
+538.0,
+338.0,
+78.0
+],
+"rb": [
+26.0,
+538.0,
+338.0,
+83.0
+]
+},
+"41:70": {
+"name": "Group 2089345688",
+"type": "GROUP",
+"frame": "41:49",
+"box": [
+72.0,
+564.0,
+246.0,
+27.0
+],
+"rb": [
+72.0,
+564.0,
+246.0,
+27.0
+]
+},
+"41:71": {
+"name": "bepul qatnashish",
+"type": "TEXT",
+"frame": "41:49",
+"box": [
+72.0,
+564.0,
+200.0,
+27.0
+],
+"rb": [
+73.56,
+568.31,
+196.88,
+16.59
+],
+"text": {
+"chars": "bepul qatnashish",
+"font": "Gilroy",
+"weight": 600,
+"size": 22.0,
+"lh": 26.950000762939453,
+"ls": 0.0,
+"align": "CENTER",
+"case": "UPPER"
+}
+},
+"41:72": {
+"name": "Group 2089345772",
+"type": "GROUP",
+"frame": "41:49",
+"box": [
+287.0,
+567.0,
+31.0,
+19.0
+],
+"rb": [
+287.0,
+567.0,
+31.0,
+19.0
+]
+},
+"41:73": {
+"name": "Vector",
+"type": "VECTOR",
+"frame": "41:49",
+"box": [
+287.0,
+567.0,
+9.0,
+19.0
+],
+"rb": [
+287.0,
+567.0,
+9.0,
+19.0
+]
+},
+"41:74": {
+"name": "Vector",
+"type": "VECTOR",
+"frame": "41:49",
+"box": [
+298.0,
+567.0,
+9.0,
+19.0
+],
+"rb": [
+298.0,
+567.0,
+9.0,
+19.0
+]
+},
+"41:75": {
+"name": "Vector",
+"type": "VECTOR",
+"frame": "41:49",
+"box": [
+309.0,
+567.0,
+9.0,
+19.0
+],
+"rb": [
+309.0,
+567.0,
+9.0,
+19.0
+]
+},
+"41:76": {
+"name": "Group 2089345794",
+"type": "GROUP",
+"frame": "41:49",
+"box": [
+26.0,
+638.0,
+338.0,
+90.0
+],
+"rb": [
+25.0,
+637.0,
+340.0,
+92.0
+]
+},
+"41:77": {
+"name": "Rectangle 15",
+"type": "RECTANGLE",
+"frame": "41:49",
+"box": [
+26.0,
+638.0,
+338.0,
+90.0
+],
+"rb": [
+25.0,
+637.0,
+340.0,
+92.0
+]
+},
+"41:78": {
+"name": "Mask group",
+"type": "GROUP",
+"frame": "41:49",
+"box": [
+26.0,
+638.0,
+338.0,
+90.0
+],
+"rb": [
+26.0,
+638.0,
+338.0,
+90.0
+]
+},
+"41:79": {
+"name": "Rectangle 16",
+"type": "RECTANGLE",
+"frame": "41:49",
+"box": [
+26.0,
+638.0,
+338.0,
+90.0
+]
+},
+"41:80": {
+"name": "image-Photoroom - 2026-04-28T101140.744 1",
+"type": "RECTANGLE",
+"frame": "41:49",
+"box": [
+244.0,
+625.0,
+147.26,
+150.71
+],
+"rb": [
+244.0,
+638.0,
+120.0,
+90.0
+]
+},
+"41:81": {
+"name": "maxsus Sovg’a:",
+"type": "TEXT",
+"frame": "41:49",
+"box": [
+40.0,
+644.0,
+166.0,
+38.0
+],
+"rb": [
+41.36,
+650.28,
+163.27,
+23.04
+],
+"text": {
+"chars": "maxsus Sovg’a:",
+"font": "Bebas Neue",
+"weight": 400,
+"size": 32.0,
+"lh": 38.400001525878906,
+"ls": 0.64,
+"align": "CENTER",
+"case": "UPPER"
+}
+},
+"41:82": {
+"name": "vebinarga qatnashganlar orasidan grant yutish imkoni",
+"type": "TEXT",
+"frame": "41:49",
+"box": [
+40.0,
+678.0,
+213.0,
+42.0
+],
+"rb": [
+40.19,
+683.22,
+208.61,
+36.41
+],
+"text": {
+"chars": "vebinarga qatnashganlar orasidan grant yutish imkoni",
+"font": "Mulish",
+"weight": 400,
+"size": 16.0,
+"lh": 20.799999237060547,
+"ls": 0.0,
+"align": "LEFT",
+"case": ""
+}
+},
+"41:83": {
+"name": "vebinarda siz",
+"type": "TEXT",
+"frame": "41:49",
+"box": [
+116.0,
+752.0,
+158.0,
+39.0
+],
+"rb": [
+117.04,
+760.91,
+155.9,
+26.38
+],
+"text": {
+"chars": "vebinarda siz",
+"font": "Antonio",
+"weight": 700,
+"size": 30.0,
+"lh": 38.818359375,
+"ls": 0.0,
+"align": "CENTER",
+"case": "UPPER"
+}
+},
+"41:84": {
+"name": "Group 2089345796",
+"type": "GROUP",
+"frame": "41:49",
+"box": [
+94.0,
+819.0,
+203.0,
+203.0
+],
+"rb": [
+94.0,
+819.0,
+203.0,
+203.0
+]
+},
+"41:85": {
+"name": "Group 2089345795",
+"type": "GROUP",
+"frame": "41:49",
+"box": [
+94.0,
+819.0,
+203.0,
+203.0
+],
+"rb": [
+94.0,
+819.0,
+203.0,
+203.0
+]
+},
+"41:86": {
+"name": "Ellipse 8",
+"type": "ELLIPSE",
+"frame": "41:49",
+"box": [
+94.0,
+819.0,
+203.0,
+203.0
+],
+"rb": [
+94.0,
+819.0,
+203.0,
+203.0
+]
+},
+"41:87": {
+"name": "Ellipse 9",
+"type": "ELLIPSE",
+"frame": "41:49",
+"box": [
+115.0,
+840.0,
+161.0,
+161.0
+],
+"rb": [
+115.0,
+840.0,
+161.0,
+161.0
+]
+},
+"41:88": {
+"name": "Ellipse 10",
+"type": "ELLIPSE",
+"frame": "41:49",
+"box": [
+136.0,
+861.0,
+119.0,
+119.0
+],
+"rb": [
+136.0,
+861.0,
+119.0,
+119.0
+]
+},
+"41:89": {
+"name": "ChatGPT Image Sep 15, 2026, 05_00_25 PM (1) 1",
+"type": "RECTANGLE",
+"frame": "41:49",
+"box": [
+111.0,
+850.0,
+156.0,
+128.0
+],
+"rb": [
+111.0,
+850.0,
+156.0,
+128.0
+]
+},
+"41:90": {
+"name": "Group 2089345797",
+"type": "GROUP",
+"frame": "41:49",
+"box": [
+94.0,
+1094.0,
+203.0,
+203.0
+],
+"rb": [
+94.0,
+1094.0,
+203.0,
+203.0
+]
+},
+"41:91": {
+"name": "Group 2089345795",
+"type": "GROUP",
+"frame": "41:49",
+"box": [
+94.0,
+1094.0,
+203.0,
+203.0
+],
+"rb": [
+94.0,
+1094.0,
+203.0,
+203.0
+]
+},
+"41:92": {
+"name": "Ellipse 8",
+"type": "ELLIPSE",
+"frame": "41:49",
+"box": [
+94.0,
+1094.0,
+203.0,
+203.0
+],
+"rb": [
+94.0,
+1094.0,
+203.0,
+203.0
+]
+},
+"41:93": {
+"name": "Ellipse 9",
+"type": "ELLIPSE",
+"frame": "41:49",
+"box": [
+115.0,
+1115.0,
+161.0,
+161.0
+],
+"rb": [
+115.0,
+1115.0,
+161.0,
+161.0
+]
+},
+"41:94": {
+"name": "Ellipse 10",
+"type": "ELLIPSE",
+"frame": "41:49",
+"box": [
+136.0,
+1136.0,
+119.0,
+119.0
+],
+"rb": [
+136.0,
+1136.0,
+119.0,
+119.0
+]
+},
+"41:95": {
+"name": "ChatGPT Image Sep 15, 2026, 05_00_25 PM (1) 1",
+"type": "RECTANGLE",
+"frame": "41:49",
+"box": [
+111.0,
+1125.0,
+156.0,
+128.0
+],
+"rb": [
+111.0,
+1125.0,
+156.0,
+128.0
+]
+},
+"41:96": {
+"name": "Group 2089345798",
+"type": "GROUP",
+"frame": "41:49",
+"box": [
+94.0,
+1369.0,
+203.0,
+203.0
+],
+"rb": [
+94.0,
+1369.0,
+203.0,
+203.0
+]
+},
+"41:97": {
+"name": "Group 2089345795",
+"type": "GROUP",
+"frame": "41:49",
+"box": [
+94.0,
+1369.0,
+203.0,
+203.0
+],
+"rb": [
+94.0,
+1369.0,
+203.0,
+203.0
+]
+},
+"41:98": {
+"name": "Ellipse 8",
+"type": "ELLIPSE",
+"frame": "41:49",
+"box": [
+94.0,
+1369.0,
+203.0,
+203.0
+],
+"rb": [
+94.0,
+1369.0,
+203.0,
+203.0
+]
+},
+"41:99": {
+"name": "Ellipse 9",
+"type": "ELLIPSE",
+"frame": "41:49",
+"box": [
+115.0,
+1390.0,
+161.0,
+161.0
+],
+"rb": [
+115.0,
+1390.0,
+161.0,
+161.0
+]
+},
+"41:100": {
+"name": "Ellipse 10",
+"type": "ELLIPSE",
+"frame": "41:49",
+"box": [
+136.0,
+1411.0,
+119.0,
+119.0
+],
+"rb": [
+136.0,
+1411.0,
+119.0,
+119.0
+]
+},
+"41:101": {
+"name": "ChatGPT Image Sep 15, 2026, 05_00_25 PM (1) 1",
+"type": "RECTANGLE",
+"frame": "41:49",
+"box": [
+111.0,
+1400.0,
+156.0,
+128.0
+],
+"rb": [
+111.0,
+1400.0,
+156.0,
+128.0
+]
+},
+"41:102": {
+"name": "Logistikani o‘rganib, oyiga qancha daromad topish mumkinligini haqida bilib olasiz.",
+"type": "TEXT",
+"frame": "41:49",
+"box": [
+63.0,
+988.0,
+264.0,
+66.0
+],
+"rb": [
+65.37,
+993.22,
+259.56,
+59.23
+],
+"text": {
+"chars": "Logistikani o‘rganib, oyiga qancha daromad topish mumkinligini haqida bilib olasiz.",
+"font": "Mulish",
+"weight": 400,
+"size": 16.0,
+"lh": 22.399999618530273,
+"ls": 0.0,
+"align": "CENTER",
+"case": ""
+}
+},
+"41:103": {
+"name": "Logistika sohasi sizga mos keladimi va bu yo‘nalishda ishlay olasizmi — aniqlab olasiz.",
+"type": "TEXT",
+"frame": "41:49",
+"box": [
+63.0,
+1263.0,
+264.0,
+66.0
+],
+"rb": [
+73.17,
+1268.22,
+244.77,
+59.23
+],
+"text": {
+"chars": "Logistika sohasi sizga mos keladimi va bu yo‘nalishda ishlay olasizmi — aniqlab olasiz.",
+"font": "Mulish",
+"weight": 400,
+"size": 16.0,
+"lh": 22.399999618530273,
+"ls": 0.0,
+"align": "CENTER",
+"case": ""
+}
+},
+"41:104": {
+"name": "Logistikani bepul o‘rganish uchun $10 000 lik grantni yutib olish shartlari bilan tanishasiz.",
+"type": "TEXT",
+"frame": "41:49",
+"box": [
+63.0,
+1538.0,
+264.0,
+66.0
+],
+"rb": [
+73.58,
+1543.22,
+243.03,
+55.92
+],
+"text": {
+"chars": "Logistikani bepul o‘rganish uchun $10 000 lik grantni yutib olish shartlari bilan tanishasiz.",
+"font": "Mulish",
+"weight": 400,
+"size": 16.0,
+"lh": 22.399999618530273,
+"ls": 0.0,
+"align": "CENTER",
+"case": ""
+}
+},
+"41:105": {
+"name": "Group 2089345799",
+"type": "GROUP",
+"frame": "41:49",
+"box": [
+26.0,
+1630.0,
+338.0,
+78.0
+],
+"rb": [
+26.0,
+1630.0,
+338.0,
+83.0
+]
+},
+"41:106": {
+"name": "Rectangle 10",
+"type": "RECTANGLE",
+"frame": "41:49",
+"box": [
+26.0,
+1630.0,
+338.0,
+78.0
+],
+"rb": [
+26.0,
+1630.0,
+338.0,
+83.0
+]
+},
+"41:107": {
+"name": "Group 2089345688",
+"type": "GROUP",
+"frame": "41:49",
+"box": [
+72.0,
+1656.0,
+246.0,
+27.0
+],
+"rb": [
+72.0,
+1656.0,
+246.0,
+27.0
+]
+},
+"41:108": {
+"name": "bepul qatnashish",
+"type": "TEXT",
+"frame": "41:49",
+"box": [
+72.0,
+1656.0,
+200.0,
+27.0
+],
+"rb": [
+73.56,
+1660.31,
+196.88,
+16.59
+],
+"text": {
+"chars": "bepul qatnashish",
+"font": "Gilroy",
+"weight": 600,
+"size": 22.0,
+"lh": 26.950000762939453,
+"ls": 0.0,
+"align": "CENTER",
+"case": "UPPER"
+}
+},
+"41:109": {
+"name": "Group 2089345772",
+"type": "GROUP",
+"frame": "41:49",
+"box": [
+287.0,
+1659.0,
+31.0,
+19.0
+],
+"rb": [
+287.0,
+1659.0,
+31.0,
+19.0
+]
+},
+"41:110": {
+"name": "Vector",
+"type": "VECTOR",
+"frame": "41:49",
+"box": [
+287.0,
+1659.0,
+9.0,
+19.0
+],
+"rb": [
+287.0,
+1659.0,
+9.0,
+19.0
+]
+},
+"41:111": {
+"name": "Vector",
+"type": "VECTOR",
+"frame": "41:49",
+"box": [
+298.0,
+1659.0,
+9.0,
+19.0
+],
+"rb": [
+298.0,
+1659.0,
+9.0,
+19.0
+]
+},
+"41:112": {
+"name": "Vector",
+"type": "VECTOR",
+"frame": "41:49",
+"box": [
+309.0,
+1659.0,
+9.0,
+19.0
+],
+"rb": [
+309.0,
+1659.0,
+9.0,
+19.0
+]
+},
+"41:113": {
+"name": "Site 3",
+"type": "FRAME",
+"frame": "41:113",
+"box": [
+0.0,
+0.0,
+390.0,
+1880.0
+],
+"rb": [
+0.0,
+0.0,
+390.0,
+1880.0
+]
+},
+"41:114": {
+"name": "ChatGPT Image Sep 15, 2026, 05_20_42 PM 1",
+"type": "RECTANGLE",
+"frame": "41:113",
+"box": [
+0.0,
+-13.0,
+390.0,
+622.0
+],
+"rb": [
+0.0,
+0.0,
+390.0,
+609.0
+]
+},
+"41:115": {
+"name": "Rectangle 240650024",
+"type": "RECTANGLE",
+"frame": "41:113",
+"box": [
+0.0,
+0.0,
+390.0,
+206.0
+],
+"rb": [
+0.0,
+0.0,
+390.0,
+206.0
+]
+},
+"41:116": {
+"name": "Rectangle 240650025",
+"type": "RECTANGLE",
+"frame": "41:113",
+"box": [
+0.0,
+508.0,
+390.0,
+101.0
+],
+"rb": [
+0.0,
+508.0,
+390.0,
+101.0
+]
+},
+"41:117": {
+"name": "Rectangle 240650027",
+"type": "RECTANGLE",
+"frame": "41:113",
+"box": [
+0.0,
+771.0,
+390.0,
+1109.0
+],
+"rb": [
+0.0,
+771.0,
+390.0,
+1109.0
+]
+},
+"41:118": {
+"name": "Logistikani mutlaqo bepulga o’rganib, boshlang’ich 300$ daromadga chiqish uchun 10,000$ lik grant",
+"type": "TEXT",
+"frame": "41:113",
+"box": [
+12.0,
+65.0,
+365.0,
+93.0
+],
+"rb": [
+17.8,
+69.12,
+353.38,
+87.24
+],
+"text": {
+"chars": "Logistikani mutlaqo bepulga o’rganib, boshlang’ich 300$ daromadga chiqish uchun 10,000$ lik grant",
+"font": "Bebas Neue",
+"weight": 400,
+"size": 28.0,
+"lh": 32.20000076293945,
+"ls": 0.0,
+"align": "CENTER",
+"case": "UPPER"
+}
+},
+"41:119": {
+"name": "Group 1000004588",
+"type": "GROUP",
+"frame": "41:113",
+"box": [
+43.0,
+19.0,
+135.0,
+28.0
+],
+"rb": [
+43.0,
+19.0,
+135.0,
+28.0
+]
+},
+"41:120": {
+"name": "Rectangle 281",
+"type": "RECTANGLE",
+"frame": "41:113",
+"box": [
+43.0,
+19.0,
+135.0,
+28.0
+],
+"rb": [
+43.0,
+19.0,
+135.0,
+28.0
+]
+},
+"41:121": {
+"name": "Group 2089345800",
+"type": "GROUP",
+"frame": "41:113",
+"box": [
+50.0,
+25.0,
+119.96,
+17.12
+],
+"rb": [
+50.0,
+25.0,
+119.96,
+17.45
+]
+},
+"41:122": {
+"name": "Vector",
+"type": "VECTOR",
+"frame": "41:113",
+"box": [
+50.0,
+25.0,
+15.0,
+5.0
+],
+"rb": [
+50.0,
+25.0,
+15.0,
+5.0
+]
+},
+"41:123": {
+"name": "Vector",
+"type": "VECTOR",
+"frame": "41:113",
+"box": [
+50.0,
+31.0,
+15.0,
+9.0
+],
+"rb": [
+50.0,
+31.0,
+15.0,
+9.0
+]
+},
+"41:124": {
+"name": "19-sentyabr",
+"type": "TEXT",
+"frame": "41:113",
+"box": [
+69.96,
+26.12,
+100.0,
+16.0
+],
+"rb": [
+70.63,
+27.12,
+98.41,
+15.33
+],
+"text": {
+"chars": "19-sentyabr",
+"font": "Sora",
+"weight": 400,
+"size": 16.0,
+"lh": 16.0,
+"ls": 0.32,
+"align": "LEFT",
+"case": ""
+}
+},
+"41:125": {
+"name": "Group 2089345622",
+"type": "GROUP",
+"frame": "41:113",
+"box": [
+212.0,
+19.0,
+136.0,
+28.0
+],
+"rb": [
+212.0,
+19.0,
+136.0,
+28.0
+]
+},
+"41:126": {
+"name": "Rectangle 281",
+"type": "RECTANGLE",
+"frame": "41:113",
+"box": [
+212.0,
+19.0,
+136.0,
+28.0
+],
+"rb": [
+212.0,
+19.0,
+136.0,
+28.0
+]
+},
+"41:127": {
+"name": "Vector",
+"type": "VECTOR",
+"frame": "41:113",
+"box": [
+220.0,
+26.0,
+13.0,
+13.0
+],
+"rb": [
+220.0,
+26.0,
+13.0,
+13.0
+]
+},
+"41:128": {
+"name": "Soat: 20:00",
+"type": "TEXT",
+"frame": "41:113",
+"box": [
+239.0,
+26.0,
+99.0,
+16.0
+],
+"rb": [
+239.9,
+27.0,
+96.59,
+12.29
+],
+"text": {
+"chars": "Soat: 20:00",
+"font": "Sora",
+"weight": 400,
+"size": 16.0,
+"lh": 16.0,
+"ls": 0.32,
+"align": "LEFT",
+"case": ""
+}
+},
+"41:129": {
+"name": "Group 2089345784",
+"type": "GROUP",
+"frame": "41:113",
+"box": [
+19.0,
+534.0,
+352.0,
+107.0
+],
+"rb": [
+15.0,
+530.0,
+360.0,
+115.0
+]
+},
+"41:130": {
+"name": "Group 1000005381",
+"type": "GROUP",
+"frame": "41:113",
+"box": [
+23.0,
+556.0,
+343.0,
+85.0
+],
+"rb": [
+23.0,
+556.0,
+343.0,
+89.0
+]
+},
+"41:131": {
+"name": "Group 1000004475",
+"type": "GROUP",
+"frame": "41:113",
+"box": [
+23.0,
+556.0,
+343.0,
+85.0
+],
+"rb": [
+23.0,
+556.0,
+343.0,
+89.0
+]
+},
+"41:132": {
+"name": "Rectangle 23950",
+"type": "RECTANGLE",
+"frame": "41:113",
+"box": [
+23.0,
+556.0,
+343.0,
+85.0
+],
+"rb": [
+23.0,
+556.0,
+343.0,
+89.0
+]
+},
+"41:133": {
+"name": "Group 1000004448",
+"type": "GROUP",
+"frame": "41:113",
+"box": [
+57.0,
+585.0,
+275.0,
+32.0
+],
+"rb": [
+57.0,
+585.0,
+276.0,
+32.0
+]
+},
+"41:134": {
+"name": "bepul qatnashish",
+"type": "TEXT",
+"frame": "41:113",
+"box": [
+57.0,
+585.0,
+245.0,
+29.0
+],
+"rb": [
+58.66,
+591.46,
+241.68,
+19.15
+],
+"text": {
+"chars": "bepul qatnashish",
+"font": "HelveticaNeue",
+"weight": 400,
+"size": 24.0,
+"lh": 28.631999969482422,
+"ls": 0.0,
+"align": "LEFT",
+"case": "UPPER"
+}
+},
+"41:135": {
+"name": "Arrow 1",
+"type": "VECTOR",
+"frame": "41:113",
+"box": [
+314.0,
+600.0,
+18.0,
+0.0
+],
+"rb": [
+313.0,
+592.64,
+20.0,
+14.73
+]
+},
+"41:136": {
+"name": "fluent-mdl2:touch",
+"type": "FRAME",
+"frame": "41:113",
+"box": [
+70.0,
+590.0,
+27.0,
+27.0
+],
+"rb": [
+70.0,
+590.0,
+27.0,
+27.0
+]
+},
+"41:137": {
+"name": "image 54",
+"type": "RECTANGLE",
+"frame": "41:113",
+"box": [
+19.0,
+534.0,
+352.0,
+44.0
+],
+"rb": [
+15.0,
+530.0,
+360.0,
+52.0
+]
+},
+"41:138": {
+"name": "Group 2089345795",
+"type": "GROUP",
+"frame": "41:113",
+"box": [
+19.0,
+1725.0,
+352.0,
+107.0
+],
+"rb": [
+15.0,
+1721.0,
+360.0,
+115.0
+]
+},
+"41:139": {
+"name": "Group 1000005381",
+"type": "GROUP",
+"frame": "41:113",
+"box": [
+23.0,
+1747.0,
+343.0,
+85.0
+],
+"rb": [
+23.0,
+1747.0,
+343.0,
+89.0
+]
+},
+"41:140": {
+"name": "Group 1000004475",
+"type": "GROUP",
+"frame": "41:113",
+"box": [
+23.0,
+1747.0,
+343.0,
+85.0
+],
+"rb": [
+23.0,
+1747.0,
+343.0,
+89.0
+]
+},
+"41:141": {
+"name": "Rectangle 23950",
+"type": "RECTANGLE",
+"frame": "41:113",
+"box": [
+23.0,
+1747.0,
+343.0,
+85.0
+],
+"rb": [
+23.0,
+1747.0,
+343.0,
+89.0
+]
+},
+"41:142": {
+"name": "Group 1000004448",
+"type": "GROUP",
+"frame": "41:113",
+"box": [
+57.0,
+1776.0,
+275.0,
+32.0
+],
+"rb": [
+57.0,
+1776.0,
+276.0,
+32.0
+]
+},
+"41:143": {
+"name": "bepul qatnashish",
+"type": "TEXT",
+"frame": "41:113",
+"box": [
+57.0,
+1776.0,
+245.0,
+29.0
+],
+"rb": [
+58.66,
+1782.46,
+241.68,
+19.15
+],
+"text": {
+"chars": "bepul qatnashish",
+"font": "HelveticaNeue",
+"weight": 400,
+"size": 24.0,
+"lh": 28.631999969482422,
+"ls": 0.0,
+"align": "LEFT",
+"case": "UPPER"
+}
+},
+"41:144": {
+"name": "Arrow 1",
+"type": "VECTOR",
+"frame": "41:113",
+"box": [
+314.0,
+1791.0,
+18.0,
+0.0
+],
+"rb": [
+313.0,
+1783.64,
+20.0,
+14.73
+]
+},
+"41:145": {
+"name": "fluent-mdl2:touch",
+"type": "FRAME",
+"frame": "41:113",
+"box": [
+70.0,
+1781.0,
+27.0,
+27.0
+],
+"rb": [
+70.0,
+1781.0,
+27.0,
+27.0
+]
+},
+"41:146": {
+"name": "image 54",
+"type": "RECTANGLE",
+"frame": "41:113",
+"box": [
+19.0,
+1725.0,
+352.0,
+44.0
+],
+"rb": [
+15.0,
+1721.0,
+360.0,
+52.0
+]
+},
+"41:147": {
+"name": "Group 2089345794",
+"type": "GROUP",
+"frame": "41:113",
+"box": [
+24.0,
+659.0,
+342.0,
+90.0
+],
+"rb": [
+23.0,
+658.0,
+344.0,
+92.0
+]
+},
+"41:148": {
+"name": "Rectangle 15",
+"type": "RECTANGLE",
+"frame": "41:113",
+"box": [
+24.0,
+659.0,
+342.0,
+90.0
+],
+"rb": [
+23.0,
+658.0,
+344.0,
+92.0
+]
+},
+"41:149": {
+"name": "Mask group",
+"type": "GROUP",
+"frame": "41:113",
+"box": [
+24.0,
+659.0,
+342.0,
+90.0
+],
+"rb": [
+24.0,
+659.0,
+342.0,
+90.0
+]
+},
+"41:150": {
+"name": "Rectangle 16",
+"type": "RECTANGLE",
+"frame": "41:113",
+"box": [
+24.0,
+659.0,
+342.0,
+90.0
+]
+},
+"41:151": {
+"name": "maxsus Sovg’a:",
+"type": "TEXT",
+"frame": "41:113",
+"box": [
+146.0,
+665.0,
+166.0,
+38.0
+],
+"rb": [
+147.36,
+671.28,
+163.27,
+23.04
+],
+"text": {
+"chars": "maxsus Sovg’a:",
+"font": "Bebas Neue",
+"weight": 400,
+"size": 32.0,
+"lh": 38.400001525878906,
+"ls": 0.64,
+"align": "CENTER",
+"case": "UPPER"
+}
+},
+"41:152": {
+"name": "vebinarga qatnashganlar orasidan grant yutish imkoni",
+"type": "TEXT",
+"frame": "41:113",
+"box": [
+146.0,
+699.0,
+213.0,
+42.0
+],
+"rb": [
+146.19,
+704.22,
+208.61,
+36.41
+],
+"text": {
+"chars": "vebinarga qatnashganlar orasidan grant yutish imkoni",
+"font": "Mulish",
+"weight": 400,
+"size": 16.0,
+"lh": 20.799999237060547,
+"ls": 0.0,
+"align": "LEFT",
+"case": ""
+}
+},
+"41:153": {
+"name": "ChatGPT Image Sep 15, 2026, 05_00_25 PM (1) 1",
+"type": "RECTANGLE",
+"frame": "41:113",
+"box": [
+33.0,
+661.0,
+101.0,
+83.0
+],
+"rb": [
+33.0,
+661.0,
+101.0,
+83.0
+]
+},
+"41:154": {
+"name": "vebinarda siz",
+"type": "TEXT",
+"frame": "41:113",
+"box": [
+101.0,
+783.0,
+188.0,
+50.0
+],
+"rb": [
+101.72,
+791.18,
+186.17,
+30.24
+],
+"text": {
+"chars": "vebinarda siz",
+"font": "Bebas Neue",
+"weight": 400,
+"size": 42.0,
+"lh": 50.400001525878906,
+"ls": 0.0,
+"align": "CENTER",
+"case": "UPPER"
+}
+},
+"41:155": {
+"name": "Group 2089345801",
+"type": "GROUP",
+"frame": "41:113",
+"box": [
+34.0,
+841.0,
+323.0,
+278.0
+],
+"rb": [
+34.0,
+841.0,
+323.0,
+278.0
+]
+},
+"41:156": {
+"name": "Rectangle 240650028",
+"type": "RECTANGLE",
+"frame": "41:113",
+"box": [
+34.0,
+841.0,
+323.0,
+278.0
+],
+"rb": [
+34.0,
+841.0,
+323.0,
+278.0
+]
+},
+"41:157": {
+"name": "Mask group",
+"type": "GROUP",
+"frame": "41:113",
+"box": [
+48.0,
+855.0,
+295.0,
+174.0
+],
+"rb": [
+48.0,
+855.0,
+295.0,
+174.0
+]
+},
+"41:158": {
+"name": "Rectangle 240650029",
+"type": "RECTANGLE",
+"frame": "41:113",
+"box": [
+48.0,
+855.0,
+295.0,
+174.0
+]
+},
+"41:159": {
+"name": "ChatGPT Image Sep 15, 2026, 05_31_49 PM 1",
+"type": "RECTANGLE",
+"frame": "41:113",
+"box": [
+0.0,
+849.0,
+373.0,
+560.0
+],
+"rb": [
+48.0,
+855.0,
+295.0,
+174.0
+]
+},
+"41:160": {
+"name": "Logistikani o‘rganib, oyiga qancha daromad topish mumkinligini haqida bilib olasiz.",
+"type": "TEXT",
+"frame": "41:113",
+"box": [
+63.0,
+1041.0,
+264.0,
+66.0
+],
+"rb": [
+65.37,
+1046.22,
+259.56,
+59.23
+],
+"text": {
+"chars": "Logistikani o‘rganib, oyiga qancha daromad topish mumkinligini haqida bilib olasiz.",
+"font": "Mulish",
+"weight": 400,
+"size": 16.0,
+"lh": 22.399999618530273,
+"ls": 0.0,
+"align": "CENTER",
+"case": ""
+}
+},
+"41:161": {
+"name": "Group 2089345802",
+"type": "GROUP",
+"frame": "41:113",
+"box": [
+34.0,
+1141.0,
+323.0,
+278.0
+],
+"rb": [
+34.0,
+1141.0,
+323.0,
+278.0
+]
+},
+"41:162": {
+"name": "Rectangle 240650029",
+"type": "RECTANGLE",
+"frame": "41:113",
+"box": [
+34.0,
+1141.0,
+323.0,
+278.0
+],
+"rb": [
+34.0,
+1141.0,
+323.0,
+278.0
+]
+},
+"41:163": {
+"name": "Mask group",
+"type": "GROUP",
+"frame": "41:113",
+"box": [
+48.0,
+1155.0,
+295.0,
+174.0
+],
+"rb": [
+48.0,
+1155.0,
+295.0,
+174.0
+]
+},
+"41:164": {
+"name": "Rectangle 240650029",
+"type": "RECTANGLE",
+"frame": "41:113",
+"box": [
+48.0,
+1155.0,
+295.0,
+174.0
+]
+},
+"41:165": {
+"name": "ChatGPT Image Sep 15, 2026, 05_31_49 PM 1",
+"type": "RECTANGLE",
+"frame": "41:113",
+"box": [
+0.0,
+1149.0,
+373.0,
+560.0
+],
+"rb": [
+48.0,
+1155.0,
+295.0,
+174.0
+]
+},
+"41:166": {
+"name": "Logistika sohasi sizga mos keladimi va bu yo‘nalishda ishlay olasizmi — aniqlab olasiz.",
+"type": "TEXT",
+"frame": "41:113",
+"box": [
+63.0,
+1341.0,
+264.0,
+66.0
+],
+"rb": [
+73.17,
+1346.22,
+244.77,
+59.23
+],
+"text": {
+"chars": "Logistika sohasi sizga mos keladimi va bu yo‘nalishda ishlay olasizmi — aniqlab olasiz.",
+"font": "Mulish",
+"weight": 400,
+"size": 16.0,
+"lh": 22.399999618530273,
+"ls": 0.0,
+"align": "CENTER",
+"case": ""
+}
+},
+"41:167": {
+"name": "Group 2089345803",
+"type": "GROUP",
+"frame": "41:113",
+"box": [
+34.0,
+1441.0,
+323.0,
+278.0
+],
+"rb": [
+34.0,
+1441.0,
+323.0,
+278.0
+]
+},
+"41:168": {
+"name": "Rectangle 240650030",
+"type": "RECTANGLE",
+"frame": "41:113",
+"box": [
+34.0,
+1441.0,
+323.0,
+278.0
+],
+"rb": [
+34.0,
+1441.0,
+323.0,
+278.0
+]
+},
+"41:169": {
+"name": "Mask group",
+"type": "GROUP",
+"frame": "41:113",
+"box": [
+48.0,
+1455.0,
+295.0,
+174.0
+],
+"rb": [
+48.0,
+1455.0,
+295.0,
+174.0
+]
+},
+"41:170": {
+"name": "Rectangle 240650029",
+"type": "RECTANGLE",
+"frame": "41:113",
+"box": [
+48.0,
+1455.0,
+295.0,
+174.0
+]
+},
+"41:171": {
+"name": "ChatGPT Image Sep 15, 2026, 05_31_49 PM 1",
+"type": "RECTANGLE",
+"frame": "41:113",
+"box": [
+0.0,
+1453.0,
+368.0,
+552.0
+],
+"rb": [
+48.0,
+1455.0,
+295.0,
+174.0
+]
+},
+"41:172": {
+"name": "Logistikani bepul o‘rganish uchun $10 000 lik grantni yutib olish shartlari bilan tanishasiz.",
+"type": "TEXT",
+"frame": "41:113",
+"box": [
+63.0,
+1641.0,
+264.0,
+66.0
+],
+"rb": [
+73.58,
+1646.22,
+243.03,
+55.92
+],
+"text": {
+"chars": "Logistikani bepul o‘rganish uchun $10 000 lik grantni yutib olish shartlari bilan tanishasiz.",
+"font": "Mulish",
+"weight": 400,
+"size": 16.0,
+"lh": 22.399999618530273,
+"ls": 0.0,
+"align": "CENTER",
+"case": ""
+}
+}
+}

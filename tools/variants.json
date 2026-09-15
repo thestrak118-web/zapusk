@@ -1,0 +1,38 @@
+{
+  "_izoh": "Figma 'Untitled' / Page 1 freymlari -> example/<v>. svg — tools/build.py ga beriladigan SVG nomi (Figma 'Export frame as SVG').",
+  "variants": {
+    "d": {
+      "svg": "Site 1.svg",
+      "prefix": "s1",
+      "variant": "4",
+      "theme": "#367AF7",
+      "bg": "#ffffff",
+      "og": "assets/s1-02.webp",
+      "title": "Logistikani bepul o‘rganib, 300$ daromadga chiqish — bepul vebinar",
+      "desc": "19-sentyabr, soat 20:00. Logistikani mutlaqo bepulga o‘rganib, boshlang‘ich 300$ daromadga chiqish. Qatnashganlar orasidan 10,000$ lik grant yutish imkoni.",
+      "accent": "#3074F0"
+    },
+    "e": {
+      "svg": "Site 2.svg",
+      "prefix": "s2",
+      "variant": "5",
+      "theme": "#000000",
+      "bg": "#000000",
+      "og": "assets/s2-02.webp",
+      "title": "10,000$ lik grant — logistika bo‘yicha bepul vebinar",
+      "desc": "19-sentabr, soat 20:00. Logistikani bepulga o‘rganishingiz uchun 10,000$ lik grant. Bepul onlayn vebinar.",
+      "accent": "#E7600F"
+    },
+    "f": {
+      "svg": "Site 3.svg",
+      "prefix": "s3",
+      "variant": "6",
+      "theme": "#D40000",
+      "bg": "#ffffff",
+      "og": "assets/s3-02.webp",
+      "title": "10,000$ lik grant — logistikani bepul o‘rganing",
+      "desc": "19-sentyabr, soat 20:00. Logistikani mutlaqo bepulga o‘rganib, boshlang‘ich 300$ daromadga chiqish uchun 10,000$ lik grant.",
+      "accent": "#E91919"
+    }
+  }
+}
