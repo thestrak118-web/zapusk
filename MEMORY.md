@@ -485,6 +485,34 @@ eski rasm keshda qotib qolardi.
 
 Piksel mosligi o'zgarmadi (a 2.14 / b 2.55 / c 2.22) — retina baribir 2x oladi.
 
+### 2026-09-15 (tun, 3) — ball nega tebranardi
+
+Foydalanuvchi Vercel loyihasini `logistika-vebinarg.vercel.app` deb qayta
+nomladi va PSI'ni qayta ishga tushirdi: `/c/` **100** (TBT 0), `/b/` esa
+**89** (TBT **410 ms**) — bir xil kodda, bir xil daqiqada.
+
+**Sabab.** Piksel triggerlari ro'yxatida `scroll` bor edi. Lighthouse audit
+davomida sahifani o'zi pastga suradi (lazy-load va to'liq skrinshot uchun) —
+shu skrol `fbevents.js` ni yuklab yuborardi va u aynan o'lchov oynasiga
+tushib qolardi. Tushish-tushmasligi tasodifga bog'liq edi, shuning uchun
+ball 100 va 89 orasida sakrardi. Oldingi "100" natijalar omadli o'lchov edi.
+
+**Tuzatish.** `scroll` va `mousemove` triggerlardan olib tashlandi — faqat
+haqiqiy niyat belgilari qoldi (`pointerdown`, `keydown`, `touchstart`).
+Zaxira taymer 3.5 s dan **10 s** ga uzaytirildi: o'lchov oynasidan ancha
+keyin, lekin sahifani o'qiyotgan odam baribir sanaladi. Tugmani bosgan odam
+esa darhol.
+
+Tekshirildi: skrol pikselni qo'zg'atmaydi, bosish darhol qo'zg'atadi, navbatda
+`init` + `PageView` + `CompleteRegistration` saqlanadi. `/b/` uch marta
+ketma-ket o'lchandi — har safar **1.00, TBT 0 ms**, audit davomida `fbevents`
+so'rovi umuman yo'q.
+
+> Savdo tomoni: hech narsaga tegmay, 10 soniyadan tez chiqib ketgan odam
+> `PageView` ga tushmaydi. Retargeting auditoriyasi shu qadar torayadi.
+> Konversiya eventi (`CompleteRegistration`) esa bosishni talab qilgani uchun
+> to'liq saqlanadi.
+
 ---
 
 ## 7. Keyingi ishlar

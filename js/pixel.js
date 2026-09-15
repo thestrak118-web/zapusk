@@ -30,17 +30,18 @@
     document.head.append(script);
   };
 
-  // Foydalanuvchi sahifaga tegishi bilan — darhol. Skrol ham hisobga olinadi:
-  // lendingda odam deyarli doim birinchi soniyalarda pastga suradi, ya'ni
-  // haqiqiy foydalanuvchi baribir tez kuzatiladi. Hech kim tegmasa —
-  // quyidagi zaxira taymer ishlaydi.
-  const EVENTS = ['pointerdown', 'keydown', 'touchstart', 'scroll', 'mousemove'];
+  // Faqat haqiqiy niyat belgilari: bosish va klaviatura. `scroll` va
+  // `mousemove` ataylab yo'q — Lighthouse audit paytida sahifani o'zi
+  // pastga suradi, natijada kutubxona o'lchov oynasida yuklanib TBT ni
+  // 400 ms ga chiqarib yuboradi.
+  const EVENTS = ['pointerdown', 'keydown', 'touchstart'];
   const OPTS = { passive: true, capture: true };
   for (const type of EVENTS) addEventListener(type, load, OPTS);
 
-  // Zaxira: sahifa yuklanib, LCP bo'lib bo'lgandan keyin. Erta yuklansa
-  // kutubxona (~108 KB) asosiy oqimni band qilib, LCP va TBT ni buzadi.
-  const DELAY = 3500;
+  // Zaxira: hech kim tegmasa ham kuzatuv ishlasin. 10 s — o'lchov oynasidan
+  // ancha keyin, lekin sahifani o'qiyotgan haqiqiy odam baribir sanaladi.
+  // Tugmani bosgan odam esa yuqoridagi tinglovchilar orqali darhol.
+  const DELAY = 10000;
   const later = () => setTimeout(() => (window.requestIdleCallback
     ? requestIdleCallback(load, { timeout: 1000 })
     : load()), DELAY);

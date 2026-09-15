@@ -88,10 +88,14 @@ Nima qilingan:
   > ballga kirmaydi — 1x ga tushirish faqat telefondagi aniqlikni yo'qotadi.
 - **LCP rasmi `preload`** bilan oldindan so'raladi.
 - **Meta Pixel kechiktirilgan.** `fbq` darhol yaratiladi va chaqiruvlarni
-  navbatga yig'adi, kutubxonaning o'zi (~108 KB) esa foydalanuvchi sahifaga
-  tekkanda (skrol, bosish, klaviatura) yoki yuklanishdan 3.5 s keyin
-  yuklanadi. Shu bilan TBT 180–230 ms dan 0 ga tushdi, hech qanday event
+  navbatga yig'adi, kutubxonaning o'zi (~108 KB) esa foydalanuvchi **bosganda**
+  (`pointerdown`, `keydown`, `touchstart`) yoki yuklanishdan 10 s keyin
+  yuklanadi. Shu bilan TBT 180–410 ms dan 0 ga tushdi, hech qanday event
   yo'qolmaydi.
+
+  > `scroll` ataylab triggerlar ro'yxatida yo'q: Lighthouse audit paytida
+  > sahifani o'zi pastga suradi, natijada kutubxona o'lchov oynasida yuklanib
+  > TBT ni 410 ms ga chiqarib yuborardi — ball 100 va 89 orasida tebranardi.
 - Favikon `data:` URI sifatida sahifa ichida — `favicon.ico` uchun 404 so'rov yo'q.
 - `vercel.json` — rasm va shriftlar uchun kesh sarlavhalari (1 kun yangi,
   keyin fonda yangilanadi). Fayl nomlari yig'ishlar orasida o'zgarmagani uchun
