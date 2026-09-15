@@ -552,9 +552,14 @@ Mobil ko'rinish tegilmadi.
 **a (va ildiz): tugma chetida "ramka".** Figma SVG eksportida CTA `<path>` —
 yon tomonlari 3 px tashqariga bo'rtgan "bochka" shakl. Pastki soya (`dy=5`)
 bo'rtmani kuzatmaydi, shuning uchun chap/o'ng chetda zinapoya paydo bo'lib,
-ramkaga o'xshardi. Ikkala tugma `<rect x=24 w=343 h=82 rx=12>` ga almashtirildi,
-`.cta-1/.cta-2` radiusi ham 41 → 12 (41 generatorning `h/2` taxmini edi,
-Figma qiymati emas). c da tugma allaqachon `rect` — tegilmadi.
+ramkaga o'xshardi. Avval `<rect rx=12>` bilan yopildi, keyin foydalanuvchi
+Figma'dan tugma fonini rasm qilib berdi: `assets/button.avif` (515×131 — 343×87
+tugma+soyaning 1.5x eksporti; `a/assets/` da nusxasi). Endi SVG'dagi tugma
+shakli, uning `filter[01]_di` va `paint[23]` ta'riflari o'chirilgan; fon —
+`<img class="im cta-bg1|cta-bg2">` (`24,554` va `24,1258`, 343×87.33), yozuv
+qatlami (`svg.v` 3-chi) **undan keyin** turadi, shuning uchun yozuv va strelka
+rasm ustida. `.cta-1/.cta-2` radiusi 12 (41 generatorning `h/2` taxmini edi).
+c da tugma `rect` — tegilmadi.
 
 **b: sovg'a rasmi.** Foydalanuvchi `b/assets/gift.png` (204×161) yukladi — bu
 kartochka o'ng qismining (136×107) 1.5x eksporti. AVIF: `gift.avif` 136×107
