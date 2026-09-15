@@ -91,19 +91,37 @@ body{ background:#000000; }
 /* Figma freymi: qat'iy 390.0px kanvas, har bir qatlam absolyut koordinatada.
    .im — rasm to'ldirgan shakl, .v — vektor+matn qatlami (z-tartib DOM bo'yicha) */
 .page{ position:relative; width:390.0px; height:1781.0px; margin-inline:auto; overflow:hidden; }
+
+/* Kanvas qat'iy 390.0px. Telefonda <meta viewport width=390.0> uni ekran
+   kengligiga moslab kattalashtiradi — u yerda hech narsa qilish shart emas.
+   Desktop brauzer esa bu meta'ni e'tiborsiz qoldiradi va sahifa keng
+   ekranning o'rtasida tor ustun bo'lib qoladi. Shuning uchun faqat keng
+   ekranlarda o'lchamini oshiramiz (zoom layoutga ta'sir qiladi, ya'ni
+   balandlik ham o'zi to'g'rilanadi). */
+@media (min-width:480px){ .page{ zoom:1.15; } }
+@media (min-width:640px){ .page{ zoom:1.3;  } }
+@media (min-width:900px){ .page{ zoom:1.45; } }
+/* 390.0px dan tor desktop oynasida kesilib qolmasin */
+@media (max-width:389px){ .page{ zoom:.92; } }
 .im{ position:absolute; display:block; max-width:none; }
-.v{ position:absolute; left:0; top:0; width:390.0px; height:1781.0px; pointer-events:none; }
+.v{ position:absolute; left:0; top:0; pointer-events:none; }
 /* CTA — Figma shakli ustidagi shaffof tugma (yozuv SVG qatlamida) */
 .cta{ position:absolute; display:block; padding:0; border:0; background:none;
       font:inherit; color:transparent; cursor:pointer;
       -webkit-tap-highlight-color:transparent; }
 .cta:focus-visible{ outline:3px solid #fff; outline-offset:3px; }
 .i1{left:0px;top:-13px;width:389px;height:692px;opacity:0.26}
+.page>svg.v:nth-of-type(2){left:0px;top:0px}
 .i14{left:40px;top:211px;width:311px;height:370px}
+.page>svg.v:nth-of-type(3){left:0px;top:0px}
 .i22{left:228px;top:674.515px;width:125.217px;height:69.985px}
+.page>svg.v:nth-of-type(4){left:0px;top:561px}
 .i29{left:111px;top:879px;width:156px;height:128px}
+.page>svg.v:nth-of-type(5){left:24.5px;top:1053.5px}
 .i33{left:111px;top:1154px;width:156px;height:128px}
+.page>svg.v:nth-of-type(6){left:24.5px;top:1328.5px}
 .i37{left:111px;top:1429px;width:156px;height:128px}
+.page>svg.v:nth-of-type(7){left:0px;top:943.24px}
 .cta-1{left:26px;top:538px;width:338px;height:78px;border-radius:39px}
 .cta-2{left:26px;top:1659px;width:338px;height:78px;border-radius:39px}
 
@@ -119,7 +137,7 @@ body{ background:#000000; }
 <body data-variant="2">
 
 <main class="page">
-  <svg xmlns="http://www.w3.org/2000/svg" width="390.0" height="1781.0" viewBox="0 0 390 1781" fill="none" class="v" aria-hidden="false"><defs>
+  <svg xmlns="http://www.w3.org/2000/svg" width="390" height="1781" viewBox="0 0 390 1781" fill="none" class="v" aria-hidden="false"><defs>
 <filter id="filter1_f_0_1_c0" x="52.7" y="261.7" width="286.6" height="286.6" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix" />
 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
@@ -235,7 +253,7 @@ body{ background:#000000; }
 </g>
 </svg>
   <img class="im i1" src="assets/s2-01.avif" srcset="assets/s2-01.avif 1x, assets/s2-01@2x.avif 2x" alt="" width="389" height="692">
-  <svg xmlns="http://www.w3.org/2000/svg" width="390.0" height="1781.0" viewBox="0 0 390 1781" fill="none" class="v" aria-hidden="false"><defs>
+  <svg xmlns="http://www.w3.org/2000/svg" width="390" height="547" viewBox="0 0 390 547" fill="none" class="v" aria-hidden="false"><defs>
 <filter id="filter1_f_0_1_c2" x="52.7" y="261.7" width="286.6" height="286.6" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix" />
 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
@@ -378,7 +396,7 @@ body{ background:#000000; }
 </g>
 </svg>
   <img class="im i14" src="assets/s2-02.avif" srcset="assets/s2-02.avif 1x, assets/s2-02@2x.avif 2x" alt="" width="311" height="370">
-  <svg xmlns="http://www.w3.org/2000/svg" width="390.0" height="1781.0" viewBox="0 0 390 1781" fill="none" class="v" aria-hidden="false"><defs>
+  <svg xmlns="http://www.w3.org/2000/svg" width="390" height="815.5" viewBox="0 0 390 815.5" fill="none" class="v" aria-hidden="false"><defs>
 <filter id="filter1_f_0_1_c4" x="52.7" y="261.7" width="286.6" height="286.6" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix" />
 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
@@ -508,7 +526,7 @@ body{ background:#000000; }
 </g>
 </svg>
   <img class="im i22" src="assets/s2-03.avif" srcset="assets/s2-03.avif 1x, assets/s2-03@2x.avif 2x" alt="" width="125" height="70">
-  <svg xmlns="http://www.w3.org/2000/svg" width="390.0" height="1781.0" viewBox="0 0 390 1781" fill="none" class="v" aria-hidden="false"><defs>
+  <svg xmlns="http://www.w3.org/2000/svg" width="390" height="559.5" viewBox="0 561 390 559.5" fill="none" class="v" aria-hidden="false"><defs>
 <filter id="filter1_f_0_1_c6" x="52.7" y="261.7" width="286.6" height="286.6" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix" />
 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
@@ -633,7 +651,7 @@ body{ background:#000000; }
 </g>
 </svg>
   <img class="im i29" src="assets/s2-04.avif" srcset="assets/s2-04.avif 1x, assets/s2-04@2x.avif 2x" alt="" width="156" height="128" loading="lazy">
-  <svg xmlns="http://www.w3.org/2000/svg" width="390.0" height="1781.0" viewBox="0 0 390 1781" fill="none" class="v" aria-hidden="false"><defs>
+  <svg xmlns="http://www.w3.org/2000/svg" width="342" height="342" viewBox="24.5 1053.5 342 342" fill="none" class="v" aria-hidden="false"><defs>
 <filter id="filter1_f_0_1_c8" x="52.7" y="261.7" width="286.6" height="286.6" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix" />
 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
@@ -755,7 +773,7 @@ body{ background:#000000; }
 </g>
 </svg>
   <img class="im i33" src="assets/s2-05.avif" srcset="assets/s2-05.avif 1x, assets/s2-05@2x.avif 2x" alt="" width="156" height="128" loading="lazy">
-  <svg xmlns="http://www.w3.org/2000/svg" width="390.0" height="1781.0" viewBox="0 0 390 1781" fill="none" class="v" aria-hidden="false"><defs>
+  <svg xmlns="http://www.w3.org/2000/svg" width="342" height="342" viewBox="24.5 1328.5 342 342" fill="none" class="v" aria-hidden="false"><defs>
 <filter id="filter1_f_0_1_c10" x="52.7" y="261.7" width="286.6" height="286.6" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix" />
 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
@@ -877,7 +895,7 @@ body{ background:#000000; }
 </g>
 </svg>
   <img class="im i37" src="assets/s2-06.avif" srcset="assets/s2-06.avif 1x, assets/s2-06@2x.avif 2x" alt="" width="156" height="128" loading="lazy">
-  <svg xmlns="http://www.w3.org/2000/svg" width="390.0" height="1781.0" viewBox="0 0 390 1781" fill="none" class="v" aria-hidden="false"><defs>
+  <svg xmlns="http://www.w3.org/2000/svg" width="390" height="837.76" viewBox="0 943.24 390 837.76" fill="none" class="v" aria-hidden="false"><defs>
 <filter id="filter1_f_0_1_c12" x="52.7" y="261.7" width="286.6" height="286.6" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix" />
 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />

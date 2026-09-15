@@ -101,6 +101,14 @@ Nima qilingan:
   keyin fonda yangilanadi). Fayl nomlari yig'ishlar orasida o'zgarmagani uchun
   `immutable` qo'yilmagan: dizayn yangilansa, eski rasm qotib qolmasin.
 
+## Ekranga moslashish
+
+Kanvas qat'iy 390 px. Telefonda `<meta viewport width=390>` uni ekran
+kengligiga moslab kattalashtiradi (375 px da 0.96, 360 px da 0.92) — hech
+narsa kesilmaydi. Desktop brauzer bu meta'ni e'tiborsiz qoldirgani uchun
+keng ekranlarda `zoom` bilan kattalashtiriladi: 480 px dan 1.15, 640 px dan
+1.3, 900 px dan 1.45; 390 px dan tor oynada 0.92.
+
 ## Figma bilan aniqlik
 
 Headless Chrome renderi Figma'ning 2x eksporti bilan piksel darajasida

@@ -513,6 +513,40 @@ so'rovi umuman yo'q.
 > Konversiya eventi (`CompleteRegistration`) esa bosishni talab qilgani uchun
 > to'liq saqlanadi.
 
+### 2026-09-15 (tun, 4) — qatlam chegaralari va desktop ko'rinishi
+
+**Speed Index tekshiruvi.** Foydalanuvchi "tezlik 0.8" deganda **Speed Index**ni
+nazarda tutgan ekan (ball emas). Jonli o'lchovda SI 2.5–3.9 s chiqdi. Kadrlar
+(filmstrip) ajratib olinganda ma'lum bo'ldi: sahifa **1.5 s gacha butunlay
+bo'sh**, keyin 1875 ms da hammasi bir zumda paydo bo'ladi. Ya'ni shrift yoki
+rasm kechikmayapti — **birinchi bo'yalishning o'zi** kechikadi.
+
+Tekshirilgan va rad etilgan taxminlar:
+- *Blur filtrlari* — markupda `filter=url(...)` atigi 2 marta ishlatilgan
+  (32 ta `<filter>` ta'rifi Figma eksportidan qolgan, ishlatilmaydi).
+  Ularni olib tashlash hech narsa o'zgartirmadi.
+- *Shrift almashishi* — shriftlar 686 ms da yetib keladi, FCP esa 950 ms;
+  almashish bo'yalishdan oldin tugaydi.
+- *Asosiy oqim* — jami 0.3 s (Style & Layout 144 ms).
+
+**Qatlam chegaralari.** Har bir vektor qatlam butun sahifa balandligida edi
+(c da 8 ta qatlam × 390×1925). Endi har biri faqat o'z mazmuni sig'adigan
+qutida: `viewBox` va `width/height` shu quti bo'yicha, joylashuv esa
+`.page>svg.v:nth-of-type(N){left;top}` orqali. Chegara `shape_bbox` va
+`text_bbox` (taxminiy, 70 px zaxira bilan) birlashmasidan olinadi.
+Piksel mosligi o'zgarmadi: 2.17 / 2.59 / 2.23.
+
+**Desktop ko'rinishi.** Foydalanuvchi sahifaning yon tomonida qora chiziq
+borligini ko'rsatdi. Tekshiruv: bu **faqat kompyuterda** ko'rinadi —
+telefonda `<meta viewport width=390>` kanvasni ekranga moslaydi (375 px da
+masshtab 0.96, 360 px da 0.92), desktop brauzer esa bu meta'ni umuman
+e'tiborsiz qoldiradi va 390 px lik ustun keng ekran o'rtasida qolib ketadi.
+
+Yechim — faqat keng ekranlar uchun `zoom` (layoutga ta'sir qiladi, balandlik
+o'zi to'g'rilanadi): 480 px dan 1.15, 640 px dan 1.3, 900 px dan 1.45.
+390 px dan tor desktop oynasi uchun 0.92 — avval u yerda kontent kesilardi.
+Mobil ko'rinish tegilmadi.
+
 ---
 
 ## 7. Keyingi ishlar

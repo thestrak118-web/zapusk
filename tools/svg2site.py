@@ -130,6 +130,22 @@ def union(a,b):
 CTA_WORDS=('QATNASHISH','QATNASHAMAN','RO‘YXATDAN','ROYXATDAN','RO’YXATDAN',
            'BEPUL DARSGA','JOY BAND','BOSHLASH','OLMOQCHIMAN')
 
+def text_bbox(e):
+    """<text>/<tspan> uchun taxminiy chegara: bazaviy chiziqdan yuqoriga va
+    pastga shrift o'lchami bo'yicha, kengligi belgilar soniga qarab. Aniq
+    emas, lekin qatlam chegarasi uchun yetarli — atrofiga zaxira qo'shiladi."""
+    xs=[];ys=[]
+    fs=float(e.get('font-size') or 16)
+    for t in list(e.iter()):
+        if loc(t) not in ('text','tspan'): continue
+        try: x=float(t.get('x')); y=float(t.get('y'))
+        except (TypeError,ValueError): continue
+        txt=''.join(t.itertext())
+        xs += [x, x+len(txt)*fs*0.75]
+        ys += [y-fs*1.3, y+fs*0.5]
+    if not xs: return None
+    return (min(xs),min(ys),max(xs),max(ys))
+
 class Site:
     def __init__(self,svg_path,out_dir,name):
         self.out=out_dir; self.name=name
@@ -252,7 +268,7 @@ class Site:
 
     # ---------- 3. vektor qatlamlar ----------
     def build_overlays(self):
-        overlays={}
+        overlays={}; self.vbox={}
         for n,(kind,payload) in enumerate(self.items):
             if kind!='vec': continue
             keep=set(str(i) for i in payload)
@@ -269,8 +285,25 @@ class Site:
             defs=copy.deepcopy(self.defs) if self.defs is not None else ET.Element(Q('defs'))
             for c in list(defs):
                 if loc(c) in ('pattern','image'): defs.remove(c)
-            svg=ET.Element(Q('svg'),{'width':str(self.W),'height':str(self.H),
-                'viewBox':'0 0 %g %g'%(self.W,self.H),'fill':'none','class':'v','aria-hidden':'false'})
+            # Qatlamni butun sahifa balandligida qoldirmaymiz: brauzer har
+            # biri uchun to'liq kattalikdagi bufer ajratadi va birinchi
+            # bo'yalish kechikadi. Faqat mazmuni sig'adigan quti olinadi.
+            box=None
+            for i in payload:
+                e=self.leaves[i][0]
+                box=union(box, text_bbox(e) if loc(e) in ('text','tspan')
+                               else shape_bbox(e))
+            PAD=70                      # soya/blur chetga chiqishi mumkin
+            if box:
+                x0=max(0.0,box[0]-PAD); y0=max(0.0,box[1]-PAD)
+                x1=min(self.W,box[2]+PAD); y1=min(self.H,box[3]+PAD)
+            else:
+                x0,y0,x1,y1=0.0,0.0,self.W,self.H
+            if x1-x0<1 or y1-y0<1: x0,y0,x1,y1=0.0,0.0,self.W,self.H
+            self.vbox[n]=(x0,y0,x1-x0,y1-y0)
+            svg=ET.Element(Q('svg'),{'width':'%g'%(x1-x0),'height':'%g'%(y1-y0),
+                'viewBox':'%g %g %g %g'%(x0,y0,x1-x0,y1-y0),
+                'fill':'none','class':'v','aria-hidden':'false'})
             svg.append(defs); svg.append(fr)
             xml=ET.tostring(svg,encoding='unicode')
             xml=re.sub(r' data-leaf="\d+"','',xml)
@@ -342,6 +375,9 @@ class Site:
 
         body=[]; css=[]
         imgs={d['i']:d for d in self.imgs}
+        vseq={}; k=0
+        for n,(kind,_) in enumerate(self.items):
+            if kind!='img': k+=1; vseq[n]=k
         for n,(kind,payload) in enumerate(self.items):
             if kind=='img':
                 d=imgs[payload]
@@ -360,6 +396,10 @@ class Site:
                 css.append('.%s{%s}'%(cls,';'.join(rules)))
             else:
                 body.append('  '+self.overlays[n])
+                x,y,w,h=self.vbox[n]
+                if (x,y,w,h)!=(0,0,self.W,self.H):
+                    css.append('.page>svg.v:nth-of-type(%d){left:%gpx;top:%gpx}'
+                               %(vseq[n],x,y))
         # CTA — shartnoma bo'yicha <button type="button" data-register>.
         # Modal, mamlakat ro'yxati va uslublarni js/main.js birinchi bosishda
         # o'zi qo'shadi; sahifada modal markupi bo'lmasligi kerak.
@@ -390,7 +430,7 @@ class Site:
         open(os.path.join(self.out,'index.html'),'w',encoding='utf-8').write(html)
         os.makedirs(os.path.join(self.out,'css'),exist_ok=True)
         open(os.path.join(self.out,'css','site.css'),'w',encoding='utf-8').write(
-            SITE_CSS.format(h=self.H,w=self.W,sub='\n'.join(css),bg=meta.get('bg','#ffffff')))
+            SITE_CSS.format(h=self.H,w=self.W,wm=int(self.W)-1,sub='\n'.join(css),bg=meta.get('bg','#ffffff')))
         return dict(fonts=self.fonts,ctas=self.ctas,imgs=len(self.imgs),overlays=len(self.overlays))
 
 TEMPLATE='''<!doctype html>
@@ -443,8 +483,20 @@ body{{ background:{bg}; }}
 /* Figma freymi: qat'iy {w}px kanvas, har bir qatlam absolyut koordinatada.
    .im — rasm to'ldirgan shakl, .v — vektor+matn qatlami (z-tartib DOM bo'yicha) */
 .page{{ position:relative; width:{w}px; height:{h}px; margin-inline:auto; overflow:hidden; }}
+
+/* Kanvas qat'iy {w}px. Telefonda <meta viewport width={w}> uni ekran
+   kengligiga moslab kattalashtiradi — u yerda hech narsa qilish shart emas.
+   Desktop brauzer esa bu meta'ni e'tiborsiz qoldiradi va sahifa keng
+   ekranning o'rtasida tor ustun bo'lib qoladi. Shuning uchun faqat keng
+   ekranlarda o'lchamini oshiramiz (zoom layoutga ta'sir qiladi, ya'ni
+   balandlik ham o'zi to'g'rilanadi). */
+@media (min-width:480px){{ .page{{ zoom:1.15; }} }}
+@media (min-width:640px){{ .page{{ zoom:1.3;  }} }}
+@media (min-width:900px){{ .page{{ zoom:1.45; }} }}
+/* {w}px dan tor desktop oynasida kesilib qolmasin */
+@media (max-width:{wm}px){{ .page{{ zoom:.92; }} }}
 .im{{ position:absolute; display:block; max-width:none; }}
-.v{{ position:absolute; left:0; top:0; width:{w}px; height:{h}px; pointer-events:none; }}
+.v{{ position:absolute; left:0; top:0; pointer-events:none; }}
 /* CTA — Figma shakli ustidagi shaffof tugma (yozuv SVG qatlamida) */
 .cta{{ position:absolute; display:block; padding:0; border:0; background:none;
       font:inherit; color:transparent; cursor:pointer;

@@ -89,16 +89,31 @@ body{ background:#ffffff; }
 /* Figma freymi: qat'iy 390.0px kanvas, har bir qatlam absolyut koordinatada.
    .im — rasm to'ldirgan shakl, .v — vektor+matn qatlami (z-tartib DOM bo'yicha) */
 .page{ position:relative; width:390.0px; height:1380.0px; margin-inline:auto; overflow:hidden; }
+
+/* Kanvas qat'iy 390.0px. Telefonda <meta viewport width=390.0> uni ekran
+   kengligiga moslab kattalashtiradi — u yerda hech narsa qilish shart emas.
+   Desktop brauzer esa bu meta'ni e'tiborsiz qoldiradi va sahifa keng
+   ekranning o'rtasida tor ustun bo'lib qoladi. Shuning uchun faqat keng
+   ekranlarda o'lchamini oshiramiz (zoom layoutga ta'sir qiladi, ya'ni
+   balandlik ham o'zi to'g'rilanadi). */
+@media (min-width:480px){ .page{ zoom:1.15; } }
+@media (min-width:640px){ .page{ zoom:1.3;  } }
+@media (min-width:900px){ .page{ zoom:1.45; } }
+/* 390.0px dan tor desktop oynasida kesilib qolmasin */
+@media (max-width:389px){ .page{ zoom:.92; } }
 .im{ position:absolute; display:block; max-width:none; }
-.v{ position:absolute; left:0; top:0; width:390.0px; height:1380.0px; pointer-events:none; }
+.v{ position:absolute; left:0; top:0; pointer-events:none; }
 /* CTA — Figma shakli ustidagi shaffof tugma (yozuv SVG qatlamida) */
 .cta{ position:absolute; display:block; padding:0; border:0; background:none;
       font:inherit; color:transparent; cursor:pointer;
       -webkit-tap-highlight-color:transparent; }
 .cta:focus-visible{ outline:3px solid #fff; outline-offset:3px; }
 .i1{left:-31px;top:198px;width:489px;height:383px}
+.page>svg.v:nth-of-type(2){left:0px;top:0px}
 .i15{left:75px;top:237px;width:250px;height:366px}
+.page>svg.v:nth-of-type(3){left:0px;top:484px}
 .i25{left:29px;top:665px;width:123px;height:82px}
+.page>svg.v:nth-of-type(4){left:0px;top:717.734px}
 .cta-1{left:24px;top:554px;width:343px;height:82px;border-radius:41px}
 .cta-2{left:24px;top:1258px;width:343px;height:82px;border-radius:41px}
 
@@ -114,7 +129,7 @@ body{ background:#ffffff; }
 <body data-variant="1">
 
 <main class="page">
-  <svg xmlns="http://www.w3.org/2000/svg" width="390.0" height="1380.0" viewBox="0 0 390 1380" fill="none" class="v" aria-hidden="false"><defs>
+  <svg xmlns="http://www.w3.org/2000/svg" width="390" height="1380" viewBox="0 0 390 1380" fill="none" class="v" aria-hidden="false"><defs>
 <filter id="filter0_di_0_1_c0" x="24" y="554" width="343" height="87" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix" />
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
@@ -210,7 +225,7 @@ body{ background:#ffffff; }
 </g>
 </svg>
   <img class="im i1" src="assets/s1-01.avif" srcset="assets/s1-01.avif 1x, assets/s1-01@2x.avif 2x" alt="" width="489" height="383">
-  <svg xmlns="http://www.w3.org/2000/svg" width="390.0" height="1380.0" viewBox="0 0 390 1380" fill="none" class="v" aria-hidden="false"><defs>
+  <svg xmlns="http://www.w3.org/2000/svg" width="390" height="651" viewBox="0 0 390 651" fill="none" class="v" aria-hidden="false"><defs>
 <filter id="filter0_di_0_1_c2" x="24" y="554" width="343" height="87" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix" />
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
@@ -324,7 +339,7 @@ body{ background:#ffffff; }
 </g>
 </svg>
   <img class="im i15" src="assets/s1-02.avif" srcset="assets/s1-02.avif 1x, assets/s1-02@2x.avif 2x" alt="" width="250" height="366">
-  <svg xmlns="http://www.w3.org/2000/svg" width="390.0" height="1380.0" viewBox="0 0 390 1380" fill="none" class="v" aria-hidden="false"><defs>
+  <svg xmlns="http://www.w3.org/2000/svg" width="390" height="896" viewBox="0 484 390 896" fill="none" class="v" aria-hidden="false"><defs>
 <filter id="filter0_di_0_1_c4" x="24" y="554" width="343" height="87" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix" />
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
@@ -440,7 +455,7 @@ body{ background:#ffffff; }
 </g>
 </svg>
   <img class="im i25" src="assets/s1-03.avif" srcset="assets/s1-03.avif 1x, assets/s1-03@2x.avif 2x" alt="" width="123" height="82">
-  <svg xmlns="http://www.w3.org/2000/svg" width="390.0" height="1380.0" viewBox="0 0 390 1380" fill="none" class="v" aria-hidden="false"><defs>
+  <svg xmlns="http://www.w3.org/2000/svg" width="390" height="584.266" viewBox="0 717.734 390 584.266" fill="none" class="v" aria-hidden="false"><defs>
 <filter id="filter0_di_0_1_c6" x="24" y="554" width="343" height="87" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix" />
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
