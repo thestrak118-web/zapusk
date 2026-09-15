@@ -1,14 +1,19 @@
 (() => {
-  const id = window.LAUNCH_CONFIG?.pixelId;
-  if (!id || !/^\d+$/.test(id)) return;
-  const fbq = window.fbq = window.fbq || function () {
-    fbq.callMethod ? fbq.callMethod.apply(fbq, arguments) : fbq.queue.push(arguments);
+  'use strict';
+  const id = window.LOGISTICS_CONFIG?.pixelId;
+  if (typeof id !== 'string' || !/^\d+$/.test(id.trim())) return;
+  if (window.fbq) return;
+  const queue = window.fbq = function () {
+    if (queue.callMethod) queue.callMethod.apply(queue, arguments);
+    else queue.queue.push(arguments);
   };
-  if (!window._fbq) window._fbq = fbq;
-  fbq.push = fbq; fbq.loaded = true; fbq.version = '2.0'; fbq.queue = fbq.queue || [];
+  queue.queue = [];
+  queue.loaded = true;
+  queue.version = '2.0';
   const script = document.createElement('script');
-  script.defer = true;
+  script.async = true;
   script.src = 'https://connect.facebook.net/en_US/fbevents.js';
-  document.body.appendChild(script);
-  fbq('init', id); fbq('track', 'PageView');
+  document.head.append(script);
+  queue('init', id.trim());
+  queue('track', 'PageView');
 })();

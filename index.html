@@ -3,32 +3,35 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BIR — Uchta sayt varianti</title>
-<style>*{box-sizing:border-box}body{margin:0;background:#eef1f6;color:#17243c;font:16px/1.5 Arial,sans-serif}header{max-width:1250px;margin:40px auto 24px;padding:0 20px}h1{font-size:32px;margin:0 0 4px}header p{margin:0;color:#526176}main{max-width:1250px;margin:auto;padding:0 20px 40px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}a{display:flex;justify-content:space-between;text-decoration:none;background:white;color:#1649be;border-radius:16px 16px 0 0;padding:16px 20px;font-weight:700}iframe{display:block;border:0;width:100%;height:760px;background:white;border-radius:0 0 16px 16px;box-shadow:0 10px 24px #1327490c}@media(max-width:850px){main{grid-template-columns:1fr;max-width:430px}header{text-align:center}}footer{max-width:1250px;margin:auto;padding:0 20px 56px}footer h2{font-size:18px;margin:0 0 4px}footer p{margin:0 0 14px;color:#526176;font-size:14px}footer ul{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 22px;padding:0;list-style:none}footer a{display:inline-block;border-radius:10px;padding:10px 16px;font-size:15px}</style>
-<link rel="stylesheet" href="./css/main.css" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="./css/main.css"></noscript>
+<title>Logistika vebinar — 3 ta sayt varianti</title>
+<meta name="robots" content="noindex">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#eef1f6;color:#17243c;font:16px/1.5 system-ui,Arial,sans-serif}
+header{max-width:1250px;margin:40px auto 20px;padding:0 20px}
+h1{font-size:30px;margin:0 0 4px}
+header p{margin:0;color:#526176}
+main{max-width:1250px;margin:auto;padding:0 20px 48px;display:grid;
+     grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+a.top{display:flex;justify-content:space-between;text-decoration:none;background:#fff;
+      color:#1649be;border-radius:16px 16px 0 0;padding:16px 20px;font-weight:700}
+iframe{display:block;border:0;width:100%;height:760px;background:#fff;
+       border-radius:0 0 16px 16px;box-shadow:0 10px 24px rgba(19,39,73,.05)}
+@media(max-width:850px){main{grid-template-columns:1fr;max-width:430px}header{text-align:center}}
+</style>
 </head>
 <body>
-<header><h1>BIR — Vebinar saytlari</h1><p>25-Sentabr · 20:00</p></header>
+<header>
+  <h1>Logistika — bepul vebinar</h1>
+  <p>19-sentyabr · 20:00 · uchta sayt varianti</p>
+</header>
 <main>
-<section><a href="./a/">Variant A <span>Ochish ↗</span></a><iframe src="./a/" title="Variant A ko‘rinishi" loading="lazy"></iframe></section>
-<section><a href="./b/">Variant B <span>Ochish ↗</span></a><iframe src="./b/" title="Variant B ko‘rinishi" loading="lazy"></iframe></section>
-<section><a href="./c/">Variant C <span>Ochish ↗</span></a><iframe src="./c/" title="Variant C ko‘rinishi" loading="lazy"></iframe></section>
+  <section><a class="top" href="./a/">Variant A — ko‘k <span>Ochish ↗</span></a>
+    <iframe src="./a/" title="Variant A" loading="lazy"></iframe></section>
+  <section><a class="top" href="./b/">Variant B — qora <span>Ochish ↗</span></a>
+    <iframe src="./b/" title="Variant B" loading="lazy"></iframe></section>
+  <section><a class="top" href="./c/">Variant C — qizil <span>Ochish ↗</span></a>
+    <iframe src="./c/" title="Variant C" loading="lazy"></iframe></section>
 </main>
-<footer>
-  <h2>Boshqa kampaniyalar</h2>
-  <p>Logistika — bepul vebinar, 19-sentyabr 20:00 (Figma Page 1)</p>
-  <ul>
-    <li><a href="./example/d/">d — oq / ko‘k ↗</a></li>
-    <li><a href="./example/e/">e — qora / to‘q sariq ↗</a></li>
-    <li><a href="./example/f/">f — oq / qizil ↗</a></li>
-  </ul>
-  <p>uStudy — AI darsi, 18–19-sentabr (Figma Page 2)</p>
-  <ul>
-    <li><a href="./example/a/">a — oq / ko‘k ↗</a></li>
-    <li><a href="./example/b/">b — qora / oltin ↗</a></li>
-    <li><a href="./example/c/">c — oq / to‘q sariq ↗</a></li>
-  </ul>
-</footer>
 </body>
 </html>

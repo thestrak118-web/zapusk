@@ -6,7 +6,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 
-BASE='http://127.0.0.1:8899/example/%s/index.html'
+BASE='http://127.0.0.1:8899/%s/index.html'
 opts=Options()
 for a in ('--headless=new','--no-sandbox','--disable-gpu','--window-size=390,900'):
     opts.add_argument(a)
@@ -20,7 +20,7 @@ def check(v,cond,msg):
     print('   %s %s'%('OK  ' if cond else 'XATO',msg))
     if not cond: fail+=1
 
-for v in ('d','e','f'):
+for v in ('a','b','c'):
     print('--- variant',v)
     d.get(BASE%v)
     time.sleep(1.2)

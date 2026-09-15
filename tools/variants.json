@@ -1,35 +1,35 @@
 {
-  "_izoh": "Figma 'Untitled' / Page 1 freymlari -> example/<v>. svg — tools/build.py ga beriladigan SVG nomi (Figma 'Export frame as SVG').",
+  "_izoh": "Figma 'Untitled' / Page 1 freymlari -> <variant>/ papkasi. svg — tools/build.py ga beriladigan SVG nomi (Figma 'Export frame as SVG').",
   "variants": {
-    "d": {
+    "a": {
       "svg": "Site 1.svg",
       "prefix": "s1",
-      "variant": "4",
+      "variant": "1",
       "theme": "#367AF7",
       "bg": "#ffffff",
-      "og": "assets/s1-02.webp",
+      "og": "assets/s1-02.avif",
       "title": "Logistikani bepul o‘rganib, 300$ daromadga chiqish — bepul vebinar",
       "desc": "19-sentyabr, soat 20:00. Logistikani mutlaqo bepulga o‘rganib, boshlang‘ich 300$ daromadga chiqish. Qatnashganlar orasidan 10,000$ lik grant yutish imkoni.",
       "accent": "#3074F0"
     },
-    "e": {
+    "b": {
       "svg": "Site 2.svg",
       "prefix": "s2",
-      "variant": "5",
+      "variant": "2",
       "theme": "#000000",
       "bg": "#000000",
-      "og": "assets/s2-02.webp",
+      "og": "assets/s2-02.avif",
       "title": "10,000$ lik grant — logistika bo‘yicha bepul vebinar",
       "desc": "19-sentabr, soat 20:00. Logistikani bepulga o‘rganishingiz uchun 10,000$ lik grant. Bepul onlayn vebinar.",
       "accent": "#E7600F"
     },
-    "f": {
+    "c": {
       "svg": "Site 3.svg",
       "prefix": "s3",
-      "variant": "6",
+      "variant": "3",
       "theme": "#D40000",
       "bg": "#ffffff",
-      "og": "assets/s3-02.webp",
+      "og": "assets/s3-02.avif",
       "title": "10,000$ lik grant — logistikani bepul o‘rganing",
       "desc": "19-sentyabr, soat 20:00. Logistikani mutlaqo bepulga o‘rganib, boshlang‘ich 300$ daromadga chiqish uchun 10,000$ lik grant.",
       "accent": "#E91919"

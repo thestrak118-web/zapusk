@@ -312,15 +312,86 @@ CDP orqali **bloklanadi** — jadvalga sinov lidi tushmaydi.
 **Eslatma:** `example/{d,e,f}` avval qo'lda (absolyut koordinata bilan) yig'ilgan
 edi; 2026-09-15 da hammasi generator chiqarganiga almashtirildi.
 
+### 2026-09-15 (kechqurun) — a/b/c ga ko'chirish, tezlik, sozlamalar
+
+**Tuzilma.** Foydalanuvchi: "boshqa saytlar kerakmas, asosiy logistika".
+`example/d,e,f` → ildizdagi **`a/ b/ c/`** (variant raqamlari 1/2/3).
+BIR (ildizdagi eski a/b/c + css/ + BIR.md), uStudy (`example/a,b,c`) va eski
+`_check/` **`arxiv/`** ga ko'chirildi — o'chirilmadi, git tarixida ham bor
+(`40c4b78`). Tiklash: `git mv arxiv/bir-a a` yoki `git checkout 40c4b78 -- <yo'l>`.
+
+**Sozlamalar to'ldirildi** (uchala variantda):
+
+| Kalit | Qiymat |
+|---|---|
+| `endpointUrl` | `AKfycbz7G8GK…/exec` |
+| `telegramUrl` | `https://t.me/+GzsmqPGpcew2MjZi` |
+| `pixelId` | `2982763675408670` (Meta) |
+| `sheetName` | **hali bo'sh — ariza yozilmaydi** |
+
+**Nega "Ariza tasdiqlanmadi" chiqqan.** CORS aybdor emas: endpoint `302` bilan
+`script.googleusercontent.com` ga o'tadi, ikkala javobda ham
+`access-control-allow-origin: *` bor va JSON qaytadi. Haqiqiy sabab —
+`sheetName` yuborilmagan:
+
+```
+{"ok":false,"code":"MISSING_SHEET","message":"sheetName parametri yuborilmagan!"}
+```
+
+Skript noma'lum varaqni yaratmaydi, `SHEET_NOT_FOUND` qaytaradi — demak nom
+aniq bo'lishi kerak. **`sheetName` to'ldirilsa, xato bloki umuman chiqmaydi.**
+Uni yashirish kerak emas: u faqat ariza yetib bormaganda ko'rinadi.
+
+**Tezlik** — Lighthouse mobil, ball 0.74–0.83 dan **0.97–0.98** ga chiqdi:
+
+| | oldin | keyin (siqish bilan) |
+|---|---|---|
+| FCP | 3218–3540 ms | 636–641 ms |
+| LCP | 3302–4503 ms | 1508–1802 ms |
+| Speed Index | 4574–4708 ms | 636–641 ms |
+
+1. **Google Fonts olib tashlandi** — `render-blocking 2479 ms` shundan edi.
+   `tools/localfonts.py` har bir shriftdan faqat sahifadagi harflarni
+   `css2?...&text=` orqali oladi (1–5 KB), `fonts/` ga qo'yadi, `@font-face`
+   yozadi. Diqqat: subset havolasi `.woff2` bilan tugamaydi (`/l/font?kit=…`).
+2. **CSS sahifa ichiga** ko'chirildi — render to'sadigan so'rov qolmadi.
+3. **Rasmlar WebP → AVIF** (`AVIF_Q=58`, PIL o'zi kodlaydi, `cwebp` kerak emas)
+   va **`SCALE=3` → `2`**. Hero 183 KB → 51 KB. 2x da piksel mosligi ham
+   yaxshilandi (etalon ham 2x): a 2.72→2.14, c 2.48→2.22.
+4. **LCP rasmi `preload`** qilinadi.
+5. Qolgan TBT ~150 ms — Meta Pixel `fbevents.js`. Kerak bo'lsa uni
+   `requestIdleCallback` ga o'tkazish mumkin, lekin u umumiy
+   `logistics-launch/source/integration/js/pixel.js` faylida — o'zgartirilsa
+   boshqa loyihalarga ham ta'sir qiladi.
+
+**Meta eventi.** Foydalanuvchi so'rovi bilan har bir CTA bosilishiga standart
+`CompleteRegistration` qo'yildi — shablon ichidagi kichik skript, `[data-register]`
+ni capture bosqichida tinglaydi va `fbq` mavjud bo'lsagina chaqiradi.
+Brauzerda tekshirildi: uchala variantda 2 tadan CTA, har biri bitta chaqiruv.
+
+> Semantik eslatma: Meta'da `CompleteRegistration` **ro'yxatdan o'tish
+> tugallanganini** bildiradi. CTA bosilishiga qo'yilgani uchun formani
+> to'ldirmagan odam ham shu eventga tushadi. Kerak bo'lsa uni `thankYou.html`
+> ga (`thanks.js` ichida, server tasdig'idan keyin) ko'chirish mumkin —
+> o'shanda raqam haqiqiy arizalarni ko'rsatadi.
+
+**`js/app.js` olib tashlandi.** U eski uStudy loyihasidan qolgan taymer skripti
+edi; bu uchta sahifada `[data-timer]` element yo'q, ya'ni hech narsa qilmasdi.
+Bundan tashqari generator unga havola chiqarardi-yu, `build.py` uni yaratmasdi —
+noldan yig'ilgan variantda 404 bo'lardi.
+
+**`FONT_SUB` ishlatilmayotgan ekan.** E'lon qilingan-u, hech qayerda
+qo'llanilmagan — shuning uchun CTA yozuvi HelveticaNeue'ni topolmay tasodifiy
+fallback bilan chizilardi. Endi qatlam XML'ida almashtiriladi
+(HelveticaNeue → Arimo, Gilroy → Urbanist) va yozuv Figma bilan ustma-ust tushadi.
+
 ---
 
 ## 7. Keyingi ishlar
 
-- [ ] `LOGISTICS_CONFIG.telegramUrl` — rahmat sahifasidagi kanal tugmasi uchun
-      yangi loyihaning kanal havolasi (hozir bo'sh, tugma ishlamaydi)
-- [ ] Endpointga haqiqiy lid yuborib tekshirish (sinovda ataylab bloklangan)
-- [ ] `pixelId` — reklama piksel ID si, kerak bo'lsa
-- [ ] a/b/c dagi `ctaUrl` ni haqiqiy Telegram bot havolasiga almashtirish
+- [ ] **`sheetName` ni to'ldirish** — bu bo'lmasa hech bir ariza jadvalga
+      yozilmaydi (`MISSING_SHEET`). Eng muhim ochiq ish.
+- [ ] `sheetName` qo'yilgach, haqiqiy ariza yuborib jadvalda ko'rish
 - [ ] GitHub Pages yoqish (`thestrak118-web.github.io/zapusk/`)
 - [ ] Figma tokenni yangilash (chatga ochiq yozilgan edi)
 - [ ] CTA yozuvi Figma'da HelveticaNeue Bold — hozir Arimo bilan almashtirilgan,

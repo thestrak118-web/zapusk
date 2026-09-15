@@ -29,12 +29,16 @@ def main():
         svg = svg_dir / meta.pop('svg')
         if not svg.exists():
             sys.exit('topilmadi: %s' % svg)
-        out = ROOT / 'example' / name
+        out = ROOT / name
         # eski rasmlar qolib ketmasin
-        for old in (out / 'assets').glob('%s-*.webp' % meta['prefix']):
-            old.unlink()
+        for pat in ('%s-*.webp', '%s-*.avif'):
+          for old in (out / 'assets').glob(pat % meta['prefix']):
+              old.unlink()
         subprocess.run([sys.executable, str(ROOT / 'tools/svg2site.py'),
                         str(svg), str(out), json.dumps(meta, ensure_ascii=False)],
+                       check=True)
+        # Google Fonts -> lokal subset, CSS sahifa ichiga
+        subprocess.run([sys.executable, str(ROOT / 'tools/localfonts.py'), str(out)],
                        check=True)
         info = install_integration(out)
         print('   ro\'yxatdan o\'tish oqimi o\'rnatildi (%d bayt), config saqlandi: %s'

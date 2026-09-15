@@ -18,12 +18,13 @@ SVG='http://www.w3.org/2000/svg'; XLINK='http://www.w3.org/1999/xlink'
 ET.register_namespace('',SVG); ET.register_namespace('xlink',XLINK)
 Q=lambda t:'{%s}%s'%(SVG,t)
 loc=lambda e:e.tag.split('}')[-1]
-SCALE=3                       # rasm eksport masshtabi
+SCALE=2                       # rasm eksport masshtabi
+AVIF_Q=58                     # AVIF sifati (58 ~ WebP q88 ko'rinishi, yarmi hajm)
 
 # litsenziyali shrift -> bepul analog (kenglik bo'yicha tanlangan)
 FONT_SUB={
- 'HelveticaNeue':'Helvetica Neue,Helvetica,Arimo,Arial,sans-serif',
- 'Helvetica Neue':'Helvetica Neue,Helvetica,Arimo,Arial,sans-serif',
+ 'HelveticaNeue':'Arimo,Helvetica Neue,Helvetica,Arial,sans-serif',
+ 'Helvetica Neue':'Arimo,Helvetica Neue,Helvetica,Arial,sans-serif',
  'Gilroy':'Urbanist,Poppins,sans-serif',
 }
 # Google Fonts'dan yuklanadiganlar
@@ -225,12 +226,11 @@ class Site:
             if hsh in self._hashes:
                 fname=self._hashes[hsh]
             else:
-                fname='%s-%02d.webp'%(self.name,len(self._hashes)+1)
-                png=os.path.join(self.out,'assets','_tmp.png')
-                out.save(png)
-                subprocess.run(['cwebp','-quiet','-q','88','-alpha_q','100',png,'-o',
-                                os.path.join(self.out,'assets',fname)],check=True)
-                os.remove(png)
+                # AVIF — bir xil ko'rinishda WebP'dan ~2 barobar yengil.
+                # LCP rasmi shu bo'lgani uchun sezilarli farq qiladi.
+                fname='%s-%02d.avif'%(self.name,len(self._hashes)+1)
+                out.save(os.path.join(self.out,'assets',fname),'AVIF',
+                         quality=AVIF_Q,speed=4)
                 self._hashes[hsh]=fname
             op=float(e.get('fill-opacity',1))*float(st.get('opacity',1) or 1)
             blur=None
@@ -272,6 +272,10 @@ class Site:
             xml=re.sub(r'(id="|url\(#)([A-Za-z0-9_]+)',lambda m:m.group(1)+m.group(2)+'_c%d'%n,xml)
             xml=xml.replace('<ns0:','<').replace('</ns0:','</').replace(' xmlns:ns0="%s"'%SVG,'')
             xml=xml.replace('ns0:','').replace('ns1:','xlink:')
+            # litsenziyali shrift -> bepul analog (aks holda brauzer tasodifiy
+            # fallback chizadi va yozuv Figma'dagidan boshqacha chiqadi)
+            for lic,free in FONT_SUB.items():
+                xml=xml.replace('font-family="%s"'%lic,'font-family="%s"'%free)
             overlays[n]=xml
         self.overlays=overlays
 
@@ -408,7 +412,16 @@ TEMPLATE='''<!doctype html>
      CTA bosilganda o'zi yaratadi (integration shartnomasi). -->
 <script src="./js/config.js" defer></script>
 <script src="./js/main.js" defer></script>
-<script src="./js/app.js" defer></script>
+<script>
+/* CTA bosilganda Meta standart eventi. fbq'ni js/main.js ichidagi pixel.js
+   yaratadi va u faqat raqamli pixelId sozlanganda ishga tushadi — shuning
+   uchun tekshirib chaqiramiz. Capture bosqichi: modal ochilishiga xalaqit
+   bermaydi. */
+addEventListener('click', function (e) {{
+  if (!e.target.closest('[data-register]')) return;
+  if (typeof fbq === 'function') fbq('track', 'CompleteRegistration');
+}}, true);
+</script>
 </body>
 </html>
 '''
