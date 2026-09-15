@@ -79,7 +79,13 @@ Nima qilingan:
 - **Shriftlar lokal va subset.** Har bir shriftdan faqat sahifada uchraydigan
   harflar olinadi (1–5 KB), Google Fonts'ga so'rov yo'q.
 - **CSS sahifa ichida.** Render to'sadigan tashqi so'rov qolmagan.
-- **Rasmlar AVIF, 2x.** WebP 3x bilan solishtirganda ~2 barobar yengil.
+- **Rasmlar AVIF, ikki o'lchamda.** Har bir rasm 1x va 2x (`@2x`) qilib
+  chiqariladi, `srcset` bilan beriladi: retina ekran 2x ni, oddiy ekran esa
+  ikki barobar yengil 1x ni yuklaydi.
+
+  > Lighthouse mobil emulyatsiyada DPR 2.625 ishlatadi, ya'ni baribir 2x
+  > rasmni oladi va uni "ortiqcha katta" deb belgilaydi. Bu diagnostika
+  > ballga kirmaydi — 1x ga tushirish faqat telefondagi aniqlikni yo'qotadi.
 - **LCP rasmi `preload`** bilan oldindan so'raladi.
 - **Meta Pixel kechiktirilgan.** `fbq` darhol yaratiladi va chaqiruvlarni
   navbatga yig'adi, kutubxonaning o'zi (~108 KB) esa foydalanuvchi sahifaga
@@ -87,6 +93,9 @@ Nima qilingan:
   yuklanadi. Shu bilan TBT 180–230 ms dan 0 ga tushdi, hech qanday event
   yo'qolmaydi.
 - Favikon `data:` URI sifatida sahifa ichida — `favicon.ico` uchun 404 so'rov yo'q.
+- `vercel.json` — rasm va shriftlar uchun kesh sarlavhalari (1 kun yangi,
+  keyin fonda yangilanadi). Fayl nomlari yig'ishlar orasida o'zgarmagani uchun
+  `immutable` qo'yilmagan: dizayn yangilansa, eski rasm qotib qolmasin.
 
 ## Figma bilan aniqlik
 

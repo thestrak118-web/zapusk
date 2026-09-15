@@ -461,6 +461,30 @@ dan **0 ms** ga tushdi.
 > `pixel.js` umumiy fayl (`logistics-launch/source/integration/js/pixel.js`) —
 > o'zgarish shu integratsiyani ishlatadigan boshqa loyihalarga ham tegishli.
 
+### 2026-09-15 (tun, davomi) — PSI 100, srcset va kesh
+
+Piksel kechiktirilgandan keyin Vercel'dagi PSI: `/b/` va `/c/` — **100/100/100/100**
+(Performance, Accessibility, Best Practices, SEO), TBT 0 ms. Ildiz `/` — 99;
+sabab nuqson emas, o'sha o'lchovdagi tarmoq tebranishi (FCP 1.45 s → 0.96).
+
+**`srcset` qo'shildi.** Har bir rasm endi ikki o'lchamda chiqadi: `nom.avif` (1x)
+va `nom@2x.avif`. Sahifada `srcset="… 1x, … 2x"`, LCP rasmining `preload` ida
+`imagesrcset`.
+
+> Lighthouse `image-delivery-insight` ni baribir ko'rsatadi: uning mobil
+> emulyatsiyasi DPR **2.625** bilan ishlaydi, ya'ni 2x faylni yuklaydi, keyin
+> uni CSS piksel bilan solishtirib "ortiqcha" deb belgilaydi. Bu diagnostika,
+> **ballga kirmaydi** (ball 1.00). 1x ga tushirish faqat telefonda rasmni
+> xiralashtiradi — shuning uchun qilinmadi. Foyda retina bo'lmagan ekranlarda:
+> ular endi yarim hajm yuklaydi.
+
+**`vercel.json`** qo'shildi — rasm/shrift uchun `max-age=86400` +
+`stale-while-revalidate=604800`, JS uchun 1 soat. `immutable` qo'yilmadi:
+fayl nomlari yig'ishlar orasida o'zgarmaydi, aks holda dizayn yangilangach
+eski rasm keshda qotib qolardi.
+
+Piksel mosligi o'zgarmadi (a 2.14 / b 2.55 / c 2.22) — retina baribir 2x oladi.
+
 ---
 
 ## 7. Keyingi ishlar

@@ -97,10 +97,15 @@ def main():
     page = re.sub(r'<link rel="stylesheet" href="css/(base|site)\.css">\n?', '', page)
 
     # LCP rasmini oldindan yuklash
-    first = re.search(r'<img class="im [^"]*" src="(assets/[^"]+)"', page)
+    first = re.search(r'<img class="im [^"]*" src="(assets/[^"]+)"'
+                      r'(?:\s+srcset="([^"]+)")?', page)
     if first:
-        preloads.insert(0, '<link rel="preload" href="%s" as="image" '
-                           'fetchpriority="high">' % first.group(1))
+        tag = ('<link rel="preload" href="%s" as="image" fetchpriority="high"'
+               % first.group(1))
+        # srcset bo'lsa — brauzer preload'da ham to'g'ri o'lchamni tanlasin
+        if first.group(2):
+            tag += ' imagesrcset="%s"' % first.group(2)
+        preloads.insert(0, tag + '>')
     page = page.replace('</head>',
                         '\n'.join(preloads) + '\n<style>\n' + css + '</style>\n</head>', 1)
     (out / 'index.html').write_text(page, encoding='utf-8')

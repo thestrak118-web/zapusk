@@ -227,9 +227,15 @@ class Site:
                 fname=self._hashes[hsh]
             else:
                 # AVIF — bir xil ko'rinishda WebP'dan ~2 barobar yengil.
-                # LCP rasmi shu bo'lgani uchun sezilarli farq qiladi.
-                fname='%s-%02d.avif'%(self.name,len(self._hashes)+1)
-                out.save(os.path.join(self.out,'assets',fname),'AVIF',
+                # Ikki o'lchamda: oddiy ekran 1x ni, retina 2x ni oladi
+                # (srcset). Shu bilan telefonda aniqlik ham saqlanadi,
+                # ortiqcha bayt ham yuklanmaydi.
+                n=len(self._hashes)+1
+                fname='%s-%02d.avif'%(self.name,n)
+                one=im.resize((max(1,round(cw)),max(1,round(ch))),Image.LANCZOS,box=box)
+                one.save(os.path.join(self.out,'assets',fname),'AVIF',
+                         quality=AVIF_Q,speed=4)
+                out.save(os.path.join(self.out,'assets',fname[:-5]+'@2x.avif'),'AVIF',
                          quality=AVIF_Q,speed=4)
                 self._hashes[hsh]=fname
             op=float(e.get('fill-opacity',1))*float(st.get('opacity',1) or 1)
@@ -341,8 +347,11 @@ class Site:
                 d=imgs[payload]
                 cls='i%d'%payload
                 alt=meta.get('alt',{}).get(d['name'],'')
-                body.append('  <img class="im %s" src="assets/%s" alt="%s" width="%g" height="%g"%s>'%(
-                    cls,d['file'],alt,round(d['w']),round(d['h']),
+                body.append('  <img class="im %s" src="assets/%s" '
+                            'srcset="assets/%s 1x, assets/%s 2x" '
+                            'alt="%s" width="%g" height="%g"%s>'%(
+                    cls,d['file'],d['file'],d['file'][:-5]+'@2x.avif',
+                    alt,round(d['w']),round(d['h']),
                     ' loading="lazy"' if d['y']>700 else ''))
                 rules=['left:%gpx'%d['x'],'top:%gpx'%d['y'],'width:%gpx'%d['w'],'height:%gpx'%d['h']]
                 if d['op']<0.999: rules.append('opacity:%.2f'%d['op'])
