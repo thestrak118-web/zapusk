@@ -90,7 +90,8 @@
     telegram.href = channel.href;
     telegram.removeAttribute('aria-disabled');
     telegram.removeAttribute('tabindex');
-  } else {
+  } else if (!telegram.getAttribute('href')) {
+    // Havola thankYou.html ning o'zida yozilgan — config bo'sh bo'lsa ham u qoladi.
     telegram.removeAttribute('href');
     telegram.setAttribute('aria-disabled', 'true');
     telegram.setAttribute('tabindex', '-1');
