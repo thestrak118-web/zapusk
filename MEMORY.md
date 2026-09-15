@@ -547,6 +547,24 @@ o'zi to'g'rilanadi): 480 px dan 1.15, 640 px dan 1.3, 900 px dan 1.45.
 390 px dan tor desktop oynasi uchun 0.92 — avval u yerda kontent kesilardi.
 Mobil ko'rinish tegilmadi.
 
+### 2026-09-15 (tun, 5) — a tugma shakli, b sovg'a rasmi
+
+**a (va ildiz): tugma chetida "ramka".** Figma SVG eksportida CTA `<path>` —
+yon tomonlari 3 px tashqariga bo'rtgan "bochka" shakl. Pastki soya (`dy=5`)
+bo'rtmani kuzatmaydi, shuning uchun chap/o'ng chetda zinapoya paydo bo'lib,
+ramkaga o'xshardi. Ikkala tugma `<rect x=24 w=343 h=82 rx=12>` ga almashtirildi,
+`.cta-1/.cta-2` radiusi ham 41 → 12 (41 generatorning `h/2` taxmini edi,
+Figma qiymati emas). c da tugma allaqachon `rect` — tegilmadi.
+
+**b: sovg'a rasmi.** Foydalanuvchi `b/assets/gift.png` (204×161) yukladi — bu
+kartochka o'ng qismining (136×107) 1.5x eksporti. AVIF: `gift.avif` 136×107
+(2.9 KB) va `gift@1.5x.avif` (4.7 KB), `.i22` → `228,638` 136×107. Eski
+`s2-03*.avif` o'chirildi.
+
+> ⚠️ Ikkalasi ham **generator chiqargan faylda qo'lda** tuzatildi (manba SVG
+> repoda yo'q). `tools/build.py` qayta ishga tushirilsa, qaytib ketadi —
+> oldin manba SVG'da tugmani va sovg'a rasmini tuzatish kerak.
+
 ---
 
 ## 7. Keyingi ishlar
